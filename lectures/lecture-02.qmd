@@ -1,0 +1,232 @@
+---
+title: "Spatial Distribution of *Aedes aegypti* Oviposition Temporal Patterns"
+author:
+  - name: "V. Andreo, X. Porcasi, C. Guzman, L. Lopez, C.M. Scavuzzo"
+date: "2026-05-20"
+institute: "CONICET · CONAE · Universidad Nacional de Córdoba"
+format:
+  revealjs:
+    theme: [default, ../assets/css/IG_style.scss]
+    slide-number: true
+    logo: ../assets/img/logos_ig_unc_conae.png
+    footer: "Andreo et al. (2021) *Insects* 12(10), 919 · DOI: 10.3390/insects12100919"
+    transition: fade
+    highlight-style: github
+    code-line-numbers: false
+    toc: true
+    toc-depth: 1
+    toc-title: "Outline"
+bibliography: ../references.bib
+csl: ../american-statistical-association.csl
+---
+
+# Motivation {background-color="#1a3a4a"}
+
+## The problem: dengue in urban Argentina
+
+- *Aedes aegypti* is fully adapted to urban environments
+- Transmits dengue, Zika, chikungunya, and yellow fever
+- **Mosquito activity is not uniform across a city** — why?
+
+::: {.callout-note}
+If temporal activity patterns vary spatially, **transmission risk varies too** — 
+but no field data exist for most of a city.
+:::
+
+## Research questions
+
+1. Do distinct groups of temporal activity patterns exist among *Ae. aegypti* ovitraps?
+2. Are those patterns associated with local environmental conditions detectable from satellite imagery?
+3. Can we **predict** patterns city-wide — even where no field data exist?
+4. Do predicted patterns relate to observed dengue incidence?
+
+# Data {background-color="#1a3a4a"}
+
+## Field data: ovitrap surveillance
+
+- **Location:** Córdoba city, Argentina (~1.4 million inhabitants)
+- **Period:** 2017–2019 (two full entomological seasons)
+- **Resolution:** weekly counts per ovitrap
+- **Network:** ~50 ovitraps distributed across the urban area
+
+```
+Weekly egg counts → time series per trap → N × T matrix
+```
+
+::: {.callout-tip}
+Ovitraps are inexpensive, passive traps — but sparse and heterogeneous across the city.
+:::
+
+## Satellite covariates: Sentinel-2
+
+| Variable type | Derived product |
+|---|---|
+| Vegetation | NDVI time series (median, SD) |
+| Humidity / water | NDWI, MNDWI |
+| Built environment | NDBI |
+| Texture / heterogeneity | GLCM indices (contrast, entropy, correlation) |
+| Land cover diversity | Shannon index over buffer areas |
+
+All covariates extracted over **buffer areas** surrounding each ovitrap location.
+
+# Methods {background-color="#1a3a4a"}
+
+## Analytical pipeline
+
+```{mermaid}
+flowchart LR
+  A[Weekly ovitrap\ntime series] --> B[Time series\nclustering]
+  B --> C[Cluster labels\nper trap]
+  D[Sentinel-2\ncovariates] --> E[Random forest\nclassification]
+  C --> E
+  E --> F[City-wide\nprediction map]
+  F --> G[Comparison with\ndengue incidence]
+```
+
+## Step 1 — Time series clustering
+
+- **Goal:** discover groups of temporal patterns without prior labels
+- **Distance metric choices:** DTW, Euclidean, correlation-based
+- **Algorithms tested:** k-means with DTW barycenter averaging (DBA), hierarchical clustering
+- **Cluster validity indices:** Silhouette, Calinski–Harabász, Davies–Bouldin
+
+::: {.fragment}
+> Choosing the *right* distance metric matters more than the clustering algorithm itself.
+> DTW is robust to phase shifts; correlation-based metrics emphasise shape similarity.
+:::
+
+## Step 2 — Feature extraction & classification
+
+- Each trap → **feature vector** from Sentinel-2 covariates
+- **Random forest classifier** trained on labelled traps (cluster assignments)
+- Key challenge: **class imbalance** — some patterns are rare in the field sample
+
+::: {.callout-warning}
+### Class imbalance strategy
+- Stratified k-fold cross-validation
+- Oversampling minority classes (SMOTE)
+- Balanced accuracy and F1-score as evaluation metrics
+:::
+
+## Step 3 — City-wide prediction
+
+- Apply trained RF model to **all pixels** in Córdoba's urban area
+- Each pixel gets a **predicted temporal pattern class**
+- Result: a continuous raster map of expected *Ae. aegypti* temporal behaviour
+
+## Step 4 — Validation against dengue incidence
+
+- Aggregate predicted class proportions per **neighbourhood (barrio)**
+- Correlate with officially reported dengue incidence (cases / 1000 inhabitants)
+- Spearman's ρ, visual inspection of spatial concordance
+
+# Results {background-color="#1a3a4a"}
+
+## Three temporal patterns
+
+Three distinct cluster groups were found:
+
+| Pattern | Description | Typical timing |
+|---|---|---|
+| **C1** | Early, sharp peak | Oct–Nov |
+| **C2** | Late, sustained activity | Jan–Mar |
+| **C3** | Low, flat profile | Throughout season |
+
+::: {.fragment}
+The three patterns are **biologically interpretable** and spatially structured —
+not random artefacts of clustering.
+:::
+
+## Environmental associations
+
+Variables most associated with pattern membership:
+
+- **Land cover diversity** (Shannon index in buffer)
+- **NDVI variability** (temporal SD of vegetation greenness)
+- **Humidity-related indices** (NDWI, MNDWI)
+- **Texture heterogeneity** (GLCM entropy, contrast)
+
+::: {.callout-note}
+Traps in more **heterogeneous, vegetated, humid** microenvironments tended toward 
+earlier and higher oviposition peaks (Pattern C1/C2).
+:::
+
+## City-wide prediction map
+
+> Sentinel-2-derived covariates were sufficient to predict temporal pattern membership 
+> across the full urban extent of Córdoba.
+
+- Random forest out-of-bag accuracy: **XX%** (cross-validated)
+- Spatial prediction reveals **intra-urban heterogeneity** invisible to sparse surveillance
+
+::: {.fragment}
+This is the key result: **risk is not uniform within a city**, 
+and satellite data can reveal that structure.
+:::
+
+## Relationship with dengue incidence
+
+- **Weak but positive** association between proportion of Pattern C2 pixels 
+  and neighbourhood-level dengue incidence (ρ ≈ 0.3)
+- Statistically significant (p < 0.05) despite small sample of neighbourhoods
+- Confirms biological relevance of the clustering
+
+::: {.callout-warning}
+The association is real but modest — dengue incidence is influenced by many factors 
+beyond mosquito activity (human mobility, immunity, reporting).
+:::
+
+# Discussion {background-color="#1a3a4a"}
+
+## What worked
+
+✔ Unsupervised clustering on sparse field data → meaningful, stable patterns  
+✔ Sentinel-2 covariates carry sufficient signal to generalise to unsampled locations  
+✔ Random forest handles mixed-type features robustly  
+✔ Open, reproducible workflow (GRASS GIS + Python)  
+
+## What we would do differently
+
+- **Better handling of spatial autocorrelation** in cross-validation (spatial CV)
+- **More seasons** of ovitrap data — two years may capture normal variability only
+- **Incorporate human mobility** data for the dengue validation step
+- **Deep learning** for temporal feature extraction? Possibly — but at the cost of interpretability
+
+## Open questions
+
+1. Are the three patterns stable across years and cities?
+2. Which Sentinel-2 bands/indices are truly **causal** vs merely correlated?
+3. Can early-season satellite imagery **predict** the coming season's pattern?
+4. How does this scale to other *Aedes* species or other disease systems?
+
+# Conclusions {background-color="#1a3a4a"}
+
+## Take-home messages
+
+::: {.incremental}
+1. *Ae. aegypti* temporal activity is **spatially heterogeneous** within cities
+2. That heterogeneity is **predictable** from freely available satellite imagery
+3. Sentinel-2 + random forest = a practical, scalable surveillance tool
+4. The spatial distribution of patterns has **epidemiological relevance** (dengue)
+5. Open-source tools (GRASS, Python) make this workflow **transferable**
+:::
+
+## Implications for public health
+
+> Understanding *where* and *when* mosquitoes are most active — 
+> without exhaustive field campaigns — can:
+
+- Guide **targeted vector control** interventions
+- Support **early warning systems**
+- Improve **allocation of surveillance resources**
+- Feed into **dengue risk models** at urban scale
+
+# Thank you {background-color="#1a3a4a"}
+
+## References & resources
+
+**Paper:**  
+Andreo, V., Porcasi, X., Guzman, C., Lopez, L. & Scavuzzo, C.M. (2021).  
+Spatial Distribution of *Aedes aegypti* Oviposition Temporal Patterns and Their  
+Relationship with Environment and Dengue Incidence.  
+*Insects*, 12(10), 919. <https://doi.org/10.3390/insects12100919>

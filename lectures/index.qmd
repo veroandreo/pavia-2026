@@ -1,0 +1,8 @@
+---
+title: "Lectures"
+listing:
+  contents: "lecture-*.qmd"
+  type: table
+  fields: [title, description, date]
+  sort: "date asc"
+---

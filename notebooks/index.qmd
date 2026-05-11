@@ -1,0 +1,9 @@
+---
+title: "Notebooks"
+listing:
+  contents:
+    - "notebook-*.qmd"
+  type: table
+  fields: [title, description, date]
+  sort: "date asc"
+---

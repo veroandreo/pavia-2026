@@ -1,0 +1,70 @@
+---
+title: "Verónica Andreo"
+about:
+  template: trestles
+  image: assets/img/caricatura.png
+  links:
+    - text: "{{< ai researchgate size=2x >}}"
+      url: "https://www.researchgate.net/profile/Veronica_Andreo2"
+    - text: "{{< ai google-scholar size=2x >}}"
+      url: https://scholar.google.com/citations?user=zoN4MO4AAAAJ&hl=en
+    - text: "{{< ai orcid size=2x >}}"
+      url: https://orcid.org/0000-0002-4633-2161
+    - text: "{{< fa brands github size=2x >}}"
+      url: https://github.com/veroandreo
+---
+
+
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-12}
+## {{< fa solid dna >}} About
+[**Verónica Andreo**](https://veroandreo.gitlab.io/) is a biologist. She holds a PhD in
+Biological Sciences and an MSc in Remote Sensing and GIS applications.
+She works as a researcher for [CONICET](https://www.conicet.gov.ar/) and lecturer at the
+[Gulich Institute](http://ig.conae.unc.edu.ar/) — Argentinian Space Agency
+[(CONAE)](https://www.argentina.gob.ar/ciencia/conae) in Córdoba, Argentina.
+Her research focuses on applications of spatial information and geotechnologies to problems
+related to the ecology of zoonotic and vector-borne diseases and public health.
+Specifically, she works on uncovering **environmental drivers of vector-borne disease
+distribution and outbreaks**, with a particular interest in those environmental features
+that can be derived **by means of satellite image analysis, remote sensing time series
+and GIS-based techniques**.
+
+Verónica is part of the [**GRASS GIS**](https://grass.osgeo.org/) project and has served
+as coordinator of the [development team](https://grass.osgeo.org/about/team/) since 2021.
+She is a strong advocate for free and open source software for geospatial (FOSS4G) and a
+member of [OSGeo](https://www.osgeo.org/), the Open Source Geospatial Foundation.
+She was the Program Committee chair for the international conference
+[**FOSS4G 2021**](2021.foss4g.org/), hosted by Argentina.
+Among other activities, she has volunteered as a mentor for GRASS GIS in the
+[Google Code-In](https://codein.withgoogle.com/) contest, introducing high school students
+to the open source world, and in
+[Google Summer of Code](https://summerofcode.withgoogle.com/)
+for university students and developers.
+:::
+
+
+::: {.g-col-12 .g-col-md-6}
+## {{< fa solid heart >}} Interests
+
+- Ecology of zoonotic and vector-borne diseases
+- Remote sensing time series
+- Satellite image analysis
+- Geographic Information Systems (GIS)
+- Species Distribution Models (SDM)
+- Data science
+- Free and open source software
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## {{< fa solid graduation-cap >}} Education
+
+- **PhD in Biological Sciences**. *National University of Río Cuarto*. 2012.
+- **MSc in Spatial Applications for Early Warning and Response to Emergencies**.
+*National University of Córdoba*. 2015.
+- **Biologist**. *National University of Río Cuarto*. 2005.
+:::
+
+:::

@@ -1,0 +1,36 @@
+---
+title: "Earth Observation for Disease Ecology"
+subtitle: "From environmental drivers to operational risk mapping"
+date: today
+author: "Verónica Andreo"
+toc: true
+---
+
+## Overview
+
+These are the materials for the lectures and workshop prepared for 
+the visit to the University of Pavia in the framework of the 
+**HerIT4future** project.
+
+## Description 
+
+Vector-borne and zoonotic diseases impose a significant burden on human health worldwide, and their dyamics are tightly coupled to environmental conditions that can be monitored from space. This series of lectures, seminars and workshops explore the intersection of remote sensing and disease ecology, addressing both the conceptual foundations and the methodological challenges of building operational disease surveillance tools from satellite data. 
+We begin with the theoretical framework linking remote sensing to health geography and disease ecology, illustrated through case studies spanning hantavirus, dengue, leishmaniasis and West Nile fever. A research seminar then dissects a real analytical pipeline, combining field ovitrap time series, unsupervised clustering and machine learning with Sentinel-2 imagery, to map Aedes aegypti temporal activity across an entire city and validate predictions against dengue incidence. A hands-on workshop guides participants through a complete species distribution modeling workflow with GRASS and Python within Jupyter notebooks and Google Colab, from satellite data to spatially explicit distribution maps. The series closes with a collaborative problem-solving session, where open methodological challenges in RS-based disease surveillance, such as sparse data, class imbalance, model transferability, are brought to the table for collective discussion.
+Across all sessions, the emphasis is on reproducibility, open-source tools, and the translation of RS data into actionable public health information.
+
+## Schedule
+
+All lectures will take place at: 
+**Aula Seminari Magenta – Dipartimento Ingegneria Ind. e dell’Informazione**.
+
+| Date | Time | Type | Title |
+|------|------|------|-------|
+| May 18, 2026 | 16:00–18:00 | Lecture | Environmental drivers of vector-borne and zoonotic diseases: leveraging remote sensing for public health |
+| May 20, 2026 | 11:00–13:00 | Seminar | Mapping mosquito activity from space: methods, choices, and open questions in urban disease surveillance |
+| May 21, 2026 | 14:00–16:00 | Workshop | From satellite data to disease risk maps: a practical introduction to species distribution modeling |
+| May 22, 2026 | 14:00–16:00 | Discussion | Let's solve it together: open problems in RS-based disease surveillance |
+
+: {tbl-colwidths="[15, 10, 10, 65]"}
+
+
+

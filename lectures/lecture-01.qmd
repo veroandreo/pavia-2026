@@ -1,0 +1,1014 @@
+---
+title: Environmental drivers of vector-borne and zoonotic diseases
+subtitle: Leveraging remote sensing for Public Health
+author:
+  name: Dr. Verónica Andreo
+  affiliation:
+    - CONICET
+    - Instituto Gulich (CONAE-UNC)
+  email: veronica.andreo@ig.edu.ar
+  orcid: 0000-0002-4633-2161
+title-slide-attributes:
+  data-background-color: "#1A428A"
+date: "2026-05-18"
+bibliography: ../references.bib
+csl: ../american-statistical-association.csl
+format:
+  revealjs:
+    hash-type: number
+    slide-number: true
+    chalkboard:
+      buttons: true
+    preview-links: auto
+    theme: [default, ../assets/css/IG_style.scss]
+    logo: ../assets/img/logos_ig_unc_conae.png
+---
+
+## About me {background-color="#1A428A"}
+
+<br>
+
+:::: {.columns}
+::: {.column width="60%"}
+- Researcher and lecturer at Instituto Gulich (CONICET-CONAE-UNC)
+- Background: Dr. in Biology, MSc in Spatial Information Applications
+- Remote sensing and geospatial applications in disease ecology
+- Member of the GRASS GIS Dev Team & project chair; OSGeo Charter member & FOSS4G enthusiast
+
+{{< fa globe >}} <https://veroandreo.gitlab.io/>
+:::
+
+::: {.column width="40%"}
+![](../assets/img/lecture/gulich.jpg){width="70%" fig-align="center"}
+:::
+::::
+
+
+## Overview {background-color="#1A428A" background-image="../assets/img/lecture/RS_and_Public_Health_vertical.png" background-size="32%" background-position="right"}
+
+- Motivation
+- Health Geography
+- Disease Ecology
+- Remote sensing fundamentals
+- Leveraging remote sensing for Disease Ecology
+  - Resolution vs scale
+  - How can we use RS?
+  - Examples
+- Gaps, challenges and opportunities
+- Conclusion
+
+---
+
+:::{.r-stack}
+![](../assets/img/lecture/sdg_poster.png){.fragment fragment-index=2 .fade-in-then-out width="90%"}
+
+![](../assets/img/lecture/sdg_3.png){.fragment .fade-in-then-out fragment-index=1 width="55%" fig-align="center"}
+
+![](../assets/img/lecture/sdg_3_target33.png){.fragment fragment-index=3 .fade-in width="100%" fig-align="center"}
+:::
+
+::: footer
+<https://sdgs.un.org/goals/goal3>
+:::
+
+::: {.notes}
+Vector-borne and zoonotic diseases are responsible for one-sixth of disease and disability worldwide. This is one of the reasons why good health and well-being is among the 17 UN goals for sustainable development. More specifically, the target is to end epidemics of NTDs among other communicable diseases.
+:::
+
+---
+
+### Neglected Tropical Diseases (NTD)
+
+<br>
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](https://www.rets.epsjv.fiocruz.br/sites/default/files/ntd_-_materia_-_ingles_0.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](../assets/img/lecture/vbd_cycle.png){.fragment .fade-in width="80%" fig-align="center"}
+:::
+
+:::
+
+![](../assets/img/lecture/aedesaegypti_blood.png){.fragment .absolute bottom=40 right=380 width=150}
+
+![](../assets/img/lecture/sandfly.png){.fragment .absolute top=5 right=-30 width=170}
+
+![](../assets/img/lecture/tick.png){.fragment .absolute bottom=130 right=-30 width=120}
+
+::: {.notes}
+Which are these NTDs and why might remote sensing be relevant for their study? Most of them are transmitted by animals — they need a vector to carry the pathogen from host to humans or among humans. Animals, especially ectothermic ones, are highly affected by environmental conditions... think of Aedes aegypti mosquitoes... and what information can be most easily extracted from RS? Environmental information.
+:::
+
+---
+
+::: {.center}
+You all have seen this, right?
+:::
+
+::: {.columns}
+
+::: {.column width="60%"}
+![](../assets/img/lecture/Snow-cholera-map.jpg)
+:::
+
+::: {.column width="7%"}
+:::
+
+::: {.column width="30%"}
+<br><br>
+![](../assets/img/lecture/John_Snow.jpg)
+:::
+:::
+
+::: {.notes}
+Before we reach the core of remote sensing uses and applications, there are a couple of things that happened first and some definitions I'd like to share. You all have seen this, right? This is the first class of a GIS course, but also the first time that the association between health/disease and place/space was clearly mapped.
+:::
+
+## Health Geography
+
+<br>
+
+::: {.columns}
+::: {.column width="33%"}
+::: {.color-box-light-blue .fragment fragment-index=1}
+**Environmental health**: focuses on environmental hazards, environmental risk assessment, and the physical and psycho-social health impacts of environmental contamination.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-blue .fragment fragment-index=3}
+**Disease ecology**: study of infectious diseases (including NTDs) and the spatial distribution of environmental, social, political & economic conditions associated with disease.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-blue .fragment fragment-index=2}
+**Health care delivery and access**: spatial patterns of health care provision and patient behavior.
+:::
+:::
+:::
+
+::: {.notes}
+This was the beginning of what was called health geography — the application of geographical information, perspectives, and methods to the study of health, disease, and health care. Within this discipline we can identify 3 fields of study: Environmental health, Health access and Disease ecology.
+:::
+
+
+## Health Geography
+
+<br>
+
+::: {.columns}
+::: {.column width="33%"}
+::: {.color-box-light-blue}
+**Environmental health**: focuses on environmental hazards, environmental risk assessment, and the physical and psycho-social health impacts of environmental contamination.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-magenta}
+**Disease ecology**: study of infectious diseases (including NTDs) and the spatial distribution of environmental, social, political & economic conditions associated with disease.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-blue}
+**Health care delivery and access**: spatial patterns of health care provision and patient behavior.
+:::
+:::
+:::
+
+::: {.notes}
+While RS has applications in all fields, I'll focus on those related to disease ecology as it is where I have worked the most.
+:::
+
+
+## Disease Ecology I
+
+::: {.columns}
+::: {.column width="57%"}
+<br><br>
+![](../assets/img/lecture/global_view_diseases.png){width="700"}
+:::
+
+::: {.column width="43%"}
+The main objective is to understand the influence of environmental factors and to predict when and where a disease is most likely to occur
+
+::: {style="display: flex; align-items: center; justify-content: center;"}
+{{< fa solid angles-down size=2x >}}
+:::
+
+decision making, planning of prevention, management or response actions, etc.
+:::
+:::
+
+
+## Disease Ecology II
+
+::: {.r-stack}
+![](../assets/img/lecture/disease_triad.jpg){.fragment width="150%" fig-align="center"}
+
+![](../assets/img/lecture/lambin_2010.png){.fragment width="85%" fig-align="center"}
+
+::: {data-id="box" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 700px; height: 370px; transform: translate(0%, -26%);"}
+:::
+:::
+
+::: footer
+@lambin_pathogenic_2010
+:::
+
+::: {.notes}
+This relationship with environment is usually represented by a triad — the epidemiologic triad. For disease to occur (in humans) we need proper environmental conditions, a pathogen, and competent hosts and vectors. Environment encompasses climate, LULCC, habitat fragmentation, human behaviour, and all the relationships among them. This is what we usually try to observe with RS.
+:::
+
+
+## Use of RS in Health applications
+
+![](../assets/img/lecture/growth_papers_health_and_RS.png){width="90%"}
+
+::: footer
+@viana_remote_2017
+:::
+
+:::{.notes}
+The use of remote sensing for public health applications has been increasing since 2007 according to this review, but it started even earlier. I particularly remember a set of publications from the Four Corners area when Sin Nombre virus appeared.
+:::
+
+
+## Most common RS variables used
+
+:::: {.columns}
+:::{.column width="70%"}
+![](../assets/img/lecture/most_used_RS_vars.png){fig-align="center"}
+:::
+
+::: {.column width="30%"}
+<br>
+
+:::{.color-box-light-blue}
+- LST
+- Precipitation
+- NDVI
+- LULC
+- Elevation
+- NDWI
+:::
+
+:::
+
+::::
+
+::: footer
+@parselia_satellite_2019
+:::
+
+:::{.notes}
+The most common variables used in general are: LST, Precipitation, NDVI, Elevation... This is for mosquitoes; if we think about ticks or mice, vegetation variables are more frequently used.
+:::
+
+
+## { background-image="../assets/img/lecture/portada_campo_satelite_sig.png" }
+
+::: {style="color: #ffffff; font-size: 1.2em;"}
+**How do we continuously map these variables?**
+From the thermometer and field notebook, to satellite data.
+:::
+
+
+## What is Remote Sensing?
+
+The **acquisition of information about objects or phenomena without being in direct contact** with them, through detection of the electromagnetic energy they emit or reflect.
+
+![](../assets/img/lecture/componentes_SR.png){width="100%" fig-align="center"}
+
+::: {.notes}
+Remote sensing is the science and art of obtaining information about an object, area, or phenomenon through the analysis of data acquired by a device not in physical contact with the object. Satellites, aircraft, or drones carry sensors that record energy reflected or emitted by the Earth's surface. A remote sensing system has four fundamental components: an energy source (usually the sun, although SAR systems generate their own), the interaction of that energy with the surface (each cover type reflects or emits differently), the sensor that records that energy, and the entire process of data transmission and processing until ready-to-use products are obtained.
+:::
+
+
+## The electromagnetic spectrum
+
+<br>
+
+![](../assets/img/lecture/espectro_electromagnetico.png){width="100%" fig-align="center"}
+
+::: {.notes}
+The electromagnetic spectrum spans from gamma rays to radio waves. Earth observation satellites work mainly in four regions: the visible (what we see with our eyes), the near-infrared (fundamental for studying vegetation), the thermal infrared (for measuring surface temperature), and microwaves (SAR radars, which can penetrate clouds). Each region has atmospheric transmission windows where the atmosphere is transparent enough to allow measurements.
+:::
+
+
+## What does the sensor measure?
+
+Sensors measure the **electromagnetic energy** reaching the detector in each band:
+
+::: {.columns}
+::: {.column width="55%"}
+
+<br>
+
+::: {.color-box-light-blue}
+**Radiance** *(W·sr⁻¹·m⁻²)*
+Energy received by the sensor — includes atmospheric effects
+:::
+
+<br>
+
+::: {.color-box-light-blue}
+**Reflectance** *(dimensionless, 0–1)*
+Fraction of sunlight reflected by the surface — obtained after applying **atmospheric correction**
+:::
+:::
+
+::: {.column width="45%"}
+
+<br>
+
+![](../assets/img/lecture/componentes_SR.png){width="90%"}
+:::
+:::
+
+
+## Spectral signatures
+
+The "fingerprint" of each land cover type
+
+![](../assets/img/lecture/firmas_espectrales.png){width="95%" fig-align="center"}
+
+::: {.notes}
+Each type of land cover has a characteristic reflectance curve as a function of wavelength. Healthy vegetation reflects very little in the red (chlorophyll absorbs that light for photosynthesis) but a lot in the near-infrared (the cellular structure of leaves reflects it). This marked difference is the basis of NDVI. Water absorbs almost all energy in the infrared, which is why it appears dark in those bands. Bare soil has an increasing and more uniform reflectance. Stressed vegetation (dry, diseased) loses that NIR jump, allowing us to detect problems before they are visible to the naked eye.
+:::
+
+
+## RS-derived variables
+
+<br>
+
+::: {.columns}
+::: {.column width="33%"}
+::: {.color-box-light-blue style="font-size: 0.75em;"}
+**Spectral indices**
+Band ratio combinations
+
+`(NIR − Red) / (NIR + Red)`
+
+- NDVI → vegetation
+- NDWI → water / moisture
+- NDBI → built-up area
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-blue style="font-size: 0.75em;"}
+**Physical variables**
+Real magnitudes derived with models
+
+- LST → land surface temperature (°C/K)
+- Albedo → total reflected fraction
+- LAI → leaf area index
+- Precipitation (microwave)
+:::
+:::
+
+::: {.column width="33%"}
+::: {.color-box-light-blue style="font-size: 0.75em;"}
+**Thematic products**
+Classifications and interpretations
+
+- LULC → land use / land cover
+- Vegetation maps
+- Change detection (LULCC)
+- Risk maps (with GIS)
+:::
+:::
+:::
+
+::: {.notes}
+This distinction is important: spectral indices are direct operations on reflectance bands, dimensionless. Physical variables require more complex models and have real units. Thematic products result from classifying or interpreting images, and often combine multiple information sources.
+:::
+
+
+## What is a GIS?
+
+<br>
+
+A **Geographic Information System (GIS)** is a system that allows **capturing, storing, analysing and visualising data with a spatial component**:
+
+<br>
+
+::: {.columns}
+::: {.column width="48%"}
+**RS → *how* we obtain the data**
+
+- Satellite images
+- Environmental variables
+- Temperature, vegetation, rainfall...
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+**GIS → how we *integrate and analyse* them**
+
+- Combine information layers
+- Disease case data + environmental variables
+- Generate risk maps
+:::
+:::
+
+::: {.notes}
+GIS is the "spatial laboratory" where we integrate all information. It can be thought of as a very powerful version of a digital map where we can overlay very different information layers: satellite images, disease case data, administrative boundaries, road networks, etc., and analyse them together to find patterns or model risks.
+:::
+
+
+## { background-image="../assets/img/lecture/portada_muchos_satelites.png" }
+
+::: {style="color: #ffffff; font-size: 1.2em;"}
+**How to choose the right data for my problem?**
+:::
+
+
+## Remote sensing basic features
+
+![](../assets/img/lecture/all_resolutions_relation.png){fig-align="center"}
+
+::: footer
+@dif_resolutions_2018
+:::
+
+::: {.notes}
+We should take into account some basic features of remote sensing before selecting which data to use.
+:::
+
+
+## Remote sensing & scale I
+
+<br>
+
+![](../assets/img/lecture/scale_vs_variables_spp_distr.png){fig-align="center"}
+
+::: footer
+@pearson_predicting_2003
+:::
+
+:::{.notes}
+To decide which RS dataset most suits our problem we also need to think about the scale at which variables operate. This shows the relationship of environmental variables and the distribution of species according to scale.
+:::
+
+
+## Remote sensing & scale II
+
+::: {.panel-tabset}
+
+## Taxonomy
+
+![](../assets/img/lecture/resolution_vs_animals.png){fig-align="center"}
+
+## Plants
+
+![](../assets/img/lecture/resolution_vs_forest.png){fig-align="center"}
+
+## Animals
+
+![](../assets/img/lecture/resolution_vs_movement_a.png){width="65%" fig-align="center"}
+:::
+
+::: footer
+@leitao_improving_2019, @lechner_applications_2020, @rumiano_movement_2020
+:::
+
+:::{.notes}
+If we study other biological or ecological phenomena we should consider scale and think which type of RS product would be most appropriate.
+:::
+
+
+## How to apply RS in disease ecology?
+
+<br>
+
+::: {.r-stack}
+
+![General approach used in (disease) ecology](../assets/img/lecture/workflow_sdm_other.png)
+
+::: {data-id="box1" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 300px; height: 140px; transform: translate(-115%, -77%);"}
+:::
+
+::: {data-id="box2" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 300px; height: 160px; transform: translate(-115%, 30%);"}
+:::
+
+::: {data-id="box3" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 330px; height: 300px; transform: translate(100%, -10%);"}
+:::
+
+:::
+
+::: {.notes}
+Going back to disease ecology, what do we use RS for?
+- To map the response variables, i.e., species occurrence or abundance, infections, disease cases
+- To map the predictor variables
+- To validate predictions
+:::
+
+## { background-image="../assets/img/lecture/satellite_and_earth.jpg" }
+
+::: { style="color: #ffffff; font-size: 1.5em;" }
+Let's have a look at some real cases...
+:::
+
+---
+
+### Detecting and mapping species occurrences
+
+<br>
+
+- Very high resolution (VHR) imagery
+- Hyperspectral data (esp. for plant species)
+- Direct and indirect counting (CV, ML, DL)
+
+::: {.columns}
+::: {.column width="53%"}
+
+![(a) Emperor penguins. (b) Elephants](../assets/img/lecture/map_spp_from_vhr_img.png)
+:::
+
+::: {.column width="47%"}
+
+![Great gerbil burrows classification](../assets/img/lecture/great_gerbil_burrows.jpg)
+:::
+:::
+
+::: footer
+@wang_surveying_2019
+:::
+
+---
+
+### Detecting and mapping species occurrences
+
+<br>
+
+![Pine beetle infection](../assets/img/lecture/pine_beetle_infection.jpg){width="70%"}
+
+::: {style="float: right; transform: translate(0%, -100%);"}
+![](../assets/img/lecture/pine_beetle_study_landsat.png){width="550px"}
+:::
+
+::: footer
+@meng_landsat_based_2022
+:::
+
+---
+
+### Time series analysis of satellite products {.smaller}
+
+- MODIS LST temporal and spatial reconstruction (LWR & splines)
+- Estimation of relevant indices (GRASS GIS temporal framework!)
+- Detection of spatial and temporal clusters of favorable conditions for the occurrence of West Nile Fever cases in Greece
+
+::: {.columns}
+::: {.column width="33%"}
+![](../assets/img/lecture/fig_modis_workflow.png)
+
+![](../assets/img/grass_gis.svg){.absolute top=350 left=-100 width="85"}
+:::
+
+::: {.column width="67%"}
+
+<br>
+
+![](../assets/img/lecture/co_cluster_method.png){.fragment .grow}
+:::
+:::
+
+::: footer
+@metz_new_2017, @andreo_identifying_2018
+:::
+
+---
+
+### Environmental risk of Dengue
+
+- MODIS LST is used to estimate number of extrinsic incubation periods (EIP) that virus might complete; the higher this number, the higher the environmental risk
+
+![[CONAE Geoportal](https://geoportal.conae.gov.ar/mapstore/#/viewer/openlayers/geoportal)](../assets/img/lecture/riesgo_dengue_por_localidad.png)
+
+::: footer
+@porcasi_operative_2012, <https://github.com/InstitutoGulich/RiesgoAmbiental>
+:::
+
+---
+
+### SDM & GIS based approach for HPS risk map
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](../assets/img/lecture/workflow_sph_andreo_etal_2014.png)
+<br>
+
+![](../assets/img/grass_gis.svg){width="30%" fig-align="center"}
+:::
+
+::: {.column width="50%" .smaller}
+We combined a rescaled probability map of the host with one of the human cases to determine levels of transmission risk
+
+![](../assets/img/lecture/colilargo_mirror.svg){.absolute top=230 right=50 width="210"}
+<br>
+
+![](../assets/img/lecture/riesgo_sph_andreo_etal_2014.png)
+:::
+:::
+
+::: footer
+@andreo_modeling_2011, @andreo_estimating_2014
+:::
+
+---
+
+### Cutaneous leishmaniasis and LULCC
+
+![](../assets/img/lecture/sandfly.png){.absolute top=5 right=-30 width=120}
+
+<br>
+
+::: {.columns}
+
+::: {.column width="50%"}
+![Change map](../assets/img/lecture/change_maps.png)
+
+![](../assets/img/lecture/grass_logo_magnets.png){.fragment .absolute top=400 left=25 width="90"}
+:::
+
+::: {.column width="50%"}
+![CL Prediction map](../assets/img/lecture/fig_ensemble_final.png)
+:::
+
+:::
+
+::: footer
+@andreo_ecological_2022, [*i.cva*](https://grass.osgeo.org/grass-stable/manuals/addons/i.cva.html)
+:::
+
+---
+
+### Towards operational risk maps
+
+::: {.columns}
+::: {.column width="60%"}
+![Workflow](../assets/img/lecture/workflow_dengue.png)
+
+![](../assets/img/grass_gis.svg){.fragment .absolute top=200 left=2 width=80}
+
+![](../assets/img/lecture/R_logo.png){.fragment .absolute top=300 left=530 width=85}
+:::
+
+::: {.column width="40%"}
+![](../assets/img/lecture/Predictions.png)
+
+![](../assets/img/lecture/aedesaegypti_blood_mirror.png){width="32%" style="float: right;"}
+:::
+:::
+
+::: footer
+@andreo_towards_2021
+:::
+
+---
+
+### Spatial distribution of temporal patterns
+
+- Temporal and spatial patterns in *Aedes aegypti* in Córdoba
+- Association with variables derived from Sentinel-2 imagery analysis to predict temporal patterns over the whole city.
+
+![](../assets/img/lecture/spatial_distr_temp_patterns.png){.r-stretch}
+
+![](../assets/img/lecture/aedesaegypti_blood.png){.absolute top=220 left=200 width=120}
+
+![](../assets/img/lecture/R_logo.png){.fragment .absolute bottom=30 right=420 width=130}
+
+![](../assets/img/grass_gis.svg){.fragment .absolute bottom=30 right=30 width=100}
+
+::: footer
+@andreo_spatial_2021
+:::
+
+---
+
+### Urban environmental characterisation for the distribution of ovitraps
+
+:::: {.columns}
+::: {.column width="40%"}
+- Object-based classification of VHR imagery
+- Landscape metrics for polygons
+- Clustering to find groups of similar polygons
+- Stratified distribution of ovitraps
+
+::: {style="font-size: 0.7em;"}
+![](../assets/img/lecture/carlita.png){width="60" style="float: right;"}
+MSc thesis, **Carla Rodriguez**.
+:::
+:::
+
+::: {.column width="60%"}
+![](../assets/img/lecture/tesis_carla.png)
+:::
+::::
+
+::: footer
+@grippa_open_source_2017, @georganos_scale_2018, @rodriguez_gonzalez_using_2023
+:::
+
+---
+
+### Predictive system based on population dynamics and weather forecasting {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+![](../assets/img/lecture/modelo_exe.png)
+:::
+
+::: {.column width="40%"}
+![](../assets/img/lecture/Fig_agui.png){width="75%" fig-align="center"}
+<br>
+
+::: {style="font-size: 0.8em;"}
+Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás San Miguel**.
+![](../assets/img/lecture/tomi.png){width="65" style="float: right;"}
+:::
+:::
+::::
+
+::: footer
+@aguirre_implementation_2021
+:::
+
+
+## {{< fa person-digging >}} Online surveillance system {{< fa person-digging >}}
+
+<br>
+
+![](../assets/img/lecture/bid_etapas_flujo_de_trabajo.drawio.png){.fragment fig-align="center"}
+
+<br>
+
+![](../assets/img/lecture/bid_logos.png){width="500" fig-align="center"}
+
+
+## {{< fa person-digging >}} Online surveillance system {{< fa person-digging >}}
+
+::: {.r-stack}
+![](../assets/img/lecture/bid_geonode.png){fig-align="center" width="67%"}
+
+![](../assets/img/lecture/bid_geonode_mosquitos.jpg){.fragment fig-align="center" width="85%"}
+
+![](../assets/img/lecture/bid_geonode_dengue_2020.jpg){.fragment fig-align="center" width="82%"}
+:::
+
+---
+
+### LULCC and disease outbreaks
+
+::: {.columns}
+::: {.column width="60%"}
+![Forest loss](../assets/img/lecture/forest_loss_1km.png)
+:::
+
+::: {.column width="40%"}
+![Visceral leishmaniasis](../assets/img/lecture/LV_kernel_density.png){width="60%"}
+
+![Cutaneous leishmaniasis](../assets/img/lecture/LC_kernel_density.png){width="60%"}
+:::
+:::
+
+::: footer
+PICT 2021 - GRF TI - 00372
+:::
+
+---
+
+### Geographic access to health
+
+::: {.columns}
+::: {.column width="45%"}
+
+::: {.r-stack}
+![](../assets/img/lecture/area_de_estudio_triple_frontera_Carli.png)
+
+![](../assets/img/lecture/camino_triple_frontera_Carli.png){.fragment}
+:::
+
+::: {style="font-size: 0.7em;"}
+![](../assets/img/lecture/carlita.png){width=60 style="float: left; padding-right: 10px"}
+PhD candidate, **Carla Rodriguez Gonzalez**.
+:::
+:::
+
+:::{.column width="55%"}
+![Travel time to health centers](../assets/img/lecture/acceso_escenario_desfavorable.png){width="90%"}
+:::
+:::
+
+---
+
+### Asthma incidence and air quality
+
+::: {.columns}
+::: {.column width="45%"}
+![](../assets/img/lecture/asma_cba_Abraham.png)
+
+::: {style="font-size: 0.7em;"}
+![](../assets/img/lecture/abraham.png){width=60 style="float: left; padding-right: 10px"}
+PhD candidate, **Abraham Coiman**.
+:::
+:::
+
+::: {.column width="55%"}
+![](../assets/img/lecture/Aerosoles_promedio_mensual.png)
+:::
+:::
+
+
+## Other projects under development {.smaller}
+
+::: {layout="[1, 20]"}
+![](../assets/img/lecture/mati.png){width="51"}
+
+Epidemiological characterisation of intestinal parasite infection in children. PhD candidate, **Matias Scavuzzo**.
+:::
+
+::: {layout="[1, 20]"}
+![](../assets/img/lecture/mica.png){width="51"}
+
+Geospatial modelling of malnutrition in children and adolescents. PhD candidate, **Micaela Campero**.
+:::
+
+::: {layout="[3, 18]"}
+![](../assets/img/lecture/juan_diego.png){width="51"}
+![](../assets/img/lecture/xime.png){width="51"}
+
+Environmental variables associated with non-communicable diseases. **Dr. Juan Diego Pinotti** and **Dr. Ximena Porcasi**.
+:::
+
+
+## Is everything studied then?? { background-color="#1A428A" }
+
+---
+
+## Challenges and gaps — RS
+![](../assets/img/lecture/satellite_b.png){.absolute top=5 right=-15 width=120}
+
+- **Trade-off** between different RS resolutions, the problem under study, the data and methods available
+- **Gaps in optical RS**: clouds, shadows (spatial and temporal interpolations)
+- Need for **corrections** if high-level data is not suitable
+- **Limited access** to VHR, LiDAR, hyperspectral (US$, tricky to scale yet)
+- **Investment and capacity building**: huge volumes of data vs. limited bandwidth, storage and computational capacity (cloud computing, parallelisation | resources)
+
+::: {.color-box-light-blue}
+[**Field data will always be needed! :)**]{style="color: #1a428a;"}
+:::
+
+---
+
+## Challenges and gaps — Ecology and Health
+
+<br>
+
+- Missing **baseline** distribution information of hosts, vectors, infection
+- Updating and digitisation of disease cases and intervention data, data still missing in large parts of the world
+- **Harmonisation of records** at different administrative levels
+- Facilitating access to (aggregated) health data
+- **Political decision and resource allocation**
+
+
+## Opportunities: low hanging fruits?
+
+- SAR data to avoid clouds, e.g., [**SAOCOM**](https://saocom.invap.com.ar/) to estimate soil moisture
+- Open LiDAR data, e.g., [GEDI](https://gedi.umd.edu/) onboard ISS
+- Open source solutions for the cloud: [openEO.cloud](https://openeo.cloud/), [actinia](https://actinia.mundialis.de/)
+
+::: {.columns}
+
+::: {.column width="34%"}
+![](../assets/img/lecture/satellite_saocom.png){width="180px" style="float: right;"}
+
+![](../assets/img/lecture/lago_san_martin_saocom.jpg){width="200px"}
+:::
+
+::: {.column width="33%"}
+![](../assets/img/lecture/gedi.jpg){width="70%"}
+
+![](../assets/img/lecture/gedi_forest_hh.jpg)
+:::
+
+::: {.column width="33%"}
+![](../assets/img/lecture/openeo_logo.svg){width="80%"}
+
+![](../assets/img/lecture/actinia_logo.png){width="80%"}
+:::
+
+:::
+
+::: footer
+@torresani_lidar_2023
+:::
+
+
+## New missions: hyperspectral for all
+
+- A number of recent and upcoming missions for hyperspectral data: [PRISMA](https://prismauserregistration.asi.it/) (recently made open), [EnMap](https://www.enmap.org/), [CHIME](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Going_hyperspectral_for_CHIME), TIRS
+
+:::: {.columns}
+:::{.column width="65%"}
+![](../assets/img/lecture/hyperspectral.jpg){width="85%" fig-align="center"}
+:::
+
+::: {.column width="35%"}
+![](../assets/img/lecture/logo_prisma.png){fig-align="center"}
+:::
+
+::::
+
+::: footer
+<http://database.eohandbook.com/database/instrumenttable.aspx>
+:::
+
+
+## Specialized cameras onboard drones
+
+- Cheaper UAVs with different types of cameras, e.g. thermal, multi- or hyperspectral sensors to detect and count animals in inaccessible places
+
+![](../assets/img/lecture/drone.png){.absolute top=100 right=-20 width=120}
+![](../assets/img/lecture/map_monkeys_with_drones_tir.png){fig-align="center" width="90%"}
+
+::: footer
+@carrasco_escobar_use_2022
+:::
+
+
+---
+
+
+![](../assets/img/lecture/one_health_and_satellites.png){fig-align="center" width="95%"}
+
+:::{.notes}
+It's clearly not all done already, and RS can contribute a great deal to reaching SDGs in general and SDG 3 in particular, especially if we consider that for human good health and well-being, environmental health and animal health are also necessary conditions.
+:::
+
+
+# { background-image="../assets/img/lecture/CONAE_aereo.png" }
+
+::: {style="color: #ffffff; font-size: 5em;" .fragment}
+Thanks!
+:::
+
+<br><br>
+
+:::{.fragment style="float: right; font-size: 0.7em;"}
+![](../assets/img/profile.png){.bio-img}
+
+[{{< fa envelope >}} veronica.andreo@ig.edu.ar](veronica.andreo@ig.edu.ar)
+
+[{{< fa brands mastodon >}} VeronicaAndreo](https://fosstodon.org/@VeronicaAndreo)
+
+[{{< fa presentation-screen >}} Slides](https://veroandreo.github.io/pavia-2026/lectures/lecture-01.html)
+:::
+
+::: {.fragment style="float: left;" .color-box-white}
+Unhealthy lab
+
+![](../assets/img/lecture/insaludables.png)
+:::
+
+
+## References {.tiny}
+
+::: {#refs .tiny}
+:::
+
+
+# Extra slides { background-color="#1A428A" }
+
+---
+
+### App for counting *Aedes* eggs in ovitrap images
+
+<br>
+
+<https://ovitrap-monitor.gulich.unc.edu.ar/>
+
+::: {.columns}
+::: {.column width="45%"}
+![](../assets/img/lecture/app-count.png)
+:::
+
+::: {.column width="55%"}
+![](../assets/img/lecture/app-reports.png)
+:::
+:::
+
+::: footer
+@hamesse_ovitrap_2023
+:::

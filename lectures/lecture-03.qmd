@@ -1,0 +1,9 @@
+---
+title: "Let's solve it together"
+description: "Open problems in RS-based disease surveillance"
+date: "2026-05-22"
+---
+
+## Overview
+
+Placeholder for Lecture 3 — Discussion session.
