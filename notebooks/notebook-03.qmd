@@ -47,7 +47,7 @@ A. Using [R within a GRASS GIS session](https://grasswiki.osgeo.org/wiki/R_stati
 - write data (back) to GRASS database with `write_VECT()` and `write_RAST()`
 
 
-![](assets/img/studio/grass_terminal_calling_R.png){width="60%" fig-align="center"}
+![](../assets/img/studio/grass_terminal_calling_R.png){width="60%" fig-align="center"}
 
 B. Using [GRASS GIS within an R session](https://grasswiki.osgeo.org/wiki/R_statistics/rgrass7#GRASS_within_R), i.e. we connect to GRASS GIS database from within R (or RStudio).
 <br>
@@ -60,14 +60,14 @@ B. Using [GRASS GIS within an R session](https://grasswiki.osgeo.org/wiki/R_stat
 `rgrass` was originally intended to apply GRASS functions on data outside GRASS database; hence some prefer to create throw away locations
 :::
 
-![](assets/img/studio/grass_within_rstudio_session.png){width="70%" fig-align="center"}
+![](../assets/img/studio/grass_within_rstudio_session.png){width="70%" fig-align="center"}
 
 # SDM workflow
 
 In this part of the Studio we'll be covering the middle and right side of the
 SDM workflow, modeling and predictions.
 
-![](assets/img/lecture/workflow_sdm_other.png)
+![](../assets/img/lecture_1/workflow_sdm_other.png)
 
 There are several packages to carry out SDM, in this case we'll be using
 [SDMtune](https://cloud.r-project.org/web/packages/SDMtune/index.html) by @sdmtune. It provides functions covering the whole SDM workflow, from data 

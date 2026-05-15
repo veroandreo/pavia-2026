@@ -1,37 +1,48 @@
 ---
-title: "Spatial Distribution of *Aedes aegypti* Oviposition Temporal Patterns"
+title: "Spatial distribution of *Aedes aegypti* oviposition temporal patterns"
 author:
-  - name: "V. Andreo, X. Porcasi, C. Guzman, L. Lopez, C.M. Scavuzzo"
+  name: Dr. Verónica Andreo
+  affiliation:
+    - CONICET
+    - Instituto Gulich (CONAE-UNC)
+  email: veronica.andreo@ig.edu.ar
+  orcid: 0000-0002-4633-2161
 date: "2026-05-20"
-institute: "CONICET · CONAE · Universidad Nacional de Córdoba"
+title-slide-attributes:
+  data-background-color: "#1A428A"
+bibliography: ../references.bib
+csl: ../american-statistical-association.csl
 format:
   revealjs:
-    theme: [default, ../assets/css/IG_style.scss]
+    hash-type: number
     slide-number: true
+    chalkboard:
+      buttons: true
+    preview-links: auto
+    theme: [default, ../assets/css/IG_style.scss]
     logo: ../assets/img/logos_ig_unc_conae.png
-    footer: "Andreo et al. (2021) *Insects* 12(10), 919 · DOI: 10.3390/insects12100919"
     transition: fade
     highlight-style: github
     code-line-numbers: false
     toc: true
     toc-depth: 1
     toc-title: "Outline"
-bibliography: ../references.bib
-csl: ../american-statistical-association.csl
 ---
 
-# Motivation {background-color="#1a3a4a"}
+# Motivation {background-color="#1A428A"}
 
-## The problem: dengue in urban Argentina
+
+## The problem: dengue in urban areas
+
+![](../assets/img/lecture_1/aedesaegypti_blood_mirror.png){.absolute bottom=50 right=-30 width=150}
 
 - *Aedes aegypti* is fully adapted to urban environments
-- Transmits dengue, Zika, chikungunya, and yellow fever
-- **Mosquito activity is not uniform across a city** — why?
+- It transmits dengue, Zika, chikungunya, and yellow fever viruses
+- **Mosquito activity is not uniform across a city at any given time** — Why?
 
-::: {.callout-note}
-If temporal activity patterns vary spatially, **transmission risk varies too** — 
-but no field data exist for most of a city.
-:::
+> If temporal activity patterns vary spatially, **transmission risk might vary too** — 
+> but no field data exist for most of a city, we only have a handfull of points most of the times.
+
 
 ## Research questions
 
@@ -40,166 +51,308 @@ but no field data exist for most of a city.
 3. Can we **predict** patterns city-wide — even where no field data exist?
 4. Do predicted patterns relate to observed dengue incidence?
 
-# Data {background-color="#1a3a4a"}
 
-## Field data: ovitrap surveillance
+# Data {background-color="#1A428A"}
 
+
+## Field data from ovitrap surveillance
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- **Variable:** weekly egg counts per ovitrap
 - **Location:** Córdoba city, Argentina (~1.4 million inhabitants)
 - **Period:** 2017–2019 (two full entomological seasons)
-- **Resolution:** weekly counts per ovitrap
-- **Network:** ~50 ovitraps distributed across the urban area
+- **Network:** 300 ovitraps distributed across the urban area, 2 per household
+:::
 
-```
-Weekly egg counts → time series per trap → N × T matrix
-```
+::: {.column width="40%"}
+![](../assets/img/lecture_2/fig_1b.png){width=100% fig-align="center"}
+:::
 
-::: {.callout-tip}
+::::
+
+::: {.callout-note appearance="minimal"}
+![](../assets/img/lecture_1/ovitrap.jpg){width=10% style="float: right; margin-left: 0.2em;"}
+
 Ovitraps are inexpensive, passive traps — but sparse and heterogeneous across the city.
 :::
 
+
 ## Satellite covariates: Sentinel-2
+
+<br>
 
 | Variable type | Derived product |
 |---|---|
-| Vegetation | NDVI time series (median, SD) |
-| Humidity / water | NDWI, MNDWI |
-| Built environment | NDBI |
+| Vegetation | NDVI (average, SD) |
+| Humidity / water | NDWI, LSWI, MNDWI (average, SD) |
+| Built environment | NDBI (average, SD) |
 | Texture / heterogeneity | GLCM indices (contrast, entropy, correlation) |
-| Land cover diversity | Shannon index over buffer areas |
+| Land cover diversity | richness, diversity, mode |
 
-All covariates extracted over **buffer areas** surrounding each ovitrap location.
+All covariates were extracted over **buffer areas** of 50 and 100m radius around each ovitrap location.
 
-# Methods {background-color="#1a3a4a"}
+
+# Methods {background-color="#1A428A"}
+
 
 ## Analytical pipeline
 
-```{mermaid}
-flowchart LR
-  A[Weekly ovitrap\ntime series] --> B[Time series\nclustering]
-  B --> C[Cluster labels\nper trap]
-  D[Sentinel-2\ncovariates] --> E[Random forest\nclassification]
-  C --> E
-  E --> F[City-wide\nprediction map]
-  F --> G[Comparison with\ndengue incidence]
-```
+![](../assets/img/lecture_2/workflow.png){fig-align="center"}
 
-## Step 1 — Time series clustering
+<br>
+Routines: <https://github.com/veroandreo/mosquito-ts-clust>
+
+
+## Step 1: Time series clustering
 
 - **Goal:** discover groups of temporal patterns without prior labels
-- **Distance metric choices:** DTW, Euclidean, correlation-based
-- **Algorithms tested:** k-means with DTW barycenter averaging (DBA), hierarchical clustering
-- **Cluster validity indices:** Silhouette, Calinski–Harabász, Davies–Bouldin
+- **Algorithms:** partitional time series clustering for different periods
+- **Validation:** internal cluster validity indexes
 
-::: {.fragment}
-> Choosing the *right* distance metric matters more than the clustering algorithm itself.
-> DTW is robust to phase shifts; correlation-based metrics emphasise shape similarity.
+| Distance | Centroid | Pre-Processing | Configurations |
+|---|---|---|---|
+| DTW | DBA | Normalization | 1600 |
+| DTW_LB | DBA | Normalization | 1600 |
+| DTW | PAM | Normalization | 1600 |
+| DTW_LB | PAM | Normalization | 1600 |
+| SBD | PAM | Normalization | 160 |
+| SBD | Shape extraction | Normalization | 160 |
+
+::: {.tiny}
+**Refs.**: DTW, Dynamic Time Warping; DTW_LB, DTW Lower Bounds; DBA, DTW Barycenter Averaging; PAM, Partition Around Medoids; SBD, Shape Based Distance.
 :::
 
-## Step 2 — Feature extraction & classification
 
-- Each trap → **feature vector** from Sentinel-2 covariates
-- **Random forest classifier** trained on labelled traps (cluster assignments)
-- Key challenge: **class imbalance** — some patterns are rare in the field sample
+## Step 2: Feature extraction & classification
 
-::: {.callout-warning}
-### Class imbalance strategy
-- Stratified k-fold cross-validation
-- Oversampling minority classes (SMOTE)
-- Balanced accuracy and F1-score as evaluation metrics
-:::
+- Each household → **feature vector** from Sentinel-2 covariates
+- **Random forest classifier** trained on labelled groups (cluster assignments) for different periods
+- Key challenge: **class imbalance** --> up-sample
 
-## Step 3 — City-wide prediction
+![](../assets/img/lecture_2/RGB_maps.png){fig-align="center"}
 
-- Apply trained RF model to **all pixels** in Córdoba's urban area
+
+## Step 3: City-wide prediction
+
+- Apply trained RF models to **all pixels** in Córdoba's urban area
 - Each pixel gets a **predicted temporal pattern class**
-- Result: a continuous raster map of expected *Ae. aegypti* temporal behaviour
+- Result: raster maps of expected *Ae. aegypti* temporal behaviour
 
-## Step 4 — Validation against dengue incidence
 
-- Aggregate predicted class proportions per **neighbourhood (barrio)**
-- Correlate with officially reported dengue incidence (cases / 1000 inhabitants)
+## Step 4: Validation against dengue incidence
+
+- Aggregate predicted class proportions per **neighbourhood**
+- Correlate with dengue incidence (cases / 10,000 inhabitants)
 - Spearman's ρ, visual inspection of spatial concordance
 
-# Results {background-color="#1a3a4a"}
+![](../assets/img/lecture_2/dengue_cases_and_incidence.png){fig-align="center"}
+
+
+# Results {background-color="#1A428A"}
+
+
+## Ovitrap time series
+
+::: {.r-stack}
+![](../assets/img/lecture_2/eggs_week_2017_2019_no_interp-1.png){width=75% style="display:block; margin:0 auto;"}
+
+::: {.fragment}
+![](../assets/img/lecture_2/eggs_week_heatmap_2017_2019_no_interp-1.png){width=75% style="display:block; margin:0 auto;"}
+:::
+:::
+
+::: {.notes}
+Average egg counts varied markedly both in time and space.
+Seasonal pattern, with 2018–2019 season reaching higher egg counts.
+:::
+
 
 ## Three temporal patterns
 
-Three distinct cluster groups were found:
+::: columns
 
-| Pattern | Description | Typical timing |
-|---|---|---|
-| **C1** | Early, sharp peak | Oct–Nov |
-| **C2** | Late, sustained activity | Jan–Mar |
-| **C3** | Low, flat profile | Throughout season |
-
-::: {.fragment}
-The three patterns are **biologically interpretable** and spatially structured —
-not random artefacts of clustering.
+::: {.column width="20%"}
+[**2017–2019**]{.absolute .tiny top=185 left=5}
+[**2017–2018**]{.absolute .tiny top=370 left=5}
+[**2018–2019**]{.absolute .tiny top=555 left=5}
 :::
+
+::: {.column width="80%"}
+![](../assets/img/lecture_2/grid_clust_mean-1.png){width="52%"}
+:::
+
+:::
+
+:::{.notes}
+All the best configurations split the 143 ovitraps time series in 3 groups (i.e., the minimum k tested). 
+Two of the selected configurations are based on DTW clustering and the third one corresponds to K-shape clustering (SBD distance + shape extraction centroid).
+:::
+
+
+## Three temporal patterns - cont.
+
+::: {.tiny}
+| Series | Cluster | n | MSD | MED | Duration (days) | Max eggs | Mean max eggs | Date of max |
+|---|---|---|---|---|---|---|---|---|
+| 2017–2018 | 1 | 70 | 20 Nov 2017 | 7 May 2018 | 168 | 205 | 73 | 1 Feb 2018 |
+|   | 2 | 30 | 4 Dec 2017 | 7 May 2018 | 154 | 155 | 55 | 15 Jan 2018 |
+|   | 3 | 43 | 27 Nov 2017 | 30 Apr 2018 | 154 | 196 | 74 | 29 Jan 2018 |
+| 2018–2019 | 1 | 10 | 25 Oct 2018 | 29 Apr 2019 | 186 | 274 | 127 | 11 Feb 2019 |
+|  | 2 | 88 | 5 Nov 2018 | 29 Apr 2019 | 175 | 594 | 190 | 21 Jan 2019 |
+|  | 3 | 45 | 29 Oct 2018 | 29 Apr 2019 | 182 | 615 | 206 | 4 Feb 2019 |
+:::
+
+
+## Three temporal patterns - cont.
+
+- Median end date consistent across groups and periods
+- Median start date more variable — drives differences in season length
+- 2018–2019 season started ~1 month earlier than 2017–2018
+- Oviposition season ~20–30 days longer in 2018–2019
+- Mean peak egg counts 2–3× higher in 2018–2019
+- Date of peak similar between seasons
+
+
+## Three temporal patterns - cont.
+
+![](../assets/img/lecture_2/clusters_map-1.png)
+
+- Cluster sizes and cluster spatial distribution differed among periods.
+- One large group and the other two much smaller.
+
+:::{.notes}
+Shape of the curves: 
+- both in 17-18 and 18-19 have a group of low egg counts, no clear peak (group 2 and 1, respectively)
+- 17-18: group 1 higher egg counts for longer, group 3 also high egg counts
+- 18-19: group 2 higher earlier, group 3 also high egg counts 
+- Riskier patterns are 1 and 3 in 17-18 and 2 and 3 in 18-19
+:::
+
 
 ## Environmental associations
 
+:::: {.columns}
+
+::: {.column width="60%"}
+![](../assets/img/lecture_2/var_imp-1.png){width=100%}
+:::
+
+::: {.column width="40%"}
 Variables most associated with pattern membership:
 
-- **Land cover diversity** (Shannon index in buffer)
-- **NDVI variability** (temporal SD of vegetation greenness)
-- **Humidity-related indices** (NDWI, MNDWI)
-- **Texture heterogeneity** (GLCM entropy, contrast)
+- **Land cover diversity** (Shannon and Simpson indices)
+- **Built-up index** (NDBI)
+- **Humidity-related indices** (NDWI)
+- **Texture heterogeneity** (IDM, ASM, entropy, interspersion)
+:::
+::::
 
-::: {.callout-note}
-Traps in more **heterogeneous, vegetated, humid** microenvironments tended toward 
-earlier and higher oviposition peaks (Pattern C1/C2).
+::: {.notes}
+- Results were better for 2018–2019 than 2017–2018 (accuracy & variables selected)
+- 2017–2018: top predictors — Shannon & Simpson diversity indices
+- 2018–2019: top predictors — texture (ASM) and NDWI standard deviation
+- Best model top variables: texture measures (entropy, ASM, contrast, IDM) + SD of vegetation & water indices
 :::
 
-## City-wide prediction map
 
-> Sentinel-2-derived covariates were sufficient to predict temporal pattern membership 
-> across the full urban extent of Córdoba.
+## City-wide prediction maps
 
-- Random forest out-of-bag accuracy: **XX%** (cross-validated)
-- Spatial prediction reveals **intra-urban heterogeneity** invisible to sparse surveillance
+![](../assets/img/lecture_2/predictions_1718_1819.png)
 
-::: {.fragment}
-This is the key result: **risk is not uniform within a city**, 
-and satellite data can reveal that structure.
-:::
+
+## City-wide prediction maps - cont.
+
+<br>
+
+| | Buffer | 2017–2018 | 2018–2019 |
+|---|---|---|---|
+| **Train** | 50 m | 0.733 (0.083) | 0.822 (0.051) |
+| **Train** | 100 m | 0.730 (0.080) | 0.778 (0.090) |
+| **Test** | 50 m | 0.381 | 0.524 |
+| **Test** | 100 m | 0.476 | 0.500 |
+
+We used 2018-2019 to predict temporal pattern distribution for 2019-2020.
+
+
+## City-wide prediction maps - cont.
+
+![](../assets/img/lecture_2/pred_2019_2020.png)
+
+- Matrix of group 2 (high egg counts, early increase of activity), group 3 (high egg counts) within urban fabric, and
+group 1 (low activity, no defined peak) in border and green areas
+
 
 ## Relationship with dengue incidence
 
-- **Weak but positive** association between proportion of Pattern C2 pixels 
-  and neighbourhood-level dengue incidence (ρ ≈ 0.3)
-- Statistically significant (p < 0.05) despite small sample of neighbourhoods
-- Confirms biological relevance of the clustering
+<br>
 
-::: {.callout-warning}
-The association is real but modest — dengue incidence is influenced by many factors 
-beyond mosquito activity (human mobility, immunity, reporting).
+![](../assets/img/lecture_2/incidence_vs_ovi_clus_prop.png){fig-align="center"}
+
+- **Weak but positive** association between proportion of group 3 pixels and neighbourhood-level dengue incidence (ρ ≈ 0.3, p < 0.05)
+
+
+# Discussion {background-color="#1A428A"}
+
+
+## Summary
+
+- Novel combination of time series clustering + remote sensing + machine learning to link oviposition patterns with dengue
+- 3 temporal groups found across periods — associated with land cover diversity, vegetation/water variability, and texture heterogeneity (50 & 100 m buffers)
+- Dengue incidence showed only weak association with predicted pattern proportions at neighbourhood level
+
+
+## Temporal patterns across seasons
+
+- **2018–2019 season**: started ~20–30 days earlier and had 2–3× higher egg counts than 2017–2018
+- Both seasons share the same structure: one **low-activity** group + two **higher-activity** groups differing in peak timing and height
+- The **most frequent group** in each season is also the riskiest (G1 in 2017–18; G2 in 2018–19)
+- A **third intermediate group** exists, but remains closer to the riskier patterns in egg counts
+- That intermediate group's spatial coverage was the **only one positively associated** with neighbourhood dengue incidence
+- Temporal patterns can guide **where and when** to prioritise surveillance
+
+
+## Spatial distribution of temporal patterns
+
+- All 3 patterns appear across different city areas → driven by **local landscape factors**
+- **2017–2018**: riskier pattern (G1) covers up to 34% of the city interior; low-activity group more scattered
+- **2018–2019**: riskier pattern (G2) dominates ~75% of the city; low-activity group confined to outskirts and greener areas
+- **2019–2020** predictions mirror 2018–2019 — likely due to similar weather and environmental conditions
+- Riskiest pattern most widespread under **favourable weather** → greater challenge for surveillance and breeding-site elimination
+- Wide dominance of high-risk patterns greatly increases **dengue outbreak potential** if imported cases trigger virus circulation
+
+
+## Environmental drivers of temporal patterns
+
+- **2018–2019**: texture measures + variability in vegetation & water indices
+  - G2 and G3: Higher entropy, lower IDM & ASM (less homogeneity/uniformity), higher SD of water & vegetation indices
+  - **locally heterogeneous, vegetated microenvironments** favour higher and earlier oviposition peaks?
+- **2017–2018**: diversity measures and average vegetation/water conditions more relevant — but accuracy was much lower
+
+:::{.notes}
+- High environmental variability around ovitraps → more breeding sites, resting spots, and biting opportunities
 :::
 
-# Discussion {background-color="#1a3a4a"}
 
-## What worked
+## Limitations
 
-✔ Unsupervised clustering on sparse field data → meaningful, stable patterns  
-✔ Sentinel-2 covariates carry sufficient signal to generalise to unsampled locations  
-✔ Random forest handles mixed-type features robustly  
-✔ Open, reproducible workflow (GRASS GIS + Python)  
+- **No ground truth** for cluster validation — patterns are data-driven, not externally labelled
+- **Up-sampling** to balance small clusters may have inflated training accuracy vs. test accuracy
+- Small cluster sizes (esp. low-activity groups) may explain their under-prediction in city-wide maps
+- **Weather variables** (temperature, precipitation) excluded — micro-climate differences could explain part of the variation
+- **Human behaviour** around traps unaccounted for (plant watering, container management, pets, etc.)
 
-## What we would do differently
-
-- **Better handling of spatial autocorrelation** in cross-validation (spatial CV)
-- **More seasons** of ovitrap data — two years may capture normal variability only
-- **Incorporate human mobility** data for the dengue validation step
-- **Deep learning** for temporal feature extraction? Possibly — but at the cost of interpretability
 
 ## Open questions
 
-1. Are the three patterns stable across years and cities?
-2. Which Sentinel-2 bands/indices are truly **causal** vs merely correlated?
-3. Can early-season satellite imagery **predict** the coming season's pattern?
-4. How does this scale to other *Aedes* species or other disease systems?
+1. Are the 3 patterns stable across years and cities?
+2. Can early-season satellite imagery **predict** the coming season's pattern?
+3. Would other methods capture different patterns?
+4. How to better deal with unbalanced classes?
 
-# Conclusions {background-color="#1a3a4a"}
+
+# Conclusions {background-color="#1A428A"}
 
 ## Take-home messages
 
@@ -208,25 +361,43 @@ beyond mosquito activity (human mobility, immunity, reporting).
 2. That heterogeneity is **predictable** from freely available satellite imagery
 3. Sentinel-2 + random forest = a practical, scalable surveillance tool
 4. The spatial distribution of patterns has **epidemiological relevance** (dengue)
-5. Open-source tools (GRASS, Python) make this workflow **transferable**
+5. Open-source tools (GRASS, Python, R) make this workflow **transferable**
 :::
 
 ## Implications for public health
 
-> Understanding *where* and *when* mosquitoes are most active — 
-> without exhaustive field campaigns — can:
+Understanding *where* and *when* mosquitoes are most active — 
+without exhaustive field campaigns — can:
 
-- Guide **targeted vector control** interventions
-- Support **early warning systems**
-- Improve **allocation of surveillance resources**
-- Feed into **dengue risk models** at urban scale
+  - Guide **targeted vector control** interventions
+  - Support **early warning systems**
+  - Improve **allocation of surveillance resources**
+  - Feed into **dengue risk models** at urban scale
 
-# Thank you {background-color="#1a3a4a"}
+
+# { background-image="../assets/img/lecture_1/CONAE_aereo.png" }
+
+::: {style="color: #ffffff; font-size: 5em;" .fragment}
+Thanks!
+:::
+
+<br><br>
+
+::: {style="float: right; font-size: 0.7em;"}
+![](../assets/img/profile.png){.bio-img}
+
+[{{< fa envelope >}} veronica.andreo\@ig.edu.ar](veronica.andreo@ig.edu.ar)
+:::
+
+::: {style="float: left; font-size: 0.7em;"}
+![](../assets/img/lecture_1/gulich.jpg){.bio-img}
+
+[{{< fa globe >}} https://ig.conae.unc.edu.ar/](https://ig.conae.unc.edu.ar/)
+:::
+
 
 ## References & resources
 
 **Paper:**  
-Andreo, V., Porcasi, X., Guzman, C., Lopez, L. & Scavuzzo, C.M. (2021).  
-Spatial Distribution of *Aedes aegypti* Oviposition Temporal Patterns and Their  
-Relationship with Environment and Dengue Incidence.  
+Andreo, V., Porcasi, X., Guzman, C., Lopez, L. & Scavuzzo, C.M. (2021). Spatial distribution of *Aedes aegypti* oviposition temporal patterns and their relationship with environment and dengue incidence.  
 *Insects*, 12(10), 919. <https://doi.org/10.3390/insects12100919>

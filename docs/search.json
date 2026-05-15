@@ -1,0 +1,422 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Verónica Andreo is a biologist. She holds a PhD in Biological Sciences and an MSc in Remote Sensing and GIS applications. She works as a researcher for CONICET and lecturer at the Gulich Institute — Argentinian Space Agency (CONAE) in Córdoba, Argentina. Her research focuses on applications of spatial information and geotechnologies to problems related to the ecology of zoonotic and vector-borne diseases and public health. Specifically, she works on uncovering environmental drivers of vector-borne disease distribution and outbreaks, with a particular interest in those environmental features that can be derived by means of satellite image analysis, remote sensing time series and GIS-based techniques.\nVerónica is part of the GRASS GIS project and has served as coordinator of the development team since 2021. She is a strong advocate for free and open source software for geospatial (FOSS4G) and a member of OSGeo, the Open Source Geospatial Foundation. She was the Program Committee chair for the international conference FOSS4G 2021, hosted by Argentina. Among other activities, she has volunteered as a mentor for GRASS GIS in the Google Code-In contest, introducing high school students to the open source world, and in Google Summer of Code for university students and developers.\n\n\n\n\nEcology of zoonotic and vector-borne diseases\nRemote sensing time series\nSatellite image analysis\nGeographic Information Systems (GIS)\nSpecies Distribution Models (SDM)\nData science\nFree and open source software\n\n\n\n\n\nPhD in Biological Sciences. National University of Río Cuarto. 2012.\nMSc in Spatial Applications for Early Warning and Response to Emergencies. National University of Córdoba. 2015.\nBiologist. National University of Río Cuarto. 2005."
+  },
+  {
+    "objectID": "about.html#sobre-mí",
+    "href": "about.html#sobre-mí",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Verónica Andreo es Licenciada en Ciencias Biológicas. Tiene un Doctorado en Ciencias Biológicas y una Maestría en Aplicaciones de la Información Espacial. Se desempeña como investigadora adjunta de CONICET y docente en el Instituto Gulich - Agencia Espacial Argentina (CONAE) en Córdoba, Argentina. Su trabajo de investigación apunta a las aplicaciones de la información espacial y las geotecnologías para problemas relacionados con la ecología de las enfermedades zoonóticas y transmitidas por vectores y la salud pública. Específicamente, se centra en encontrar los factores ambientales determinantes de la distribución y ocurrencia de enfermedades transmitidas por vectores. Está interesada principalmente en aquellas características ambientales que pueden derivarse mediante el análisis de imágenes satelitales, series temporales y técnicas basadas en SIG.\nVerónica forma parte del proyecto GRASS y desde 2021 se desempeña como coordinadora del equipo de desarrollo. Es una ferviente promotora del software libre y de código abierto para geomática y miembro de OSGEO, Open Source Geospatial Foundation. Fue responsable del Comité de Programa para la conferencia internacional FOSS4G 2021, organizada por Argentina. Entre otras actividades, ha participado como mentora de GRASS en el concurso Google Code-In introduciendo a estudiantes de secundaria en el mundo del código abierto y Google Summer of Code para estudiantes universitarios y desarrolladores."
+  },
+  {
+    "objectID": "about.html#intereses",
+    "href": "about.html#intereses",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Ecología de enfermedades zoonóticas y vectoriales\nSeries temporales de datos satelitales\nAnálisis de imágenes satelitales\nSistemas de Información Geográfica (SIG)\nModelos de Distribución de Especies (SDM)\nCiencia de datos\nSoftware libre y de código abierto"
+  },
+  {
+    "objectID": "about.html#formación",
+    "href": "about.html#formación",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Doctora en Ciencias Biológicas. Universidad Nacional de Río Cuarto. 2012.\nMagíster en Aplicaciones Espaciales de Alerta y Respuesta Temprana a Emergencias. Universidad Nacional de Córdoba. 2015.\nLicenciada en Ciencias Biológicas. Universidad Nacional de Río Cuarto. 2005."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html",
+    "href": "notebooks/notebook-01.html",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "",
+    "text": "When you open GRASS you’ll get both the terminal and the graphical user interface (GUI). You can use GRASS tools in either. It’s a matter of taste, task on hand and habit, too.\nGRASS GUI has a single window layout by default, but it is also possible to minimize and/or dock/undock the panels. On the right, you can find the data browser which allows you to navigate through your projects and data, and the layers panel showing displayed layers. The panel in the middle is the map display. You can add additional ones if you need. Finally, on the right there are multiple tabs where you can find a searchable tools’ tree similar to the Processing toolbox in QGIS, a console where you can type GRASS commands, the history of executed commands in case you want to re-run a task and a simple Python console where you can use the GRASS Python API.\nFrom the data panel you can manage several actions and, if you do not yet have imported data into your GRASS project, the software creates a project with demo data automatically."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#setup",
+    "href": "notebooks/notebook-01.html#setup",
+    "title": "Notebook 1",
+    "section": "",
+    "text": "# your code here"
+  },
+  {
+    "objectID": "lectures/lecture-01.html",
+    "href": "lectures/lecture-01.html",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Placeholder for Lecture 1."
+  },
+  {
+    "objectID": "lectures/lecture-01.html#overview",
+    "href": "lectures/lecture-01.html#overview",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Placeholder for Lecture 1."
+  },
+  {
+    "objectID": "lectures/index.html",
+    "href": "lectures/index.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\nEnvironmental drivers of vector-borne and zoonotic diseases\n\n\n\n\n\nMay 18, 2026\n\n\n\n\n\n\nSpatial distribution of Aedes aegypti oviposition temporal patterns\n\n\n\n\n\nMay 20, 2026\n\n\n\n\n\n\nLet’s solve it together\n\n\nOpen problems in RS-based disease surveillance\n\n\nMay 22, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\nPart 1: Intro to GRASS GIS\n\n\n\n\n\nMay 21, 2026\n\n\n\n\n\n\nPart 2: Processing data in GRASS\n\n\n\n\n\nMay 21, 2026\n\n\n\n\n\n\nPart 3: Modelling with R\n\n\n\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Earth Observation for Disease Ecology",
+    "section": "",
+    "text": "Vector-borne and zoonotic diseases impose a significant burden on human health worldwide, and their dyamics are tightly coupled to environmental conditions that can be monitored from space. This series of lectures, seminars and workshops explore the intersection of remote sensing and disease ecology, addressing both the conceptual foundations and the methodological challenges of building operational disease surveillance tools from satellite data. We begin with the theoretical framework linking remote sensing to health geography and disease ecology, illustrated through case studies spanning hantavirus, dengue, leishmaniasis and West Nile fever. A research seminar then dissects a real analytical pipeline, combining field ovitrap time series, unsupervised clustering and machine learning with Sentinel-2 imagery, to map Aedes aegypti temporal activity across an entire city and validate predictions against dengue incidence. A hands-on workshop guides participants through a complete species distribution modeling workflow with GRASS and Python within Jupyter notebooks and Google Colab, from satellite data to spatially explicit distribution maps. The series closes with a collaborative problem-solving session, where open methodological challenges in RS-based disease surveillance, such as sparse data, class imbalance, model transferability, are brought to the table for collective discussion. Across all sessions, the emphasis is on reproducibility, open-source tools, and the translation of RS data into actionable public health information."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Earth Observation for Disease Ecology",
+    "section": "",
+    "text": "These are the materials for the lectures and workshop prepared for the visit to the University of Pavia in the framework of the HerIT4future project."
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Earth Observation for Disease Ecology",
+    "section": "Contents",
+    "text": "Contents\n\nLectures\nPresentation slides and lecture notes covering the main topics of the course.\n\n\nNotebooks\nHands-on computational exercises and tutorials."
+  },
+  {
+    "objectID": "about.html#about",
+    "href": "about.html#about",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Verónica Andreo is a biologist. She holds a PhD in Biological Sciences and an MSc in Remote Sensing and GIS applications. She works as a researcher for CONICET and lecturer at the Gulich Institute — Argentinian Space Agency (CONAE) in Córdoba, Argentina. Her research focuses on applications of spatial information and geotechnologies to problems related to the ecology of zoonotic and vector-borne diseases and public health. Specifically, she works on uncovering environmental drivers of vector-borne disease distribution and outbreaks, with a particular interest in those environmental features that can be derived by means of satellite image analysis, remote sensing time series and GIS-based techniques.\nVerónica is part of the GRASS GIS project and has served as coordinator of the development team since 2021. She is a strong advocate for free and open source software for geospatial (FOSS4G) and a member of OSGeo, the Open Source Geospatial Foundation. She was the Program Committee chair for the international conference FOSS4G 2021, hosted by Argentina. Among other activities, she has volunteered as a mentor for GRASS GIS in the Google Code-In contest, introducing high school students to the open source world, and in Google Summer of Code for university students and developers."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "Ecology of zoonotic and vector-borne diseases\nRemote sensing time series\nSatellite image analysis\nGeographic Information Systems (GIS)\nSpecies Distribution Models (SDM)\nData science\nFree and open source software"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Verónica Andreo",
+    "section": "",
+    "text": "PhD in Biological Sciences. National University of Río Cuarto. 2012.\nMSc in Spatial Applications for Early Warning and Response to Emergencies. National University of Córdoba. 2015.\nBiologist. National University of Río Cuarto. 2005."
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Earth Observation for Disease Ecology",
+    "section": "",
+    "text": "Vector-borne and zoonotic diseases impose a significant burden on human health worldwide, and their dyamics are tightly coupled to environmental conditions that can be monitored from space. This series of lectures, seminars and workshops explore the intersection of remote sensing and disease ecology, addressing both the conceptual foundations and the methodological challenges of building operational disease surveillance tools from satellite data. We begin with the theoretical framework linking remote sensing to health geography and disease ecology, illustrated through case studies spanning hantavirus, dengue, leishmaniasis and West Nile fever. A research seminar then dissects a real analytical pipeline, combining field ovitrap time series, unsupervised clustering and machine learning with Sentinel-2 imagery, to map Aedes aegypti temporal activity across an entire city and validate predictions against dengue incidence. A hands-on workshop guides participants through a complete species distribution modeling workflow with GRASS and Python within Jupyter notebooks and Google Colab, from satellite data to spatially explicit distribution maps. The series closes with a collaborative problem-solving session, where open methodological challenges in RS-based disease surveillance, such as sparse data, class imbalance, model transferability, are brought to the table for collective discussion. Across all sessions, the emphasis is on reproducibility, open-source tools, and the translation of RS data into actionable public health information."
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Earth Observation for Disease Ecology",
+    "section": "Schedule",
+    "text": "Schedule\nAll lectures will take place at: Aula Seminari Magenta – Dipartimento Ingegneria Ind. e dell’Informazione.\n\n\n\n\n\n\n\n\n\nDate\nTime\nType\nTitle\n\n\n\n\nMay 18, 2026\n16:00–18:00\nLecture\nEnvironmental drivers of vector-borne and zoonotic diseases: leveraging remote sensing for public health\n\n\nMay 20, 2026\n11:00–13:00\nSeminar\nMapping mosquito activity from space: methods, choices, and open questions in urban disease surveillance\n\n\nMay 21, 2026\n14:00–16:00\nWorkshop\nFrom satellite data to disease risk maps: a practical introduction to species distribution modeling\n\n\nMay 22, 2026\n14:00–16:00\nDiscussion\nLet’s solve it together: open problems in RS-based disease surveillance"
+  },
+  {
+    "objectID": "lectures/lecture-01.html#references",
+    "href": "lectures/lecture-01.html#references",
+    "title": "Environmental drivers of vector-borne and zoonotic diseases",
+    "section": "References",
+    "text": "References\n\n\nAguirre, E., Andreo, V., Porcasi, X., Lopez, L., Guzman, C., González, P., and Scavuzzo, C. M. (2021), “Implementation of a proactive system to monitor Aedes aegypti populations using open access historical and forecasted meteorological data,” Ecological Informatics, 64, 101351. https://doi.org/10.1016/j.ecoinf.2021.101351.\n\n\nAndreo, V., Cuervo, P. F., Porcasi, X., Lopez, L., Guzman, C., and Scavuzzo, C. M. (2021a), “Towards a workflow for operational mapping of Aedes aegypti at urban scale based on remote sensing,” Remote Sensing Applications: Society and Environment, 23, 100554. https://doi.org/10.1016/j.rsase.2021.100554.\n\n\nAndreo, V., Glass, G., Shields, T., Provensal, C., and Polop, J. (2011), “Modeling Potential Distribution of Oligoryzomys longicaudatus, the Andes Virus (Genus: Hantavirus) Reservoir, in Argentina,” EcoHealth, 8, 332–348.\n\n\nAndreo, V., Izquierdo-Verdiguier, E., Zurita-Milla, R., Rosa, R., Rizzoli, A., and Papa, A. (2018), “Identifying Favorable Spatio-Temporal Conditions for West Nile Virus Outbreaks by Co-Clustering of Modis LST Indices Time Series,” in IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, Valencia: IEEE, pp. 4670–4673. https://doi.org/10.1109/IGARSS.2018.8519542.\n\n\nAndreo, V., Neteler, M., Rocchini, D., Provensal, C., Levis, S., Porcasi, X., Rizzoli, A., Lanfri, M., Scavuzzo, M., Pini, N., Enria, D., and Polop, J. (2014), “Estimating Hantavirus Risk in Southern Argentina: A GIS-Based Approach Combining Human Cases and Host Distribution,” Viruses, 6, 201–222. https://doi.org/10.3390/v6010201.\n\n\nAndreo, V., Porcasi, X., Guzman, C., Lopez, L., and Scavuzzo, C. M. (2021b), “Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns and Their Relationship with Environment and Dengue Incidence,” Insects, 12, 919. https://doi.org/10.3390/insects12100919.\n\n\nAndreo, V., Rosa, J., Ramos, K., and Salomón, O. D. (2022), “Ecological characterization of a cutaneous leishmaniasis outbreak through remotely sensed land cover changes,” Geospatial Health, 17. https://doi.org/10.4081/gh.2022.1033.\n\n\nCarrasco-Escobar, G., Moreno, M., Fornace, K., Herrera-Varela, M., Manrique, E., and Conn, J. E. (2022), “The use of drones for mosquito surveillance and control,” Parasites & Vectors, 15, 473. https://doi.org/10.1186/s13071-022-05580-5.\n\n\nGeorganos, S., Grippa, T., Lennert, M., Vanhuysse, S., and Johnson, B. A. (2018), “Scale Matters: Spatially Partitioned Unsupervised Segmentation Parameter Optimization for Large and Heterogeneous Satellite Images,” 23.\n\n\nGrippa, T., Lennert, M., Beaumont, B., Vanhuysse, S., Stephenne, N., Wolff, E., Grippa, T., Lennert, M., Beaumont, B., Vanhuysse, S., Stephenne, N., and Wolff, E. (2017), “An Open-Source Semi-Automated Processing Chain for Urban Object-Based Classification,” Remote Sensing, 9, 358. https://doi.org/10.3390/rs9040358.\n\n\nHamesse, C., Andreo, V., Rodriguez Gonzalez, C., Beumier, C., Rubio, J., Porcasi, X., Lopez, L., Guzman, C., Haelterman, R., Shimoni, M., and Scavuzzo, C. M. (2023), “Ovitrap Monitor - Online application for counting mosquito eggs and visualisation toolbox in support of health services,” Ecological Informatics, 75, 102105. https://doi.org/10.1016/j.ecoinf.2023.102105.\n\n\nKasampalis, D. A., Alexandridis, T. K., Deva, C., Challinor, A., Moshou, D., and Zalidis, G. (2018), “Contribution of remote sensing on crop models: A review,” Journal of Imaging, 4, 52. https://doi.org/10.3390/jimaging4040052.\n\n\nLambin, E. F., Tran, A., Vanwambeke, S. O., Linard, C., and Soti, V. (2010), “Pathogenic landscapes: Interactions between land, people, disease vectors, and their animal hosts,” International Journal of Health Geographics, 9, 54. https://doi.org/10.1186/1476-072X-9-54.\n\n\nLechner, A. M., Foody, G. M., and Boyd, D. S. (2020), “Applications in Remote Sensing to Forest Ecology and Management,” One Earth, 2, 405–412. https://doi.org/10.1016/j.oneear.2020.05.001.\n\n\nLeitão, P. J., and Santos, M. J. (2019), “Improving models of species ecological niches: A remote sensing overview,” Frontiers in Ecology and Evolution, 7. https://doi.org/10.3389/fevo.2019.00009.\n\n\nMeng, R., Gao, R., Zhao, F., Huang, C., Sun, R., Lv, Z., and Huang, Z. (2022), “Landsat-based monitoring of southern pine beetle infestation severity and severity change in a temperate mixed forest,” Remote Sensing of Environment, 269, 112847. https://doi.org/10.1016/j.rse.2021.112847.\n\n\nMetz, M., Andreo, V., and Neteler, M. (2017), “A New Fully Gap-Free Time Series of Land Surface Temperature from MODIS LST Data,” Remote Sensing, 9, 1333. https://doi.org/10.3390/rs9121333.\n\n\nParselia, E., Kontoes, C., Tsouni, A., Hadjichristodoulou, C., Kioutsioukis, I., Magiorkinis, G., and Stilianakis, N. I. (2019), “Satellite Earth Observation Data in Epidemiological Modeling of Malaria, Dengue and West Nile Virus: A Scoping Review,” Remote Sensing, 11, 1862. https://doi.org/10.3390/rs11161862.\n\n\nPearson, R. G., and Dawson, T. P. (2003), “Predicting the impacts of climate change on the distribution of species: Are bioclimate envelope models useful?” Global Ecology and Biogeography, 12, 361–371. https://doi.org/10.1046/j.1466-822X.2003.00042.x.\n\n\nPorcasi, X., Rotela, C. H., Introini, M. V., Frutos, N., Lanfri, S., Peralta, G., De Elia, E. A., Lanfri, M. A., and Scavuzzo, C. M. (2012), “An operative dengue risk stratification system in Argentina based on geospatial technology,” Geospatial Health, 6, S31–S42. https://doi.org/10.4081/gh.2012.120.\n\n\nRodriguez Gonzalez, C., Guzman, C., and Andreo, V. (2023), “Using VHR satellite imagery, OBIA and landscape metrics to improve mosquito surveillance in urban areas,” Ecological Informatics, 77, 102221. https://doi.org/10.1016/j.ecoinf.2023.102221.\n\n\nRumiano, F., Wielgus, E., Miguel, E., Chamaillé-Jammes, S., Valls-Fox, H., Cornélis, D., Garine-Wichatitsky, M. D., Fritz, H., Caron, A., and Tran, A. (2020), “Remote sensing of environmental drivers influencing the movement ecology of sympatric wild and domestic ungulates in semi-arid savannas, a review,” Remote Sensing, 12. https://doi.org/10.3390/rs12193218.\n\n\nTorresani, M., Rocchini, D., Alberti, A., Moudrý, V., Heym, M., Thouverai, E., Kacic, P., and Tomelleri, E. (2023), “LiDAR GEDI derived tree canopy height heterogeneity reveals patterns of biodiversity in forest ecosystems,” Ecological Informatics, 102082. https://doi.org/10.1016/j.ecoinf.2023.102082.\n\n\nViana, J., Santos, J. V., Neiva, R. M., Souza, J., Duarte, L., Teodoro, A. C., and Freitas, A. (2017), “Remote Sensing in Human Health: A 10-Year Bibliometric Analysis,” Remote Sensing, 9, 1225. https://doi.org/10.3390/rs9121225.\n\n\nWang, D., Shao, Q., and Yue, H. (2019), “Surveying Wild Animals from Satellites, Manned Aircraft and Unmanned Aerial Systems (UASs): A Review,” Remote Sensing, 11, 1308. https://doi.org/10.3390/rs11111308."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#grass-gis-general-stuff",
+    "href": "notebooks/notebook-01.html#grass-gis-general-stuff",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "",
+    "text": "GRASS GIS (Geographic Resources Analysis Support System), a FOSS suite used for geospatial data management and analysis, image processing, graphics and maps, spatial modeling, and visualization.\nOriginally developed by the U.S. Army Construction Engineering Research Laboratories for land management and environmental planning (1982-1995).\nFirst User Manual published on July 29th, 1983… GRASS is becoming 40 this year!\nMore history: https://grass.osgeo.org/about/history/\nFree and open source, you can use, modify, improve, share\nStrong user community, commercial support\nLarge amount of tools: 500+ core modules, 400+ addons\nGUI and CLI interfaces\nPython API and libraries - the latest grass.jupyter library can be tried online\nConnection with R, QGIS, WPS, etc.\nDifferent data types supported: raster (including satellite imagery), 3D raster or voxel, vector and space-time datasets\n\n\n\nAs of version 8.0, GRASS has modified its startup to make it more user friendly:\n\n\n\n\n\nFrom the Data catalog tab you can manage several actions and if you do not yet have imported data into the GRASS database, the software creates the directory structure or database automatically.\n\n\n\n\nGRASS database (directory with projects): When running GRASS GIS for the first time, a folder named “grassdata” is automatically created. Depending on the operating system, it can be found in $HOME (*nix) or My Documents (MS Windows).\nLocation (a project): A location is defined by its coordinate reference system (CRS). The location that is automatically created is in WGS84 (EPSG:4326). If you have data in another CRS, you should ideally create a new location.\nMapset (a subproject): Each location can have many mapsets to manage different aspects or sub-regions of a project. When creating a new location, GRASS GIS automatically creates a special mapset called PERMANENT where the central data of the project (e.g., base maps, road network, dem, etc.) can be stored.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMore info: https://grass.osgeo.org/grass-stable/manuals/grass_database.html.\n\n\n\n\n\nAnother fundamental concept of GRASS GIS (and very useful when working with raster data) is that of the computational region. It refers to the boundary configuration of the analysis area and spatial resolution (raster). The computational region can be defined and modified with the command g.region to the extent of a vector map, a raster or manually to some area of interest. The output raster maps will have an extent and spatial resolution equal to the computational region, while vector maps are always processed at their original extent.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nFor more details, see the wiki on Computational Region.\n\n\n\n\n\nGRASS has more than 500 modules for the most varied tasks:\n\n\n\nPrefix\nFunction class\nType of command\nExample\n\n\n\n\ng.*\ngeneral\ngeneral data management\ng.rename: renames map\n\n\nd.*\ndisplay\ngraphical output\nd.rast: display raster map\n\n\nr.*\nraster\nraster processing\nr.mapcalc: map algebra\n\n\nv.*\nvector\nvector processing\nv.clean: topological cleaning\n\n\ni.*\nimagery\nimagery processing\ni.pca: Principal Components Analysis on imagery group\n\n\nr3.*\nvoxel\n3D raster processing\nr3.stats: voxel statistics\n\n\ndb.*\ndatabase\ndatabase management\ndb.select: select value(s) from table\n\n\nps.*\npostscript\nPostScript map creation\nps.map: PostScript map creation\n\n\nt.*\ntemporal\nspace-time datasets\nt.rast.aggregate: raster time series aggregation\n\n\n\nExtensions or add-ons can be installed from the central GitHub repository or from other users’ GitHub (or similar repositories) using the command g.extension. For example:\n # install an extension from the GRASS GIS repository\n g.extension extension=r.hants\n \n # install an extension from another GitHub repository\n g.extension extension=r.change.stats \\\n   url=https://github.com/mundialis/r.change.stats"
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#grass",
+    "href": "notebooks/notebook-01.html#grass",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "GRASS + ",
+    "text": "GRASS + \nThere are different Python libraries delivered with GRASS GIS, we’ll use 2 of them:\n\ngrass.script which provides Python interface to launch GRASS GIS modules in scripts\ngrass.jupyter which offers classes and setup functions for running GRASS GIS in Jupyter Notebooks\n\nOther Python libraries delivered with GRASS GIS include: pygrass, the temporal framework, the testing framework, among others.\nWe can use Python within GRASS GUI, within Jupyter notebooks, or from our preferred IDE. See the options within the GUI:\n\n\n\n\n\n\n\nNote\n\n\n\nSee https://grass.osgeo.org/grass-stable/manuals/libpython/index.html for further details."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#grass-through-rgrass-package",
+    "href": "notebooks/notebook-01.html#grass-through-rgrass-package",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "GRASS +  through rgrass package",
+    "text": "GRASS +  through rgrass package\nWe can use R within a GRASS GIS session or use GRASS GIS within an R session. We’ll explore this further in the last part of this session."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#demo-session-overview",
+    "href": "notebooks/notebook-01.html#demo-session-overview",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "Demo session overview",
+    "text": "Demo session overview\nHabitat suitability mapping for the Asian tiger mosquito in Northern Italy based on variables derived from daily LST data\n\nGRASS\n\nImport species records\nCreate random background points\nCreate different environmental layers from daily LST data\n\nR\n\nRead data from GRASS into R\nModel species distribution\nModel evaluation\nVisualization of results\n\n\n\n\n\n\n\n\nData for the session\n\n\nRecords of Aedes albopictus (Asian tiger mosquito) in Northern Italy downloaded from GBIF\nAverage daily MODIS LST reconstructed by mundialis GmbH & Co. KG based on Metz et al. (2017):\n\n1 km spatial resolution\nConverted to Celsius degrees\n\n\n\n\n\nGet the sample project\n\nCreate a folder named grass_foss4geu_2024\nWithin grass_foss4geu_2024 create a folder named grassdata\nDownload the eu_laea project with LST mapset and unzip it within your grassdata folder\nDownload mosquito data and drop it within grass_foss4geu_2024\n\nThe grass_foss4geu_2024 folder’s tree should look like this:\n  grass_foss4geu_2024/\n  ├── aedes_albopictus.gpkg\n  └── grassdata\n      └── eu_laea\n          ├── italy_LST_daily\n          └── PERMANENT"
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#other-very-useful-links",
+    "href": "notebooks/notebook-01.html#other-very-useful-links",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "Other (very) useful links",
+    "text": "Other (very) useful links\n\nGRASS intro workshop held at NCSU\nUnleash the power of GRASS GIS at US-IALE 2017\nTemporal data processing wiki\nGRASS GIS and R for time series processing wiki\nGRASS GIS temporal workshop at NCSU\nGRASS GIS course in Jena\nGRASS GIS course IRSAE\nGRASS GIS course in Argentina"
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#open-grass-for-the-first-time",
+    "href": "notebooks/notebook-01.html#open-grass-for-the-first-time",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "",
+    "text": "When you open GRASS you’ll get both the terminal and the graphical user interface (GUI). You can use GRASS tools in either. It’s a matter of taste, task on hand and habit, too.\nGRASS GUI has a single window layout by default, but it is also possible to minimize and/or dock/undock the panels. On the right, you can find the data browser which allows you to navigate through your projects and data, and the layers panel showing displayed layers. The panel in the middle is the map display. You can add additional ones if you need. Finally, on the right there are multiple tabs where you can find a searchable tools’ tree similar to the Processing toolbox in QGIS, a console where you can type GRASS commands, the history of executed commands in case you want to re-run a task and a simple Python console where you can use the GRASS Python API.\nFrom the data panel you can manage several actions and, if you do not yet have imported data into your GRASS project, the software creates a project with demo data automatically."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#database",
+    "href": "notebooks/notebook-01.html#database",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "Database",
+    "text": "Database\n\nGRASS database (directory with projects): When running GRASS GIS for the first time, a folder named grassdata is automatically created. Depending on the operating system, it can be found in $HOME (*nix) or My Documents (MS Windows).\nProject: GRASS projects are simply folders storing your geospatial data with common coordinate reference system (CRS), ensuring consistency of your data.\nMapset: Data is further organized into subprojects called mapsets, which you can use to manage different subregions or analyses within a project. When creating a new project, GRASS GIS automatically creates a special mapset called PERMANENT which is used to store source datasets for your analysis that can be easily accessed from other mapsets.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMore info: https://grass.osgeo.org/grass-stable/manuals/grass_database.html."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#computational-region",
+    "href": "notebooks/notebook-01.html#computational-region",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "Computational region",
+    "text": "Computational region\nA very useful concept when working with raster data is that of the computational region. It refers to the boundaries and spatial resolution of the analysis area. The computational region can be defined and modified with the tool g.region to the extent of a vector map, a raster or manually to some area of interest. The output raster maps will have an extent and spatial resolution equal to the computational region, while vector maps are always processed at their original extent.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nFor more details, see the wiki on Computational Region."
+  },
+  {
+    "objectID": "notebooks/notebook-01.html#tools",
+    "href": "notebooks/notebook-01.html#tools",
+    "title": "Part 1: Intro to GRASS GIS",
+    "section": "Tools",
+    "text": "Tools\nGRASS has more than 500 tools for the most varied tasks:\n\n\n\nPrefix\nFunction class\nType of command\nExample\n\n\n\n\ng.*\ngeneral\ngeneral data management\ng.rename: renames map\n\n\nd.*\ndisplay\ngraphical output\nd.rast: display raster map\n\n\nr.*\nraster\nraster processing\nr.mapcalc: map algebra\n\n\nv.*\nvector\nvector processing\nv.clean: topological cleaning\n\n\ni.*\nimagery\nimagery processing\ni.pca: Principal Components Analysis on imagery group\n\n\nr3.*\nvoxel\n3D raster processing\nr3.stats: voxel statistics\n\n\ndb.*\ndatabase\ndatabase management\ndb.select: select value(s) from table\n\n\nps.*\npostscript\nPostScript map creation\nps.map: PostScript map creation\n\n\nt.*\ntemporal\nspace-time datasets\nt.rast.aggregate: raster time series aggregation\n\n\n\nExtensions or add-ons can be installed from the central GitHub repository or from other users’ GitHub (or similar repositories) using the command g.extension. For example:\n # install an extension from the GRASS GIS repository\n g.extension extension=r.hants\n \n # install an extension from another GitHub repository\n g.extension extension=r.change.stats \\\n   url=https://github.com/mundialis/r.change.stats"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html",
+    "href": "notebooks/notebook-02.html",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "",
+    "text": "In this notebook we’ll go through the processing of MODIS LST daily time series data to derive relevant predictor variables for modeling the distribution of Aedes albopictus in Northern Italy. Furthermore, we’ll show how to obtain and process occurrence data and background points.\nLet’s first go through some temporal concepts within GRASS GIS…"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html#the-tgrass-framework",
+    "href": "notebooks/notebook-02.html#the-tgrass-framework",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "The TGRASS framework",
+    "text": "The TGRASS framework\nGRASS GIS was the first FOSS GIS that incorporated capabilities to manage, analyze, process and visualize spatio-temporal data, as well as the temporal relationships among time series.\n\nTGRASS is fully based on metadata and does not duplicate any dataset\nSnapshot approach, i.e., adds time stamps to maps\nA collection of time stamped maps (snapshots) of the same variable are called space-time datasets or STDS\nMaps in a STDS can have different spatial and temporal extents\nSpace-time datasets can be composed of raster, raster 3D or vector maps, and so we call them:\n\nSpace time raster datasets (STRDS)\nSpace time 3D raster datasets (STR3DS)\nSpace time vector datasets (STVDS)"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html#temporal-tools",
+    "href": "notebooks/notebook-02.html#temporal-tools",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "Temporal tools",
+    "text": "Temporal tools\nGRASS temporal tools are named and organized following GRASS core naming scheme. In this way, we have:\n\nt.*: general tools to handle STDS of all types\nt.rast.*: tools that deal with STRDS\nt.rast3d.*: tools that deal with STR3DS\nt.vect.*: tools that deal with STVDS\n\n\nOther TGRASS notions\n\nTime can be defined as intervals (start and end time) or instances (only start time)\nTime can be absolute (e.g., 2017-04-06 22:39:49) or relative (e.g., 4 years, 90 days)\nGranularity is the greatest common divisor of the temporal extents (and possible gaps) of all maps in the space-time cube\n\n\n\n\n\n\n\nTopology refers to temporal relations between time intervals in a STDS.\n\n\n\n\n\n\n\n\nTGRASS framework and workflow"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html#grass",
+    "href": "notebooks/notebook-02.html#grass",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "GRASS + ",
+    "text": "GRASS + \nIn this part of the studio we’ll work with GRASS and Python, so let’s first see/recall the very basics.\n\nPython package grass.script\nThe grass.script or GRASS GIS Python Scripting Library provides functions for calling GRASS tools within Python scripts. The most commonly used functions include:\n\nrun_command: used when the output of the tools is a raster or vector, no text type output is expected\nread_command: used when the output of the tools is of text type\nparse_command: used with tools whose output can be converted to key=value pairs\nwrite_command: used with tools that expect text input, either in the form of a file or from standard input\n\nIt also provides several wrapper functions for frequently used tools, for example:\n\nTo get info from a raster, script.raster.raster_info() is used: gs.raster_info('dsm')\nTo get info of a vector, script.vector.vector_info() is used: gs.vector_info('roads')\nTo list the raster in a project, script.core.list_grouped() is used: gs.list_grouped(type=['raster'])\nTo obtain the computational region, script.core.region() is used: gs.region()\n\n\n\n\n\n\n\nNote\n\n\n\nMore info: https://grass.osgeo.org/grass-stable/manuals/libpython/script_intro.html\n\n\n\n\nPython package grass.jupyter\nThe grass.jupyter library improves the integration of GRASS and Jupyter, and provides different classes to facilitate GRASS maps visualization:\n\ninit: starts a GRASS session and sets up all necessary environment variables\nMap: 2D rendering\nMap3D: 3D rendering\nInteractiveMap: interactive visualization with folium\nSeriesMap: visualizations for a series of raster or vector maps\nTimeSeriesMap: visualization for spatio-temporal data\n\n\n\n\n\n\n\nNote\n\n\n\nMore info: https://grass.osgeo.org/grass-stable/manuals/libpython/grass.jupyter.html"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html#hands-on",
+    "href": "notebooks/notebook-02.html#hands-on",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "Hands-on",
+    "text": "Hands-on\nSo let’s start… We begin by setting variables, checking GRASS installation and initializing GRASS GIS\n\nimport os\n\n# Data directory\nhomedir = os.path.join(os.path.expanduser('~'), \"pavia-2026\")\n\n# GRASS GIS database variables\ngrassbin = \"grass\"\ngrassdata = os.path.join(homedir, \"grassdata\")\nproject = \"eu_laea\"\nmapset = \"italy_LST_daily\"\n\n\n# Check the GRASS GIS installation\nimport subprocess\nprint(subprocess.check_output([grassbin, \"--config\", \"version\"], text=True))\n\n\n# Ask GRASS GIS where its Python packages are \nimport sys\nsys.path.append(\n    subprocess.check_output([grassbin, \"--config\", \"python_path\"], text=True).strip()\n)\n\nNow we are ready to start a GRASS GIS session\n\n# Import the GRASS GIS packages we need\nimport grass.script as gs\nimport grass.jupyter as gj\n\n# Start the GRASS GIS Session\nsession = gj.init(grassdata, project, mapset)\n\n\nExplore data in the mapset\nLet’s first explore what we have within the italy_LST_daily mapset and display vector and raster maps using different classes from grass.jupyter library.\n\n# List vector elements\ngs.list_grouped(type=\"vector\")['italy_LST_daily']\n\n\n# Display vector map\nit_map = gj.Map(width=500, use_region=True)\nit_map.d_vect(map=\"italy_borders_0\")\nit_map.show()\n\n\n# List raster elements\nrast = gs.list_grouped(type=\"raster\", pattern=\"lst*\")['italy_LST_daily']\nrast[0:10]\n\n\n# Display raster map with interactive class\nlst_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nlst_map.add_raster(\"lst_2014.005_avg\")\nlst_map.add_layer_control(position = \"bottomright\")\nlst_map.show()"
+  },
+  {
+    "objectID": "notebooks/notebook-02.html#sdm-workflow",
+    "href": "notebooks/notebook-02.html#sdm-workflow",
+    "title": "Part 2: Processing data in GRASS",
+    "section": "SDM workflow",
+    "text": "SDM workflow\nIn this part of the Studio we’ll be addressing the left part of the SDM workflow, occurrence and background data and predictors:\n\n\nImporting species records\nWe will use occurrence data already downloaded and cleaned. We need to import it into GRASS GIS first.\n\n# Import mosquito records\ngs.run_command(\"v.import\",\n               input=os.path.join(homedir,\"aedes_albopictus.gpkg\"),\n               output=\"aedes_albopictus\")\n\nLet’s add the occurrence points over the previous interactive map\n\n# Display raster map with interactive class\nlst_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nlst_map.add_raster(\"lst_2014.005_avg\")\nlst_map.add_vector(\"aedes_albopictus\")\nlst_map.add_layer_control(position = \"bottomright\")\nlst_map.show()\n\nYou can also get the mosquito occurrences (or any other species or taxa) directly from GBIF into GRASS by means of v.in.pygbif as follows:\n\n# Set computational region\n# region = gs.parse_command(\"g.region\", raster=\"lst_2014.001_avg\", flags=\"g\")\n# region\n\n\n# Install extension (requires pygbif: pip install pygbif)\n# gs.run_command(\"g.extension\",\n#                extension=\"v.in.pygbif\")\n\n\n# Import data from GBIF\n# gs.run_command(\"v.in.pygbif\", \n#                output=\"aedes_albopictus\",\n#                taxa=\"Aedes albopictus\",\n#                date_from=\"2014-01-01\",\n#                date_to=\"2018-12-31\")\n\n\n\nCreating random background points\nThe algorithm MaxEnt that we will use in the next part of this session requires not only the projects of known occurrences, but also information on the rest of the environment available. These are not absences but background data, we actually do not know if the species is there or not, but we need it to compare with the features of the places where the species does occur.\nTo avoid getting background points exactly where occurrences are, we’ll create buffers around them. Then, we need to ensure that background points are only over land within our computational region. In order to do that, we’ll create a mask over land and we’ll overlay the buffers with the mask. Can you guess what the output will be?\n\n# Create buffer around Aedes albopictus records\ngs.run_command(\"v.buffer\",\n               input=\"aedes_albopictus\",\n               output=\"aedes_buffer\",\n               distance=2000)\n\n\n# Set computational region\nregion = gs.parse_command(\"g.region\", raster=\"lst_2014.001_avg\", flags=\"g\")\nregion\n\n\n# Create a vector mask to limit background points\nexpression=\"MASK = if(lst_2014.001_avg, 1, null())\"\ngs.raster.mapcalc(exp=expression)\n\ngs.run_command(\"r.to.vect\", \n               input=\"MASK\",\n               output=\"vect_mask\",\n               type=\"area\")\n\n\n# Subtract buffers from vector mask\ngs.run_command(\"v.overlay\",\n               ainput=\"vect_mask\",\n               binput=\"aedes_buffer\",\n               operator=\"xor\",\n               output=\"mask_bg\")\n\nLet’s display the result\n\n# Display raster map with interactive class\nmask_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nmask_map.add_vector(\"mask_bg\")\nmask_map.add_layer_control(position = \"bottomright\")\nmask_map.show()\n\nFinally, let’s create the random background points…\n\n# Generate random background points\ngs.run_command(\"v.random\",\n               output=\"background_points\",\n               npoints=1000,\n               restrict=\"mask_bg\",\n               seed=3749)\n\nand display occurrence and background points together over an LST map.\n\n# Display vector map\npb_map = gj.Map(width=500, use_region=True)\npb_map.d_rast(map=\"lst_2014.005_avg\")\npb_map.d_vect(map=\"italy_borders_0\", type=\"boundary\")\npb_map.d_vect(map=\"background_points\")\npb_map.d_vect(map=\"aedes_albopictus\", icon=\"basic/diamond\", fill_color=\"red\", size=8)\npb_map.show()\n\n\n\nCreate daily LST time series\nNow we’ll start processing the raster data to derive potentially relevant predictors to include in the model. Our data consists of a time series of daily LST averages. We’ll use the GRASS temporal framework. The first step is to create the time series object and register maps in it. See t.create and t.register for further details.\n\n# Create time series \ngs.run_command(\"t.create\",\n               type=\"strds\",\n               temporaltype=\"absolute\",\n               output=\"lst_daily\",\n               title=\"Average Daily LST\",\n               description=\"Average daily LST in degree C - 2014-2018\")\n\n\n# Check it is created\ngs.run_command(\"t.list\",\n              type=\"strds\")\n\n\n# Get list of maps \nmap_list = gs.list_grouped(type=\"raster\", pattern=\"lst_201*\")['italy_LST_daily']\nmap_list[0:10]\n\n\n# Register maps in strds  \ngs.run_command(\"t.register\", \n               input=\"lst_daily\",\n               maps=map_list,\n               increment=\"1 days\",\n               start=\"2014-01-01\", \n               flags=\"i\")\n\n\n# Get info about the strds\ngs.run_command(\"t.info\",\n               input=\"lst_daily\")\n\n\n\nGenerate environmental variables from LST STRDS\nNow that we created the time series or STRDS, let’s start estimating relevant variables. We start by calculating long term aggregations, also called climatologies.\n\nLong term monthly avg, min and max LST\nLet’s see an example first; we’ll estimate the average of all maps which start date is within January.\n\n# January average LST\ngs.run_command(\"t.rast.series\",\n               input=\"lst_daily\",\n               method=\"average\",\n               where=\"strftime('%m', start_time)='01'\",\n               output=\"lst_average_jan\")\n\n\n# Get map info and check values\ngs.raster_info(\"lst_average_jan\")['min'], gs.raster_info(\"lst_average_jan\")['max']\n\nIf we want to estimate climatologies for all months, let’s try first to get the list of maps that will be the input for t.rast.series, for that we’ll test the condition in t.rast.list first.\n\n# Define list of months as required\nmonths=['{0:02d}'.format(m) for m in range(1,13)]\n\nfor m in months:\n    gs.run_command(\"t.rast.list\",\n                   input=\"lst_daily\",\n                   where=f\"strftime('%m', start_time)='{m}'\")\n\nNow we add the methods and we are ready to estimate climatologies for all months with three different methods.\n\n# Now we estimate the climatologies for all months and methods\nmonths=['{0:02d}'.format(m) for m in range(1,13)]\nmethods=[\"average\",\"minimum\",\"maximum\"]\n\nfor m in months:\n    for me in methods:\n        gs.run_command(\"t.rast.series\", \n                       input=\"lst_daily\",\n                       method=me,\n                       where=f\"strftime('%m', start_time)='{m}'\",\n                       output=\"lst_{}_{}\".format(me,m))\n\n\n# List newly created maps\nmap_list = gs.list_grouped(type=\"raster\", pattern=\"*{average,minimum,maximum}*\")['italy_LST_daily']\nprint(map_list)\n\n\n# Remove lst_average_jan\ngs.run_command(\"g.remove\", type=\"raster\", name=\"lst_average_jan\", flags=\"f\")\n\n\n\nBioclimatic variables\nPerhaps you have heard of Worldclim or CHELSA bioclimatic variables? Well, this are 19 variables that represent potentially limiting conditions for species. They derive from the combination of temperature and precipitation long term averages. As we do not have precipitation data in this exercise, we’ll only estimate the bioclimatic variables that include temperature. See r.bioclim manual for further details. Note that we’ll use the climatologies estimated in the previous step.\n\n# Install extension\ngs.run_command(\"g.extension\",\n               extension=\"r.bioclim\")\n\n\n# Get lists of maps needed\ntmin=gs.list_grouped(type=\"raster\", pattern=\"lst_minimum_??\")['italy_LST_daily']\ntmax=gs.list_grouped(type=\"raster\", pattern=\"lst_maximum_??\")['italy_LST_daily']\ntavg=gs.list_grouped(type=\"raster\", pattern=\"lst_average_??\")['italy_LST_daily']\n\nprint(tmin,tmax,tavg)\n\n\n# Estimate temperature related bioclimatic variables\ngs.run_command(\"r.bioclim\", \n               tmin=tmin, \n               tmax=tmax,\n               tavg=tavg, \n               output=\"worldclim_\") \n\n\n# List output maps\ngs.list_grouped(type=\"raster\", pattern=\"worldclim*\")['italy_LST_daily']\n\nLet’s have a look at some of the maps we just created\n\n# Display raster map with interactive class\nbio_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nbio_map.add_raster(\"worldclim_bio01\")\nbio_map.add_raster(\"worldclim_bio02\")\nbio_map.add_layer_control(position = \"bottomright\")\nbio_map.show()\n\n\n\nSpring warming\nWe define spring warming as the velocity with which temperature increases from winter into spring and we calculate it as slope(daily Tmean February-March-April). We will use t.rast.aggregate.\n\n# Define list of months\nmonths=['{0:02d}'.format(m) for m in range(2,5)]\n\n\n# Annual spring warming\ngs.run_command(\"t.rast.aggregate\",\n               input=\"lst_daily\",\n               output=\"annual_spring_warming\",\n               basename=\"spring_warming\",\n               suffix=\"gran\",\n               method=\"slope\",\n               granularity=\"1 years\",\n               where=f\"strftime('%m',start_time)='{months[0]}' or strftime('%m',start_time)='{months[1]}' or strftime('%m', start_time)='{months[2]}'\")\n\n\n# Check raster maps in the STRDS\ngs.run_command(\"t.rast.list\", input=\"annual_spring_warming\")\n\n\n# Average spring warming\ngs.run_command(\"t.rast.series\",\n               input=\"annual_spring_warming\",\n               output=\"avg_spring_warming\",\n               method=\"average\")\n\n\n# Display raster map with interactive class\nauc_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nauc_map.add_raster(\"avg_spring_warming\")\nauc_map.add_layer_control(position = \"bottomright\")\nauc_map.show()\n\n\n\nAutumnal cooling\nWe define autumnal cooling as the velocity with which temperature decreases from summer into fall and we calculate it as slope(daily Tmean August-September-October).\n\n# Define list of months\nmonths=['{0:02d}'.format(m) for m in range(8,11)]\n\n\n# Annual autumnal cooling\ngs.run_command(\"t.rast.aggregate\",\n               input=\"lst_daily\",\n               output=\"annual_autumnal_cooling\",\n               basename=\"autumnal_cooling\",\n               suffix=\"gran\",\n               method=\"slope\",\n               granularity=\"1 years\",\n               where=f\"strftime('%m',start_time)='{months[0]}' or strftime('%m',start_time)='{months[1]}' or strftime('%m', start_time)='{months[2]}'\")\n\n\n# Check raster maps in the STRDS\ngs.run_command(\"t.rast.list\", input=\"annual_autumnal_cooling\")\n\n\n# Average autumnal cooling\ngs.run_command(\"t.rast.series\",\n               input=\"annual_autumnal_cooling\",\n               output=\"avg_autumnal_cooling\",\n               method=\"average\")\n\n\n# Display raster map with interactive class\nspw_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nspw_map.add_raster(\"avg_autumnal_cooling\")\nspw_map.add_layer_control(position = \"bottomright\")\nspw_map.show()\n\n\n\nNumber of days with LSTmean &gt;= 20 and &lt;= 30\nMosquitoes (and virus they might carry) tend to thrive in a certain range of temperatures. Let’s assume this range is from 20 to 30 °C. Here, we’ll estimate the number of days within this range per year, and then, we’ll estimate the average along years. See t.rast.algebra manual for further details.\n\n# Keep only pixels meeting the condition\nexpression=\"tmean_higher20_lower30 = if(lst_daily &gt;= 20.0 && lst_daily &lt;= 30.0, 1, null())\"\n\ngs.run_command(\"t.rast.algebra\",\n               expression=expression, \n               basename=\"tmean_higher20_lower30\",\n               suffix=\"gran\",\n               nproc=7, \n               flags=\"n\")\n\n\n# Count how many times per year the condition is met\ngs.run_command(\"t.rast.aggregate\",\n               input=\"tmean_higher20_lower30\", \n               output=\"count_tmean_higher20_lower30\",\n               basename=\"tmean_higher20_lower30\",\n               suffix=\"gran\",\n               method=\"count\",\n               granularity=\"1 years\")\n\n\n# Check raster maps in the STRDS\ngs.run_command(\"t.rast.list\", \n               input=\"count_tmean_higher20_lower30\", \n               columns=\"name,start_time,min,max\")\n\n\n# Average number of days with LSTmean &gt;= 20 and &lt;= 30\ngs.run_command(\"t.rast.series\",\n               input=\"count_tmean_higher20_lower30\",\n               output=\"avg_count_tmean_higher20_lower30\",\n               method=\"average\")\n\n\n# Display raster map with interactive class\nh20_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nh20_map.add_raster(\"avg_count_tmean_higher20_lower30\")\nh20_map.add_layer_control(position = \"bottomright\")\nh20_map.show()\n\n\n\nNumber of consecutive days with LSTmean &lt;= -10.0\nLikewise, there are temperature thresholds that mark a limit to mosquito survival. Here, we’ll use the temperature lower limit to survival. Most importantly, we we’ll count the number of consecutive days with temperatures below this threshold.\nHere, we’ll use again the temporal algebra and we’ll recall the concept of topology that we defined at the beginning of the notebook. First, we need to create a STRDS of annual granularity that will contain only zeroes. This annual STRDS, that we call annual mask, will be the base to add 1 each time the condition of less than -10 °C in consecutive days is met. Finally, we estimate the median number of days with LST lower than -10 °C over the 5 years.\n\n# Create annual mask\ngs.run_command(\"t.rast.aggregate\",\n               input=\"lst_daily\",\n               output=\"annual_mask\",\n               basename=\"annual_mask\",\n               suffix=\"gran\",\n               granularity=\"1 year\",\n               method=\"count\")\n\n\n# Replace values by zero\nexpression=\"if(annual_mask, 0)\"\n\ngs.run_command(\"t.rast.mapcalc\",\n               input=\"annual_mask\",\n               output=\"annual_mask_0\",\n               expression=expression,\n               basename=\"annual_mask_0\")\n\n\n# Calculate consecutive days with LST &lt;= -10.0\nexpression=\"lower_m10_consec_days = annual_mask_0 {+,contains,l} if(lst_daily &lt;= -10.0 && lst_daily[-1] &lt;= -10.0 || lst_daily[1] &lt;= -10.0 && lst_daily &lt;= -10.0, 1, 0)\"\n\ngs.run_command(\"t.rast.algebra\",\n               expression=expression,\n               basename=\"lower_m10\",\n               suffix=\"gran\",\n               nproc=7)\n\n\n# Inspect values\ngs.run_command(\"t.rast.list\",\n               input=\"lower_m10_consec_days\",\n               columns=\"name,start_time,min,max\")\n\n\n# Median number of consecutive days with LST &lt;= -10\ngs.run_command(\"t.rast.series\",\n               input=\"lower_m10_consec_days\",\n               output=\"median_lower_m10_consec_days\",\n               method=\"median\")\n\n\n# Display raster map with interactive class\nlt10_map = gj.InteractiveMap(width = 500, use_region=True, tiles=\"OpenStreetMap\")\nlt10_map.add_raster(\"median_lower_m10_consec_days\")\nlt10_map.add_layer_control(position = \"bottomright\")\nlt10_map.show()\n\nWe have now derived many potentially relevant predictors for the mosquito habitat suitability and we could still derive some more, for example, the number of mosquito or virus cycles per year based on development temperature thresholds and growing degree days (GDD). This could be achieved with t.rast.accumulate and t.rast.accdetect.\nWe will now open a GRASS session from R and perform SDM there."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#the-problem-dengue-in-urban-argentina",
+    "href": "lectures/lecture-02.html#the-problem-dengue-in-urban-argentina",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "The problem: dengue in urban Argentina",
+    "text": "The problem: dengue in urban Argentina\n\nAedes aegypti is fully adapted to urban environments\nTransmits dengue, Zika, chikungunya, and yellow fever\nMosquito activity is not uniform across a city — why?\n\n\n\n\n\n\n\nNote\n\n\nIf temporal activity patterns vary spatially, transmission risk varies too — but no field data exist for most of a city."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#research-questions",
+    "href": "lectures/lecture-02.html#research-questions",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Research questions",
+    "text": "Research questions\n\nDo distinct groups of temporal activity patterns exist among Ae. aegypti ovitraps?\nAre those patterns associated with local environmental conditions detectable from satellite imagery?\nCan we predict patterns city-wide — even where no field data exist?\nDo predicted patterns relate to observed dengue incidence?"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#field-data-ovitrap-surveillance",
+    "href": "lectures/lecture-02.html#field-data-ovitrap-surveillance",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Field data: ovitrap surveillance",
+    "text": "Field data: ovitrap surveillance\n\nLocation: Córdoba city, Argentina (~1.4 million inhabitants)\nPeriod: 2017–2019 (two full entomological seasons)\nResolution: weekly counts per ovitrap\nNetwork: ~50 ovitraps distributed across the urban area\n\nWeekly egg counts → time series per trap → N × T matrix\n\n\n\n\n\n\nTip\n\n\nOvitraps are inexpensive, passive traps — but sparse and heterogeneous across the city."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#satellite-covariates-sentinel-2",
+    "href": "lectures/lecture-02.html#satellite-covariates-sentinel-2",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Satellite covariates: Sentinel-2",
+    "text": "Satellite covariates: Sentinel-2\n\n\n\n\n\n\n\nVariable type\nDerived product\n\n\n\n\nVegetation\nNDVI time series (median, SD)\n\n\nHumidity / water\nNDWI, MNDWI\n\n\nBuilt environment\nNDBI\n\n\nTexture / heterogeneity\nGLCM indices (contrast, entropy, correlation)\n\n\nLand cover diversity\nShannon index over buffer areas\n\n\n\nAll covariates extracted over buffer areas surrounding each ovitrap location."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#analytical-pipeline",
+    "href": "lectures/lecture-02.html#analytical-pipeline",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Analytical pipeline",
+    "text": "Analytical pipeline\n\n\n\n\n\nflowchart LR\n  A[Weekly ovitrap\\ntime series] --&gt; B[Time series\\nclustering]\n  B --&gt; C[Cluster labels\\nper trap]\n  D[Sentinel-2\\ncovariates] --&gt; E[Random forest\\nclassification]\n  C --&gt; E\n  E --&gt; F[City-wide\\nprediction map]\n  F --&gt; G[Comparison with\\ndengue incidence]"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#step-1-time-series-clustering",
+    "href": "lectures/lecture-02.html#step-1-time-series-clustering",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Step 1 — Time series clustering",
+    "text": "Step 1 — Time series clustering\n\nGoal: discover groups of temporal patterns without prior labels\nDistance metric choices: DTW, Euclidean, correlation-based\nAlgorithms tested: k-means with DTW barycenter averaging (DBA), hierarchical clustering\nCluster validity indices: Silhouette, Calinski–Harabász, Davies–Bouldin\n\n\n\nChoosing the right distance metric matters more than the clustering algorithm itself. DTW is robust to phase shifts; correlation-based metrics emphasise shape similarity."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#step-2-feature-extraction-classification",
+    "href": "lectures/lecture-02.html#step-2-feature-extraction-classification",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Step 2 — Feature extraction & classification",
+    "text": "Step 2 — Feature extraction & classification\n\nEach trap → feature vector from Sentinel-2 covariates\nRandom forest classifier trained on labelled traps (cluster assignments)\nKey challenge: class imbalance — some patterns are rare in the field sample\n\n\n\n\n\n\n\nClass imbalance strategy\n\n\n\nStratified k-fold cross-validation\nOversampling minority classes (SMOTE)\nBalanced accuracy and F1-score as evaluation metrics"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#step-3-city-wide-prediction",
+    "href": "lectures/lecture-02.html#step-3-city-wide-prediction",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Step 3 — City-wide prediction",
+    "text": "Step 3 — City-wide prediction\n\nApply trained RF model to all pixels in Córdoba’s urban area\nEach pixel gets a predicted temporal pattern class\nResult: a continuous raster map of expected Ae. aegypti temporal behaviour"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#step-4-validation-against-dengue-incidence",
+    "href": "lectures/lecture-02.html#step-4-validation-against-dengue-incidence",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Step 4 — Validation against dengue incidence",
+    "text": "Step 4 — Validation against dengue incidence\n\nAggregate predicted class proportions per neighbourhood (barrio)\nCorrelate with officially reported dengue incidence (cases / 1000 inhabitants)\nSpearman’s ρ, visual inspection of spatial concordance"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#three-temporal-patterns",
+    "href": "lectures/lecture-02.html#three-temporal-patterns",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Three temporal patterns",
+    "text": "Three temporal patterns\nThree distinct cluster groups were found:\n\n\n\nPattern\nDescription\nTypical timing\n\n\n\n\nC1\nEarly, sharp peak\nOct–Nov\n\n\nC2\nLate, sustained activity\nJan–Mar\n\n\nC3\nLow, flat profile\nThroughout season\n\n\n\n\nThe three patterns are biologically interpretable and spatially structured — not random artefacts of clustering."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#environmental-associations",
+    "href": "lectures/lecture-02.html#environmental-associations",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Environmental associations",
+    "text": "Environmental associations\nVariables most associated with pattern membership:\n\nLand cover diversity (Shannon index in buffer)\nNDVI variability (temporal SD of vegetation greenness)\nHumidity-related indices (NDWI, MNDWI)\nTexture heterogeneity (GLCM entropy, contrast)\n\n\n\n\n\n\n\nNote\n\n\nTraps in more heterogeneous, vegetated, humid microenvironments tended toward earlier and higher oviposition peaks (Pattern C1/C2)."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#city-wide-prediction-map",
+    "href": "lectures/lecture-02.html#city-wide-prediction-map",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "City-wide prediction map",
+    "text": "City-wide prediction map\n\nSentinel-2-derived covariates were sufficient to predict temporal pattern membership across the full urban extent of Córdoba.\n\n\nRandom forest out-of-bag accuracy: XX% (cross-validated)\nSpatial prediction reveals intra-urban heterogeneity invisible to sparse surveillance\n\n\nThis is the key result: risk is not uniform within a city, and satellite data can reveal that structure."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#relationship-with-dengue-incidence",
+    "href": "lectures/lecture-02.html#relationship-with-dengue-incidence",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Relationship with dengue incidence",
+    "text": "Relationship with dengue incidence\n\nWeak but positive association between proportion of Pattern C2 pixels and neighbourhood-level dengue incidence (ρ ≈ 0.3)\nStatistically significant (p &lt; 0.05) despite small sample of neighbourhoods\nConfirms biological relevance of the clustering\n\n\n\n\n\n\n\nWarning\n\n\nThe association is real but modest — dengue incidence is influenced by many factors beyond mosquito activity (human mobility, immunity, reporting)."
+  },
+  {
+    "objectID": "lectures/lecture-02.html#what-worked",
+    "href": "lectures/lecture-02.html#what-worked",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "What worked",
+    "text": "What worked\n✔ Unsupervised clustering on sparse field data → meaningful, stable patterns\n✔ Sentinel-2 covariates carry sufficient signal to generalise to unsampled locations\n✔ Random forest handles mixed-type features robustly\n✔ Open, reproducible workflow (GRASS GIS + Python)"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#what-we-would-do-differently",
+    "href": "lectures/lecture-02.html#what-we-would-do-differently",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "What we would do differently",
+    "text": "What we would do differently\n\nBetter handling of spatial autocorrelation in cross-validation (spatial CV)\nMore seasons of ovitrap data — two years may capture normal variability only\nIncorporate human mobility data for the dengue validation step\nDeep learning for temporal feature extraction? Possibly — but at the cost of interpretability"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#open-questions",
+    "href": "lectures/lecture-02.html#open-questions",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Open questions",
+    "text": "Open questions\n\nAre the three patterns stable across years and cities?\nWhich Sentinel-2 bands/indices are truly causal vs merely correlated?\nCan early-season satellite imagery predict the coming season’s pattern?\nHow does this scale to other Aedes species or other disease systems?"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#take-home-messages",
+    "href": "lectures/lecture-02.html#take-home-messages",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Take-home messages",
+    "text": "Take-home messages\n\nAe. aegypti temporal activity is spatially heterogeneous within cities\nThat heterogeneity is predictable from freely available satellite imagery\nSentinel-2 + random forest = a practical, scalable surveillance tool\nThe spatial distribution of patterns has epidemiological relevance (dengue)\nOpen-source tools (GRASS, Python) make this workflow transferable"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#implications-for-public-health",
+    "href": "lectures/lecture-02.html#implications-for-public-health",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "Implications for public health",
+    "text": "Implications for public health\n\nUnderstanding where and when mosquitoes are most active — without exhaustive field campaigns — can:\n\n\nGuide targeted vector control interventions\nSupport early warning systems\nImprove allocation of surveillance resources\nFeed into dengue risk models at urban scale"
+  },
+  {
+    "objectID": "lectures/lecture-02.html#references-resources",
+    "href": "lectures/lecture-02.html#references-resources",
+    "title": "Spatial Distribution of Aedes aegypti Oviposition Temporal Patterns",
+    "section": "References & resources",
+    "text": "References & resources\nPaper:\nAndreo, V., Porcasi, X., Guzman, C., Lopez, L. & Scavuzzo, C.M. (2021).\nSpatial Distribution of Aedes aegypti Oviposition Temporal Patterns and Their\nRelationship with Environment and Dengue Incidence.\nInsects, 12(10), 919. https://doi.org/10.3390/insects12100919"
+  },
+  {
+    "objectID": "lectures/lecture-04.html",
+    "href": "lectures/lecture-04.html",
+    "title": "Let’s solve it together",
+    "section": "",
+    "text": "Placeholder for Lecture 4 — Discussion session."
+  },
+  {
+    "objectID": "lectures/lecture-04.html#overview",
+    "href": "lectures/lecture-04.html#overview",
+    "title": "Let’s solve it together",
+    "section": "",
+    "text": "Placeholder for Lecture 4 — Discussion session."
+  },
+  {
+    "objectID": "notebooks/notebook-03.html",
+    "href": "notebooks/notebook-03.html",
+    "title": "Part 3: Modelling with R",
+    "section": "",
+    "text": "In this third part of the studio, we’ll use R to model Aedes albopictus distribution in Northern Italy. For that, we need to connect to GRASS via the rgrass package in order to read occurrence data and predictors. The rgrass package is developed by Bivand (2022) and can be found at: https://github.com/rsbivand/rgrass/. See the vignette with further explanations and examples at: https://rsbivand.github.io/rgrass/."
+  },
+  {
+    "objectID": "notebooks/notebook-03.html#usage",
+    "href": "notebooks/notebook-03.html#usage",
+    "title": "Part 3: Modelling with R",
+    "section": "Usage",
+    "text": "Usage\nGRASS GIS and R can be used together in two ways:\nA. Using R within a GRASS GIS session, i.e. starting R (or RStudio) from GRASS terminal \n\ntype R or rstudio & in the GRASS GIS terminal\nload rgrass library\nuse read_VECT(), read_RAST() to read data from GRASS into R\naccess GRASS GIS modules and database through execGRASS()\n\nwrite data (back) to GRASS database with write_VECT() and write_RAST()\n\n\n\n\n\n\nB. Using GRASS GIS within an R session, i.e. we connect to GRASS GIS database from within R (or RStudio). \n\nwe need to start GRASS GIS with initGRASS() from R\nwe access GRASS GIS modules through execGRASS()\n\nuse read_VECT(), read_RAST(), write_VECT() and write_RAST() to read data from and to GRASS database\n\n\n\n\n\n\n\nNote\n\n\n\nrgrass was originally intended to apply GRASS functions on data outside GRASS database; hence some prefer to create throw away locations"
+  },
+  {
+    "objectID": "notebooks/notebook-03.html#references",
+    "href": "notebooks/notebook-03.html#references",
+    "title": "Part 3: Modelling with R",
+    "section": "References",
+    "text": "References\n\n\nBivand, R. (2022), Rgrass: Interface between ’GRASS’ geographical information system and ’r’.\n\n\nHijmans, R. J. (2022), Terra: Spatial data analysis.\n\n\nVignali, S., Barras, A. G., Arlettaz, R., and Braunisch, V. (2020), “SDMtune: An r package to tune and evaluate species distribution models,” Ecology and Evolution, 00, 1–18. https://doi.org/10.1002/ece3.6786."
+  },
+  {
+    "objectID": "lectures/lecture-03.html",
+    "href": "lectures/lecture-03.html",
+    "title": "Let’s solve it together",
+    "section": "",
+    "text": "Placeholder for Lecture 4 — Discussion session."
+  },
+  {
+    "objectID": "lectures/lecture-03.html#overview",
+    "href": "lectures/lecture-03.html#overview",
+    "title": "Let’s solve it together",
+    "section": "",
+    "text": "Placeholder for Lecture 4 — Discussion session."
+  }
+]

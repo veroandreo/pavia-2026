@@ -33,18 +33,28 @@ format:
 - Researcher and lecturer at Instituto Gulich (CONICET-CONAE-UNC)
 - Background: Dr. in Biology, MSc in Spatial Information Applications
 - Remote sensing and geospatial applications in disease ecology
-- Member of the GRASS GIS Dev Team & project chair; OSGeo Charter member & FOSS4G enthusiast
+- Member of the GRASS GIS Dev Team & project chair
 
 {{< fa globe >}} <https://veroandreo.gitlab.io/>
 :::
 
 ::: {.column width="40%"}
-![](../assets/img/lecture/gulich.jpg){width="70%" fig-align="center"}
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 4
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-64.4653258, lat=-31.5204194, popup="IG")
+```
+
+![](../assets/img/lecture_1/gulich.jpg){width="50%" fig-align="center"}
 :::
 ::::
 
 
-## Overview {background-color="#1A428A" background-image="../assets/img/lecture/RS_and_Public_Health_vertical.png" background-size="32%" background-position="right"}
+## Overview {background-color="#1A428A" background-image="../assets/img/lecture_1/RS_and_Public_Health_vertical.png" background-size="32%" background-position="right"}
 
 - Motivation
 - Health Geography
@@ -60,11 +70,11 @@ format:
 ---
 
 :::{.r-stack}
-![](../assets/img/lecture/sdg_poster.png){.fragment fragment-index=2 .fade-in-then-out width="90%"}
+![](../assets/img/lecture_1/sdg_poster.png){.fragment fragment-index=2 .fade-in-then-out width="90%"}
 
-![](../assets/img/lecture/sdg_3.png){.fragment .fade-in-then-out fragment-index=1 width="55%" fig-align="center"}
+![](../assets/img/lecture_1/sdg_3.png){.fragment .fade-in-then-out fragment-index=1 width="55%" fig-align="center"}
 
-![](../assets/img/lecture/sdg_3_target33.png){.fragment fragment-index=3 .fade-in width="100%" fig-align="center"}
+![](../assets/img/lecture_1/sdg_3_target33.png){.fragment fragment-index=3 .fade-in width="100%" fig-align="center"}
 :::
 
 ::: footer
@@ -88,16 +98,16 @@ Vector-borne and zoonotic diseases are responsible for one-sixth of disease and 
 :::
 
 ::: {.column width="50%"}
-![](../assets/img/lecture/vbd_cycle.png){.fragment .fade-in width="80%" fig-align="center"}
+![](../assets/img/lecture_1/vbd_cycle.png){.fragment .fade-in width="80%" fig-align="center"}
 :::
 
 :::
 
-![](../assets/img/lecture/aedesaegypti_blood.png){.fragment .absolute bottom=40 right=380 width=150}
+![](../assets/img/lecture_1/aedesaegypti_blood.png){.fragment .absolute bottom=40 right=380 width=150}
 
-![](../assets/img/lecture/sandfly.png){.fragment .absolute top=5 right=-30 width=170}
+![](../assets/img/lecture_1/sandfly.png){.fragment .absolute top=5 right=-30 width=170}
 
-![](../assets/img/lecture/tick.png){.fragment .absolute bottom=130 right=-30 width=120}
+![](../assets/img/lecture_1/tick.png){.fragment .absolute bottom=130 right=-30 width=120}
 
 ::: {.notes}
 Which are these NTDs and why might remote sensing be relevant for their study? Most of them are transmitted by animals — they need a vector to carry the pathogen from host to humans or among humans. Animals, especially ectothermic ones, are highly affected by environmental conditions... think of Aedes aegypti mosquitoes... and what information can be most easily extracted from RS? Environmental information.
@@ -112,7 +122,7 @@ You all have seen this, right?
 ::: {.columns}
 
 ::: {.column width="60%"}
-![](../assets/img/lecture/Snow-cholera-map.jpg)
+![](../assets/img/lecture_1/Snow-cholera-map.jpg)
 :::
 
 ::: {.column width="7%"}
@@ -120,7 +130,7 @@ You all have seen this, right?
 
 ::: {.column width="30%"}
 <br><br>
-![](../assets/img/lecture/John_Snow.jpg)
+![](../assets/img/lecture_1/John_Snow.jpg)
 :::
 :::
 
@@ -191,7 +201,7 @@ While RS has applications in all fields, I'll focus on those related to disease 
 ::: {.columns}
 ::: {.column width="57%"}
 <br><br>
-![](../assets/img/lecture/global_view_diseases.png){width="700"}
+![](../assets/img/lecture_1/global_view_diseases.png){width="700"}
 :::
 
 ::: {.column width="43%"}
@@ -209,9 +219,9 @@ decision making, planning of prevention, management or response actions, etc.
 ## Disease Ecology II
 
 ::: {.r-stack}
-![](../assets/img/lecture/disease_triad.jpg){.fragment width="150%" fig-align="center"}
+![](../assets/img/lecture_1/disease_triad.jpg){.fragment width="150%" fig-align="center"}
 
-![](../assets/img/lecture/lambin_2010.png){.fragment width="85%" fig-align="center"}
+![](../assets/img/lecture_1/lambin_2010.png){.fragment width="85%" fig-align="center"}
 
 ::: {data-id="box" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 700px; height: 370px; transform: translate(0%, -26%);"}
 :::
@@ -228,7 +238,7 @@ This relationship with environment is usually represented by a triad — the epi
 
 ## Use of RS in Health applications
 
-![](../assets/img/lecture/growth_papers_health_and_RS.png){width="90%"}
+![](../assets/img/lecture_1/growth_papers_health_and_RS.png){width="90%"}
 
 ::: footer
 @viana_remote_2017
@@ -243,7 +253,7 @@ The use of remote sensing for public health applications has been increasing sin
 
 :::: {.columns}
 :::{.column width="70%"}
-![](../assets/img/lecture/most_used_RS_vars.png){fig-align="center"}
+![](../assets/img/lecture_1/most_used_RS_vars.png){fig-align="center"}
 :::
 
 ::: {.column width="30%"}
@@ -271,7 +281,7 @@ The most common variables used in general are: LST, Precipitation, NDVI, Elevati
 :::
 
 
-## { background-image="../assets/img/lecture/portada_campo_satelite_sig.png" }
+## { background-image="../assets/img/lecture_1/portada_campo_satelite_sig.png" }
 
 ::: {style="color: #ffffff; font-size: 1.2em;"}
 **How do we continuously map these variables?**
@@ -283,7 +293,7 @@ From the thermometer and field notebook, to satellite data.
 
 The **acquisition of information about objects or phenomena without being in direct contact** with them, through detection of the electromagnetic energy they emit or reflect.
 
-![](../assets/img/lecture/componentes_SR.png){width="100%" fig-align="center"}
+![](../assets/img/lecture_1/componentes_SR.png){width="100%" fig-align="center"}
 
 ::: {.notes}
 Remote sensing is the science and art of obtaining information about an object, area, or phenomenon through the analysis of data acquired by a device not in physical contact with the object. Satellites, aircraft, or drones carry sensors that record energy reflected or emitted by the Earth's surface. A remote sensing system has four fundamental components: an energy source (usually the sun, although SAR systems generate their own), the interaction of that energy with the surface (each cover type reflects or emits differently), the sensor that records that energy, and the entire process of data transmission and processing until ready-to-use products are obtained.
@@ -294,7 +304,7 @@ Remote sensing is the science and art of obtaining information about an object, 
 
 <br>
 
-![](../assets/img/lecture/espectro_electromagnetico.png){width="100%" fig-align="center"}
+![](../assets/img/lecture_1/espectro_electromagnetico.png){width="100%" fig-align="center"}
 
 ::: {.notes}
 The electromagnetic spectrum spans from gamma rays to radio waves. Earth observation satellites work mainly in four regions: the visible (what we see with our eyes), the near-infrared (fundamental for studying vegetation), the thermal infrared (for measuring surface temperature), and microwaves (SAR radars, which can penetrate clouds). Each region has atmospheric transmission windows where the atmosphere is transparent enough to allow measurements.
@@ -327,7 +337,7 @@ Fraction of sunlight reflected by the surface — obtained after applying **atmo
 
 <br>
 
-![](../assets/img/lecture/componentes_SR.png){width="90%"}
+![](../assets/img/lecture_1/componentes_SR.png){width="90%"}
 :::
 :::
 
@@ -336,7 +346,7 @@ Fraction of sunlight reflected by the surface — obtained after applying **atmo
 
 The "fingerprint" of each land cover type
 
-![](../assets/img/lecture/firmas_espectrales.png){width="95%" fig-align="center"}
+![](../assets/img/lecture_1/firmas_espectrales.png){width="95%" fig-align="center"}
 
 ::: {.notes}
 Each type of land cover has a characteristic reflectance curve as a function of wavelength. Healthy vegetation reflects very little in the red (chlorophyll absorbs that light for photosynthesis) but a lot in the near-infrared (the cellular structure of leaves reflects it). This marked difference is the basis of NDVI. Water absorbs almost all energy in the infrared, which is why it appears dark in those bands. Bare soil has an increasing and more uniform reflectance. Stressed vegetation (dry, diseased) loses that NIR jump, allowing us to detect problems before they are visible to the naked eye.
@@ -425,7 +435,7 @@ GIS is the "spatial laboratory" where we integrate all information. It can be th
 :::
 
 
-## { background-image="../assets/img/lecture/portada_muchos_satelites.png" }
+## { background-image="../assets/img/lecture_1/portada_muchos_satelites.png" }
 
 ::: {style="color: #ffffff; font-size: 1.2em;"}
 **How to choose the right data for my problem?**
@@ -434,7 +444,7 @@ GIS is the "spatial laboratory" where we integrate all information. It can be th
 
 ## Remote sensing basic features
 
-![](../assets/img/lecture/all_resolutions_relation.png){fig-align="center"}
+![](../assets/img/lecture_1/all_resolutions_relation.png){fig-align="center"}
 
 ::: footer
 @dif_resolutions_2018
@@ -449,7 +459,7 @@ We should take into account some basic features of remote sensing before selecti
 
 <br>
 
-![](../assets/img/lecture/scale_vs_variables_spp_distr.png){fig-align="center"}
+![](../assets/img/lecture_1/scale_vs_variables_spp_distr.png){fig-align="center"}
 
 ::: footer
 @pearson_predicting_2003
@@ -466,15 +476,15 @@ To decide which RS dataset most suits our problem we also need to think about th
 
 ## Taxonomy
 
-![](../assets/img/lecture/resolution_vs_animals.png){fig-align="center"}
+![](../assets/img/lecture_1/resolution_vs_animals.png){fig-align="center"}
 
 ## Plants
 
-![](../assets/img/lecture/resolution_vs_forest.png){fig-align="center"}
+![](../assets/img/lecture_1/resolution_vs_forest.png){fig-align="center"}
 
 ## Animals
 
-![](../assets/img/lecture/resolution_vs_movement_a.png){width="65%" fig-align="center"}
+![](../assets/img/lecture_1/resolution_vs_movement_a.png){width="65%" fig-align="center"}
 :::
 
 ::: footer
@@ -492,7 +502,7 @@ If we study other biological or ecological phenomena we should consider scale an
 
 ::: {.r-stack}
 
-![General approach used in (disease) ecology](../assets/img/lecture/workflow_sdm_other.png)
+![General approach used in (disease) ecology](../assets/img/lecture_1/workflow_sdm_other.png)
 
 ::: {data-id="box1" .fragment style="background: rgba(232, 31, 118, 0.2); border: 5px solid; border-color: #e81f76; width: 300px; height: 140px; transform: translate(-115%, -77%);"}
 :::
@@ -512,7 +522,7 @@ Going back to disease ecology, what do we use RS for?
 - To validate predictions
 :::
 
-## { background-image="../assets/img/lecture/satellite_and_earth.jpg" }
+## { background-image="../assets/img/lecture_1/satellite_and_earth.jpg" }
 
 ::: { style="color: #ffffff; font-size: 1.5em;" }
 Let's have a look at some real cases...
@@ -531,12 +541,12 @@ Let's have a look at some real cases...
 ::: {.columns}
 ::: {.column width="53%"}
 
-![(a) Emperor penguins. (b) Elephants](../assets/img/lecture/map_spp_from_vhr_img.png)
+![(a) Emperor penguins. (b) Elephants](../assets/img/lecture_1/map_spp_from_vhr_img.png)
 :::
 
 ::: {.column width="47%"}
 
-![Great gerbil burrows classification](../assets/img/lecture/great_gerbil_burrows.jpg)
+![Great gerbil burrows classification](../assets/img/lecture_1/great_gerbil_burrows.jpg)
 :::
 :::
 
@@ -550,10 +560,10 @@ Let's have a look at some real cases...
 
 <br>
 
-![Pine beetle infection](../assets/img/lecture/pine_beetle_infection.jpg){width="70%"}
+![Pine beetle infection](../assets/img/lecture_1/pine_beetle_infection.jpg){width="70%"}
 
 ::: {style="float: right; transform: translate(0%, -100%);"}
-![](../assets/img/lecture/pine_beetle_study_landsat.png){width="550px"}
+![](../assets/img/lecture_1/pine_beetle_study_landsat.png){width="550px"}
 :::
 
 ::: footer
@@ -570,16 +580,16 @@ Let's have a look at some real cases...
 
 ::: {.columns}
 ::: {.column width="33%"}
-![](../assets/img/lecture/fig_modis_workflow.png)
+![](../assets/img/lecture_1/fig_modis_workflow.png)
 
-![](../assets/img/grass_gis.svg){.absolute top=350 left=-100 width="85"}
+![](../assets/img/grass-green.svg){.absolute top=350 left=-100 width="85"}
 :::
 
 ::: {.column width="67%"}
 
 <br>
 
-![](../assets/img/lecture/co_cluster_method.png){.fragment .grow}
+![](../assets/img/lecture_1/co_cluster_method.png){.fragment .grow}
 :::
 :::
 
@@ -593,7 +603,7 @@ Let's have a look at some real cases...
 
 - MODIS LST is used to estimate number of extrinsic incubation periods (EIP) that virus might complete; the higher this number, the higher the environmental risk
 
-![[CONAE Geoportal](https://geoportal.conae.gov.ar/mapstore/#/viewer/openlayers/geoportal)](../assets/img/lecture/riesgo_dengue_por_localidad.png)
+![[CONAE Geoportal](https://geoportal.conae.gov.ar/mapstore/#/viewer/openlayers/geoportal)](../assets/img/lecture_1/riesgo_dengue_por_localidad.png)
 
 ::: footer
 @porcasi_operative_2012, <https://github.com/InstitutoGulich/RiesgoAmbiental>
@@ -606,19 +616,19 @@ Let's have a look at some real cases...
 ::: {.columns}
 
 ::: {.column width="50%"}
-![](../assets/img/lecture/workflow_sph_andreo_etal_2014.png)
+![](../assets/img/lecture_1/workflow_sph_andreo_etal_2014.png)
 <br>
 
-![](../assets/img/grass_gis.svg){width="30%" fig-align="center"}
+![](../assets/img/grass-green.svg){width="30%" fig-align="center"}
 :::
 
 ::: {.column width="50%" .smaller}
 We combined a rescaled probability map of the host with one of the human cases to determine levels of transmission risk
 
-![](../assets/img/lecture/colilargo_mirror.svg){.absolute top=230 right=50 width="210"}
+![](../assets/img/lecture_1/colilargo_mirror.svg){.absolute top=230 right=50 width="210"}
 <br>
 
-![](../assets/img/lecture/riesgo_sph_andreo_etal_2014.png)
+![](../assets/img/lecture_1/riesgo_sph_andreo_etal_2014.png)
 :::
 :::
 
@@ -628,22 +638,30 @@ We combined a rescaled probability map of the host with one of the human cases t
 
 ---
 
+## Distribution and richness of Orthohantavirus reservoir hosts and genotypes
+
+
+![](../assets/img/lecture_1/graphicalabstract2.png)
+
+
+---
+
 ### Cutaneous leishmaniasis and LULCC
 
-![](../assets/img/lecture/sandfly.png){.absolute top=5 right=-30 width=120}
+![](../assets/img/lecture_1/sandfly.png){.absolute top=5 right=-30 width=120}
 
 <br>
 
 ::: {.columns}
 
 ::: {.column width="50%"}
-![Change map](../assets/img/lecture/change_maps.png)
+![Change map](../assets/img/lecture_1/change_maps.png)
 
-![](../assets/img/lecture/grass_logo_magnets.png){.fragment .absolute top=400 left=25 width="90"}
+![](../assets/img/grass-green.svg){.fragment .absolute top=400 left=25 width="90"}
 :::
 
 ::: {.column width="50%"}
-![CL Prediction map](../assets/img/lecture/fig_ensemble_final.png)
+![CL Prediction map](../assets/img/lecture_1/fig_ensemble_final.png)
 :::
 
 :::
@@ -658,17 +676,17 @@ We combined a rescaled probability map of the host with one of the human cases t
 
 ::: {.columns}
 ::: {.column width="60%"}
-![Workflow](../assets/img/lecture/workflow_dengue.png)
+![Workflow](../assets/img/lecture_1/workflow_dengue.png)
 
-![](../assets/img/grass_gis.svg){.fragment .absolute top=200 left=2 width=80}
+![](../assets/img/grass-green.svg){.fragment .absolute top=200 left=2 width=80}
 
-![](../assets/img/lecture/R_logo.png){.fragment .absolute top=300 left=530 width=85}
+![](../assets/img/lecture_1/R_logo.png){.fragment .absolute top=300 left=530 width=85}
 :::
 
 ::: {.column width="40%"}
-![](../assets/img/lecture/Predictions.png)
+![](../assets/img/lecture_1/Predictions.png)
 
-![](../assets/img/lecture/aedesaegypti_blood_mirror.png){width="32%" style="float: right;"}
+![](../assets/img/lecture_1/aedesaegypti_blood_mirror.png){width="32%" style="float: right;"}
 :::
 :::
 
@@ -683,13 +701,13 @@ We combined a rescaled probability map of the host with one of the human cases t
 - Temporal and spatial patterns in *Aedes aegypti* in Córdoba
 - Association with variables derived from Sentinel-2 imagery analysis to predict temporal patterns over the whole city.
 
-![](../assets/img/lecture/spatial_distr_temp_patterns.png){.r-stretch}
+![](../assets/img/lecture_1/spatial_distr_temp_patterns.png){.r-stretch}
 
-![](../assets/img/lecture/aedesaegypti_blood.png){.absolute top=220 left=200 width=120}
+![](../assets/img/lecture_1/aedesaegypti_blood.png){.absolute top=220 left=200 width=120}
 
-![](../assets/img/lecture/R_logo.png){.fragment .absolute bottom=30 right=420 width=130}
+![](../assets/img/lecture_1/R_logo.png){.fragment .absolute bottom=30 right=420 width=130}
 
-![](../assets/img/grass_gis.svg){.fragment .absolute bottom=30 right=30 width=100}
+![](../assets/img/grass-green.svg){.fragment .absolute bottom=30 right=30 width=100}
 
 ::: footer
 @andreo_spatial_2021
@@ -707,13 +725,13 @@ We combined a rescaled probability map of the host with one of the human cases t
 - Stratified distribution of ovitraps
 
 ::: {style="font-size: 0.7em;"}
-![](../assets/img/lecture/carlita.png){width="60" style="float: right;"}
+![](../assets/img/lecture_1/carlita.png){width="60" style="float: right;"}
 MSc thesis, **Carla Rodriguez**.
 :::
 :::
 
 ::: {.column width="60%"}
-![](../assets/img/lecture/tesis_carla.png)
+![](../assets/img/lecture_1/tesis_carla.png)
 :::
 ::::
 
@@ -727,16 +745,16 @@ MSc thesis, **Carla Rodriguez**.
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](../assets/img/lecture/modelo_exe.png)
+![](../assets/img/lecture_1/modelo_exe.png)
 :::
 
 ::: {.column width="40%"}
-![](../assets/img/lecture/Fig_agui.png){width="75%" fig-align="center"}
+![](../assets/img/lecture_1/Fig_agui.png){width="75%" fig-align="center"}
 <br>
 
 ::: {style="font-size: 0.8em;"}
 Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás San Miguel**.
-![](../assets/img/lecture/tomi.png){width="65" style="float: right;"}
+![](../assets/img/lecture_1/tomi.png){width="65" style="float: right;"}
 :::
 :::
 ::::
@@ -746,25 +764,25 @@ Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás
 :::
 
 
-## {{< fa person-digging >}} Online surveillance system {{< fa person-digging >}}
+## Online surveillance system
 
 <br>
 
-![](../assets/img/lecture/bid_etapas_flujo_de_trabajo.drawio.png){.fragment fig-align="center"}
+![](../assets/img/lecture_1/bid_etapas_flujo_de_trabajo.drawio.png){.fragment fig-align="center"}
 
 <br>
 
-![](../assets/img/lecture/bid_logos.png){width="500" fig-align="center"}
+![](../assets/img/lecture_1/bid_logos.png){width="500" fig-align="center"}
 
 
-## {{< fa person-digging >}} Online surveillance system {{< fa person-digging >}}
+## Online surveillance system
 
 ::: {.r-stack}
-![](../assets/img/lecture/bid_geonode.png){fig-align="center" width="67%"}
+![](../assets/img/lecture_1/bid_geonode.png){fig-align="center" width="67%"}
 
-![](../assets/img/lecture/bid_geonode_mosquitos.jpg){.fragment fig-align="center" width="85%"}
+![](../assets/img/lecture_1/bid_geonode_mosquitos.jpg){.fragment fig-align="center" width="85%"}
 
-![](../assets/img/lecture/bid_geonode_dengue_2020.jpg){.fragment fig-align="center" width="82%"}
+![](../assets/img/lecture_1/bid_geonode_dengue_2020.jpg){.fragment fig-align="center" width="82%"}
 :::
 
 ---
@@ -773,13 +791,13 @@ Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás
 
 ::: {.columns}
 ::: {.column width="60%"}
-![Forest loss](../assets/img/lecture/forest_loss_1km.png)
+![Forest loss](../assets/img/lecture_1/forest_loss_1km.png)
 :::
 
 ::: {.column width="40%"}
-![Visceral leishmaniasis](../assets/img/lecture/LV_kernel_density.png){width="60%"}
+![Visceral leishmaniasis](../assets/img/lecture_1/LV_kernel_density.png){width="60%"}
 
-![Cutaneous leishmaniasis](../assets/img/lecture/LC_kernel_density.png){width="60%"}
+![Cutaneous leishmaniasis](../assets/img/lecture_1/LC_kernel_density.png){width="60%"}
 :::
 :::
 
@@ -795,19 +813,19 @@ PICT 2021 - GRF TI - 00372
 ::: {.column width="45%"}
 
 ::: {.r-stack}
-![](../assets/img/lecture/area_de_estudio_triple_frontera_Carli.png)
+![](../assets/img/lecture_1/area_de_estudio_triple_frontera_Carli.png)
 
-![](../assets/img/lecture/camino_triple_frontera_Carli.png){.fragment}
+![](../assets/img/lecture_1/camino_triple_frontera_Carli.png){.fragment}
 :::
 
 ::: {style="font-size: 0.7em;"}
-![](../assets/img/lecture/carlita.png){width=60 style="float: left; padding-right: 10px"}
+![](../assets/img/lecture_1/carlita.png){width=60 style="float: left; padding-right: 10px"}
 PhD candidate, **Carla Rodriguez Gonzalez**.
 :::
 :::
 
 :::{.column width="55%"}
-![Travel time to health centers](../assets/img/lecture/acceso_escenario_desfavorable.png){width="90%"}
+![Travel time to health centers](../assets/img/lecture_1/acceso_escenario_desfavorable.png){width="90%"}
 :::
 :::
 
@@ -817,40 +835,30 @@ PhD candidate, **Carla Rodriguez Gonzalez**.
 
 ::: {.columns}
 ::: {.column width="45%"}
-![](../assets/img/lecture/asma_cba_Abraham.png)
+![](../assets/img/lecture_1/asma_cba_Abraham.png)
 
 ::: {style="font-size: 0.7em;"}
-![](../assets/img/lecture/abraham.png){width=60 style="float: left; padding-right: 10px"}
+![](../assets/img/lecture_1/abraham.png){width=60 style="float: left; padding-right: 10px"}
 PhD candidate, **Abraham Coiman**.
 :::
 :::
 
 ::: {.column width="55%"}
-![](../assets/img/lecture/Aerosoles_promedio_mensual.png)
+![](../assets/img/lecture_1/Aerosoles_promedio_mensual.png)
 :::
 :::
 
 
 ## Other projects under development {.smaller}
 
-::: {layout="[1, 20]"}
-![](../assets/img/lecture/mati.png){width="51"}
-
-Epidemiological characterisation of intestinal parasite infection in children. PhD candidate, **Matias Scavuzzo**.
-:::
-
-::: {layout="[1, 20]"}
-![](../assets/img/lecture/mica.png){width="51"}
-
-Geospatial modelling of malnutrition in children and adolescents. PhD candidate, **Micaela Campero**.
-:::
-
 ::: {layout="[3, 18]"}
-![](../assets/img/lecture/juan_diego.png){width="51"}
-![](../assets/img/lecture/xime.png){width="51"}
+![](../assets/img/lecture_1/anita.png){width="51"} ![](../assets/img/lecture_1/xime.png){width="51"}
 
-Environmental variables associated with non-communicable diseases. **Dr. Juan Diego Pinotti** and **Dr. Ximena Porcasi**.
+Heat-Cordoba: Heat wave effects on urban areas: water quality, infrastructure and health. **Dr. Anabella Ferral** & **Dr. Ximena Porcasi**.
 :::
+
+![](../assets/img/lecture_1/heatcordoba_graphical_abstract.svg){width=65% fig-align="center"}
+
 
 
 ## Is everything studied then?? { background-color="#1A428A" }
@@ -858,7 +866,7 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 ---
 
 ## Challenges and gaps — RS
-![](../assets/img/lecture/satellite_b.png){.absolute top=5 right=-15 width=120}
+![](../assets/img/lecture_1/satellite_b.png){.absolute top=5 right=-15 width=120}
 
 - **Trade-off** between different RS resolutions, the problem under study, the data and methods available
 - **Gaps in optical RS**: clouds, shadows (spatial and temporal interpolations)
@@ -882,6 +890,14 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 - Facilitating access to (aggregated) health data
 - **Political decision and resource allocation**
 
+---
+
+## Challenges and gaps — Methods
+
+
+Let's discuss on Thursday!
+
+
 
 ## Opportunities: low hanging fruits?
 
@@ -892,21 +908,21 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 ::: {.columns}
 
 ::: {.column width="34%"}
-![](../assets/img/lecture/satellite_saocom.png){width="180px" style="float: right;"}
+![](../assets/img/lecture_1/satellite_saocom.png){width="180px" style="float: right;"}
 
-![](../assets/img/lecture/lago_san_martin_saocom.jpg){width="200px"}
+![](../assets/img/lecture_1/lago_san_martin_saocom.jpg){width="200px"}
 :::
 
 ::: {.column width="33%"}
-![](../assets/img/lecture/gedi.jpg){width="70%"}
+![](../assets/img/lecture_1/gedi.jpg){width="70%"}
 
-![](../assets/img/lecture/gedi_forest_hh.jpg)
+![](../assets/img/lecture_1/gedi_forest_hh.jpg)
 :::
 
 ::: {.column width="33%"}
-![](../assets/img/lecture/openeo_logo.svg){width="80%"}
+![](../assets/img/lecture_1/openeo_logo.svg){width="80%"}
 
-![](../assets/img/lecture/actinia_logo.png){width="80%"}
+![](../assets/img/lecture_1/actinia_logo.png){width="80%"}
 :::
 
 :::
@@ -922,11 +938,11 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 
 :::: {.columns}
 :::{.column width="65%"}
-![](../assets/img/lecture/hyperspectral.jpg){width="85%" fig-align="center"}
+![](../assets/img/lecture_1/hyperspectral.jpg){width="85%" fig-align="center"}
 :::
 
 ::: {.column width="35%"}
-![](../assets/img/lecture/logo_prisma.png){fig-align="center"}
+![](../assets/img/lecture_1/logo_prisma.png){fig-align="center"}
 :::
 
 ::::
@@ -940,8 +956,8 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 
 - Cheaper UAVs with different types of cameras, e.g. thermal, multi- or hyperspectral sensors to detect and count animals in inaccessible places
 
-![](../assets/img/lecture/drone.png){.absolute top=100 right=-20 width=120}
-![](../assets/img/lecture/map_monkeys_with_drones_tir.png){fig-align="center" width="90%"}
+![](../assets/img/lecture_1/drone.png){.absolute top=100 right=-20 width=120}
+![](../assets/img/lecture_1/map_monkeys_with_drones_tir.png){fig-align="center" width="90%"}
 
 ::: footer
 @carrasco_escobar_use_2022
@@ -951,14 +967,14 @@ Environmental variables associated with non-communicable diseases. **Dr. Juan Di
 ---
 
 
-![](../assets/img/lecture/one_health_and_satellites.png){fig-align="center" width="95%"}
+![](../assets/img/lecture_1/one_health_and_satellites.png){fig-align="center" width="95%"}
 
 :::{.notes}
 It's clearly not all done already, and RS can contribute a great deal to reaching SDGs in general and SDG 3 in particular, especially if we consider that for human good health and well-being, environmental health and animal health are also necessary conditions.
 :::
 
 
-# { background-image="../assets/img/lecture/CONAE_aereo.png" }
+# { background-image="../assets/img/lecture_1/CONAE_aereo.png" }
 
 ::: {style="color: #ffffff; font-size: 5em;" .fragment}
 Thanks!
@@ -966,20 +982,16 @@ Thanks!
 
 <br><br>
 
-:::{.fragment style="float: right; font-size: 0.7em;"}
+::: {style="float: right; font-size: 0.7em;"}
 ![](../assets/img/profile.png){.bio-img}
 
-[{{< fa envelope >}} veronica.andreo@ig.edu.ar](veronica.andreo@ig.edu.ar)
-
-[{{< fa brands mastodon >}} VeronicaAndreo](https://fosstodon.org/@VeronicaAndreo)
-
-[{{< fa presentation-screen >}} Slides](https://veroandreo.github.io/pavia-2026/lectures/lecture-01.html)
+[{{< fa envelope >}} veronica.andreo\@ig.edu.ar](veronica.andreo@ig.edu.ar)
 :::
 
-::: {.fragment style="float: left;" .color-box-white}
-Unhealthy lab
+::: {style="float: left; font-size: 0.7em;"}
+![](../assets/img/lecture_1/gulich.jpg){.bio-img}
 
-![](../assets/img/lecture/insaludables.png)
+[{{< fa globe >}} https://ig.conae.unc.edu.ar/](https://ig.conae.unc.edu.ar/)
 :::
 
 
@@ -1001,11 +1013,11 @@ Unhealthy lab
 
 ::: {.columns}
 ::: {.column width="45%"}
-![](../assets/img/lecture/app-count.png)
+![](../assets/img/lecture_1/app-count.png)
 :::
 
 ::: {.column width="55%"}
-![](../assets/img/lecture/app-reports.png)
+![](../assets/img/lecture_1/app-reports.png)
 :::
 :::
 
