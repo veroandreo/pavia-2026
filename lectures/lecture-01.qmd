@@ -22,6 +22,9 @@ format:
     preview-links: auto
     theme: [default, ../assets/css/IG_style.scss]
     logo: ../assets/img/logos_ig_unc_conae.png
+    transition: fade
+    highlight-style: github
+    code-line-numbers: false
 ---
 
 ## About me {background-color="#1A428A"}
@@ -116,7 +119,7 @@ Which are these NTDs and why might remote sensing be relevant for their study? M
 ---
 
 ::: {.center}
-You all have seen this, right?
+Have you seen these?
 :::
 
 ::: {.columns}
@@ -135,7 +138,7 @@ You all have seen this, right?
 :::
 
 ::: {.notes}
-Before we reach the core of remote sensing uses and applications, there are a couple of things that happened first and some definitions I'd like to share. You all have seen this, right? This is the first class of a GIS course, but also the first time that the association between health/disease and place/space was clearly mapped.
+Before we reach the core of remote sensing uses and applications, there are a couple of things that happened first and some definitions I'd like to share. You all have seen this, right? This is the first class of a GIS course, but also the first time that the association between health/disease and place/space was clearly mapped. This was the beginning of what was called health geography — the application of geographical information, perspectives, and methods to the study of health, disease, and health care. 
 :::
 
 ## Health Geography
@@ -163,7 +166,7 @@ Before we reach the core of remote sensing uses and applications, there are a co
 :::
 
 ::: {.notes}
-This was the beginning of what was called health geography — the application of geographical information, perspectives, and methods to the study of health, disease, and health care. Within this discipline we can identify 3 fields of study: Environmental health, Health access and Disease ecology.
+Within this discipline we can identify 3 fields of study: Environmental health, Health access and Disease ecology.
 :::
 
 
@@ -284,7 +287,7 @@ The most common variables used in general are: LST, Precipitation, NDVI, Elevati
 ## { background-image="../assets/img/lecture_1/portada_campo_satelite_sig.png" }
 
 ::: {style="color: #ffffff; font-size: 1.2em;"}
-**How do we continuously map these variables?**
+**How do we map these variables?**
 From the thermometer and field notebook, to satellite data.
 :::
 
@@ -437,7 +440,7 @@ GIS is the "spatial laboratory" where we integrate all information. It can be th
 
 ## { background-image="../assets/img/lecture_1/portada_muchos_satelites.png" }
 
-::: {style="color: #ffffff; font-size: 1.2em;"}
+::: {style="color: #ffffff; font-size: 1.2em; text-align: center; position: absolute; bottom: 60px; width: 100%;"}
 **How to choose the right data for my problem?**
 :::
 
@@ -496,7 +499,7 @@ If we study other biological or ecological phenomena we should consider scale an
 :::
 
 
-## How to apply RS in disease ecology?
+## How do we apply RS in disease ecology?
 
 <br>
 
@@ -575,7 +578,7 @@ Let's have a look at some real cases...
 ### Time series analysis of satellite products {.smaller}
 
 - MODIS LST temporal and spatial reconstruction (LWR & splines)
-- Estimation of relevant indices (GRASS GIS temporal framework!)
+- Estimation of relevant indices (GRASS temporal framework!)
 - Detection of spatial and temporal clusters of favorable conditions for the occurrence of West Nile Fever cases in Greece
 
 ::: {.columns}
@@ -638,12 +641,15 @@ We combined a rescaled probability map of the host with one of the human cases t
 
 ---
 
-## Distribution and richness of Orthohantavirus reservoir hosts and genotypes
+## Distribution of Orthohantavirus reservoirs and genotypes
 
+<br>
 
-![](../assets/img/lecture_1/graphicalabstract2.png)
+![](../assets/img/lecture_1/graphicalabstract.png)
 
-
+:::{.footer}
+Pinotti & Andreo (unpublished)
+:::
 ---
 
 ### Cutaneous leishmaniasis and LULCC
@@ -668,6 +674,26 @@ We combined a rescaled probability map of the host with one of the human cases t
 
 ::: footer
 @andreo_ecological_2022, [*i.cva*](https://grass.osgeo.org/grass-stable/manuals/addons/i.cva.html)
+:::
+
+---
+
+### LULCC and disease outbreaks
+
+::: {.columns}
+::: {.column width="60%"}
+![Forest loss](../assets/img/lecture_1/forest_loss_1km.png)
+:::
+
+::: {.column width="40%"}
+![Visceral leishmaniasis](../assets/img/lecture_1/LV_kernel_density.png){width="60%"}
+
+![Cutaneous leishmaniasis](../assets/img/lecture_1/LC_kernel_density.png){width="60%"}
+:::
+:::
+
+::: footer
+PICT 2021 - GRF TI - 00372
 :::
 
 ---
@@ -708,6 +734,10 @@ We combined a rescaled probability map of the host with one of the human cases t
 ![](../assets/img/lecture_1/R_logo.png){.fragment .absolute bottom=30 right=420 width=130}
 
 ![](../assets/img/grass-green.svg){.fragment .absolute bottom=30 right=30 width=100}
+
+::: {.fragment .fade-in style="position: absolute; bottom: 220px; right: 5px; background-color: rgba(232, 31, 118, 0.75); color: white; padding: 4px 6px; border-radius: 6px; font-size: 0.75em; font-weight: bold;"}
+Talk on Wed 20 <br>at 11:00
+:::
 
 ::: footer
 @andreo_spatial_2021
@@ -764,7 +794,7 @@ Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás
 :::
 
 
-## Online surveillance system
+<!-- ## Online surveillance system
 
 <br>
 
@@ -783,27 +813,7 @@ Development of an early warning system (EWS) for dengue. PhD candidate, **Tomás
 ![](../assets/img/lecture_1/bid_geonode_mosquitos.jpg){.fragment fig-align="center" width="85%"}
 
 ![](../assets/img/lecture_1/bid_geonode_dengue_2020.jpg){.fragment fig-align="center" width="82%"}
-:::
-
----
-
-### LULCC and disease outbreaks
-
-::: {.columns}
-::: {.column width="60%"}
-![Forest loss](../assets/img/lecture_1/forest_loss_1km.png)
-:::
-
-::: {.column width="40%"}
-![Visceral leishmaniasis](../assets/img/lecture_1/LV_kernel_density.png){width="60%"}
-
-![Cutaneous leishmaniasis](../assets/img/lecture_1/LC_kernel_density.png){width="60%"}
-:::
-:::
-
-::: footer
-PICT 2021 - GRF TI - 00372
-:::
+::: -->
 
 ---
 
@@ -848,8 +858,9 @@ PhD candidate, **Abraham Coiman**.
 :::
 :::
 
+---
 
-## Other projects under development {.smaller}
+### Other projects under development {.smaller}
 
 ::: {layout="[3, 18]"}
 ![](../assets/img/lecture_1/anita.png){width="51"} ![](../assets/img/lecture_1/xime.png){width="51"}
@@ -858,10 +869,6 @@ Heat-Cordoba: Heat wave effects on urban areas: water quality, infrastructure an
 :::
 
 ![](../assets/img/lecture_1/heatcordoba_graphical_abstract.svg){width=65% fig-align="center"}
-
-
-
-## Is everything studied then?? { background-color="#1A428A" }
 
 ---
 
@@ -892,10 +899,13 @@ Heat-Cordoba: Heat wave effects on urban areas: water quality, infrastructure an
 
 ---
 
-## Challenges and gaps — Methods
+## Other challenges, gaps & open questions
 
+<br><br>
 
-Let's discuss on Thursday!
+::: {.fragment .fade-up style="text-align: center; font-size: 1.4em;"}
+Let's discuss and brainstorm on Friday!
+:::
 
 
 

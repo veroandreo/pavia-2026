@@ -3,6 +3,6 @@ title: "Lectures"
 listing:
   contents: "lecture-*.qmd"
   type: table
-  fields: [title, description, date]
+  fields: [title, date]
   sort: "date asc"
 ---

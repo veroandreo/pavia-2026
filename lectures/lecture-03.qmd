@@ -1,7 +1,32 @@
 ---
-title: "Let's solve it together"
-description: "Open problems in RS-based disease surveillance"
+title: "Let's solve it together: Open problems in RS-based disease surveillance"
+author:
+  name: Dr. Verónica Andreo
+  affiliation:
+    - CONICET
+    - Instituto Gulich (CONAE-UNC)
+  email: veronica.andreo@ig.edu.ar
+  orcid: 0000-0002-4633-2161
 date: "2026-05-22"
+title-slide-attributes:
+  data-background-color: "#1A428A"
+bibliography: ../references.bib
+csl: ../american-statistical-association.csl
+format:
+  revealjs:
+    hash-type: number
+    slide-number: true
+    chalkboard:
+      buttons: true
+    preview-links: auto
+    theme: [default, ../assets/css/IG_style.scss]
+    logo: ../assets/img/logos_ig_unc_conae.png
+    transition: fade
+    highlight-style: github
+    code-line-numbers: false
+    toc: true
+    toc-depth: 1
+    toc-title: "Outline"
 ---
 
 ## Overview

@@ -1,9 +1,50 @@
 ---
-title: "Notebooks"
-listing:
-  contents:
-    - "notebook-*.qmd"
-  type: table
-  fields: [title, description, date]
-  sort: "date asc"
+title: "Workshop"
+date: today
+author: "Verónica Andreo"
+toc: true
 ---
+
+### Overview
+
+In this practical session, we will model and map the habitat suitability for the Asian tiger mosquito in Northern Italy based
+on variables derived from daily Land Surface Temperature (LST) data.
+
+We will roughly go through the following steps:
+<img src="../assets/img/studio/aedes_albopictus.jpg" width="30%" align="right"/>
+
+  - Import species records
+  - Create random background points
+  - Create environmental layers from daily LST data
+  - Train a species distribution model
+  - Evaluate model's prediction
+  - Visualize results
+
+![](../assets/img/workflow_sdm_other.png){width="85%" fig-align="center"}
+
+
+### Data
+
+:::: {.columns}
+
+::: {.column width="38%"}
+![](../assets/img/studio/lst_north_italy_2014.png){width=100%}
+:::
+
+::: {.column width="62%"}
+- Records of *Aedes albopictus* (Asian tiger mosquito) in Northern Italy downloaded from [GBIF](https://www.gbif.org/)
+- Average daily MODIS LST reconstructed by [mundialis GmbH & Co. KG](https://www.mundialis.de/en/) based on @metz_new_2017:
+    - 1 km spatial resolution
+    - Converted to Celsius degrees
+:::
+
+::::
+
+### Software
+
+We will use GRASS, Python and MaxEnt. The whole workflow will be run
+in a Jupyter notebook within [Google Colab](https://colab.research.google.com/). 
+To open the notebooks in Colab, just use the URL of [this repository](https://github.com/veroandreo/pavia-2026) as shown below:
+
+**include img here**
+

@@ -1,5 +1,6 @@
 ---
-title: "Spatial distribution of *Aedes aegypti* oviposition temporal patterns"
+title: "Mapping mosquito activity from space"
+subtitle: "Methods, choices, and open questions in urban disease surveillance"
 author:
   name: Dr. Verónica Andreo
   affiliation:
