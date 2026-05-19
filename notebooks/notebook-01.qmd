@@ -130,58 +130,6 @@ We'll explore this further in the last part of this session.
 ![](../assets/img/studio/RwithinGRASS_and_Rstudio_from_grass.png)
 
 
-## Demo session overview
-
-Habitat suitability mapping for the Asian tiger mosquito in Northern Italy based
-on variables derived from daily LST data
-
-- **GRASS**
-    - Import species records
-    - Create random background points
-    - Create different environmental layers from daily LST data
-- **R**
-    - Read data from GRASS into R
-    - Model species distribution
-    - Model evaluation
-    - Visualization of results
-
-![](../assets/img/workflow_sdm_other.png){width="85%" fig-align="center"}
-
-
-### Data for the session
-
-<img src="../assets/img/studio/aedes_albopictus.jpg" width="30%" align="right"/>
-
-- Records of *Aedes albopictus* (Asian tiger mosquito) in Northern Italy
-  downloaded from [GBIF](https://www.gbif.org/)
-- Average daily MODIS LST reconstructed by 
-  [mundialis GmbH & Co. KG](https://www.mundialis.de/en/) based on @metz_new_2017:
-    - 1 km spatial resolution
-    - Converted to Celsius degrees
-
-<img src="../assets/img/studio/lst_north_italy_2014.png" width="40%" align="right" padding-right="15px"/>
-
-
-### Get the sample project
-
-- Create a folder named `grass_foss4geu_2024`
-- Within `grass_foss4geu_2024` create a folder named `grassdata`
-- Download the [eu_laea project with LST mapset](https://drive.google.com/file/d/1z1b2NLC4Z6yzz_57RddTdRRK_gUkd7fU/view?usp=sharing)
-and unzip it within your `grassdata` folder
-- Download [mosquito data](https://github.com/veroandreo/grass_ncsu_2023/raw/main/data/aedes_albopictus.gpkg) and drop it within `grass_foss4geu_2024`
-
-The `grass_foss4geu_2024` folder's tree should look like this:
-
-```         
-  grass_foss4geu_2024/
-  ├── aedes_albopictus.gpkg
-  └── grassdata
-      └── eu_laea
-          ├── italy_LST_daily
-          └── PERMANENT
-
-```
-
 # GRASS GIS HELP!!!
 
 - [GRASS GIS Reference Manual](https://grass.osgeo.org/grass-stable/manuals/index.html): Index with links to all GRASS docs

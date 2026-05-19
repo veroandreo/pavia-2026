@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.31">
 
   <meta name="author" content="Dr.&nbsp;Verónica Andreo">
@@ -152,8 +154,293 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
   <p class="date">2026-05-22</p>
 </section>
 <section class="slide level2">
-<h2>Overview</h2>
-<p>Placeholder for Lecture 3 — Discussion session.</p>
+<h2>How this session works</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><strong>No slides with answers</strong> — only questions</li>
+<li>I bring three open problems from my own research</li>
+<li>We think through them <strong>together</strong> — your modeling instincts, my domain knowledge</li>
+<li>The goal is not consensus but better-defined problems</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<blockquote>
+<p><em>Real research problems are messy. Data are scarce, labels are uncertain, biology is noisy, and the “right” method is rarely obvious.</em></p>
+</blockquote>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>Three problems for today</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 23%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Problem</th>
+<th>The question for the room</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><strong>AI buzz vs.&nbsp;ecological data</strong></td>
+<td>Can ML/DL actually learn something from 30 points or 150 time series?</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>The pipeline we built</strong></td>
+<td>Here’s exactly what we did — what would you build instead?</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>Transferability</strong></td>
+<td>The model was trained in Córdoba — what would it take to use it in Pavia?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<section class="title-slide slide level1 center" data-background-color="#1A428A">
+<h1>Problem 1</h1>
+<p>Is the AI buzz worthy for ecological modeling?</p>
+<p><em>When your data is 30 points, 150 time series, zeroes, and imbalance</em></p>
+</section>
+<section class="slide level2">
+<h2>The tension</h2>
+<p>Two concrete scenarios from this week:</p>
+<div class="columns">
+<div class="column tiny" style="width:50%;">
+<p><strong>Scenario A — Species distribution modeling</strong></p>
+<ul>
+<li>~30–100 occurrence records of <em>Aedes albopictus</em> in Northern Italy</li>
+<li>Presence-only: we know where it was found, not where it is absent</li>
+<li>8–10 environmental predictors derived from daily LST</li>
+<li>Classical approach: <strong>MaxEnt</strong></li>
+</ul>
+</div><div class="column tiny" style="width:50%;">
+<p><strong>Scenario B — Oviposition pattern classification</strong></p>
+<ul>
+<li>150 ovitrap time series across one city, two seasons</li>
+<li>3 clusters with data-driven labels and severe class imbalance</li>
+<li>~20 Sentinel-2 texture and spectral features as predictors</li>
+<li>Classical approach: <strong>random forest</strong></li>
+</ul>
+</div></div>
+<p><br></p>
+<blockquote>
+<p><strong>Can ML or DL do better than these — and how would we even know?</strong></p>
+</blockquote>
+<aside class="notes">
+<p>The point here is not to dismiss AI — it is to ask an honest question. These are the actual data sizes we work with. The burden of proof is on the more complex method.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+<h2>Discussion — AI and ecological data</h2>
+<ol type="1">
+<li><p>Can any model genuinely learn from 30 presence-only points? At what sample size does model complexity start helping rather than hurting?</p></li>
+<li><p>We had 150 time series and used time series clustering + RF. What would you try instead — and would the result be more accurate, more interpretable, or just more complex?</p></li>
+<li><p>Most datasets have structural problems: presence-only records, zero inflation, class imbalance. Are these problems that more complex algorithms can solve — or do they require different data collection strategies?</p></li>
+<li><p>Standard cross-validation might be unreliable at these sample sizes. How would you honestly evaluate a model trained on 30 points or 150 time series?</p></li>
+</ol>
+<aside class="notes">
+<p>Let the room drive toward concrete proposals. Push back gently if someone proposes a method that requires 10,000 samples — ask what they would do <em>with this data, today</em>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section class="title-slide slide level1 center" data-background-color="#1A428A">
+<h1>Problem 2</h1>
+<p>Here’s exactly what we did</p>
+<p><em>Where would you intervene?</em></p>
+</section>
+<section class="slide level2">
+<h2>The pipeline</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="../assets/img/lecture_2/workflow.png"></p>
+</div><div class="column tiny" style="width:45%;">
+<p><img data-src="../assets/img/lecture_2/dengue_cases_and_incidence.png"></p>
+<p><img data-src="../assets/img/lecture_2/incidence_vs_ovi_clus_prop.png"></p>
+</div></div>
+<aside class="notes">
+<p>Each step makes a choice that seemed reasonable at the time. The choices compound. ρ ≈ 0.15 at the end — is that a floor or a ceiling?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+<h2>Discussion — the pipeline</h2>
+<ol type="1">
+<li><p>The pipeline has five sequential steps, each introducing noise and information loss. Where would you intervene first — and what would you replace that step with?</p></li>
+<li><p>We aggregated to neighbourhoods because that is how dengue incidence is officially reported. Can you recover a fine-scale signal from aggregated data?</p></li>
+<li><p>We used dengue incidence only as a validation target, not as a training signal. Would an end-to-end pipeline that uses dengue as a (noisy, weak) supervision signal be feasible with this data?</p></li>
+<li><p>Can you think of an alternative pipeline that works with both datasets as points, respects their spatial locations, and also accounts for the time lag between mosquito activity and disease onset?</p></li>
+</ol>
+<aside class="notes">
+<p>Question 3 is the most technically open — if the room has deep learning people, this is where they will engage. Question 4 is yours to anchor: remind the room that ovitraps are geolocated weekly time series, dengue cases are geolocated (with some uncertainty) and dated — in principle, all the information is there, the aggregation was a choice, not a necessity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section class="title-slide slide level1 center" data-background-color="#1A428A">
+<h1>Problem 3</h1>
+<p>Can a model trained in Córdoba work in Pavia?</p>
+<p><em>The transferability problem</em></p>
+</section>
+<section class="slide level2">
+<h2>The tension</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>What we showed this week:</strong></p>
+<ul>
+<li>Feature importances shifted between the two seasons <em>within the same city</em>
+<ul>
+<li>2017–18: land cover diversity indices</li>
+<li>2018–19: texture + water index variability</li>
+</ul></li>
+</ul>
+<p><strong>The question:</strong> if inter-annual variation within Córdoba already changes what matters, what breaks when you move continents, climate zones, and species?</p>
+</div><div class="column tiny" style="width:45%;">
+<p><img data-src="../assets/img/lecture_2/predictions_1718_1819.png"></p>
+<p><em>City-wide predicted pattern maps, Córdoba</em></p>
+</div></div>
+<aside class="notes">
+<p>The Sentinel-2 covariates (NDVI, NDBI, NDWI, texture) are geometrically universal but ecologically context-dependent. “Land cover diversity” in a mid-density Argentine city carries a different ecological signal than in a Po Valley Italian town.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+<h2>Discussion — transferability</h2>
+<ol type="1">
+<li><p>The Sentinel-2 covariates are geometrically universal — the same bands exist everywhere. But does “high NDWI variability around an ovitrap in Córdoba” mean the same thing ecologically in Pavia? How would you test for covariate equivalence across cities?</p></li>
+<li><p>Our pipeline has no mechanism to flag when it is predicting in covariate space it has never seen. What would a useful uncertainty or extrapolation warning look like in a classification pipeline like this?</p></li>
+<li><p>What is the minimum data you would need from a new city to adapt this model — and how would you design that data collection to be as informative as possible?</p></li>
+</ol>
+<aside class="notes">
+<p>Good provocation: ask whether anyone has seen RS-based models transfer successfully across geographies. Push on whether the problem is the covariates, the labels, or both.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section class="title-slide slide level1 center" data-background-color="#1A428A">
+<h1>Wrapping up</h1>
+
+</section>
+<section class="slide level2">
+<h2>What we worked on today</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>What I brought</th>
+<th>What I hope to leave with</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>AI &amp; ecological data</strong></td>
+<td>30 points, 150 time series, zeroes, imbalance</td>
+<td>A sense of what complexity is justified</td>
+</tr>
+<tr class="even">
+<td><strong>The pipeline</strong></td>
+<td>Five steps, ρ ≈ 0.15</td>
+<td>At least one concrete alternative to try</td>
+</tr>
+<tr class="odd">
+<td><strong>Transferability</strong></td>
+<td>A model trained in Córdoba</td>
+<td>A protocol for what to collect in a new city</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+<h2>Take-home messages</h2>
+<ul>
+<li>Classical models (MaxEnt, random forest) are honest about what they can do with sparse, noisy data — before adopting something more complex, the question is: <strong>what does the new method give us that these do not?</strong></li>
+<li>The pipeline we built makes a series of choices that each seemed reasonable — but the choices compound. <strong>Changing one step changes what the next step can do.</strong></li>
+<li>The hardest constraint is not the algorithm. It is the data: how it was collected, at what scale, with what biases. <strong>No model fixes a sampling problem.</strong></li>
+</ul>
+</section></section>
+<section class="title-slide slide level1 center" data-background-image="../assets/img/lecture_1/CONAE_aereo.png">
+<h1></h1>
+<div class="fragment" style="display: inline-block; background: rgba(255,255,255,0.65); color: #1A428A; font-size: 3em; padding: 0.15em 0.4em; border-radius: 4px;">
+<p>Thanks! Let’s not forget to think!</p>
+</div>
+<p><br><br></p>
+<div style="float: right; font-size: 0.7em;">
+<p><img data-src="../assets/img/profile.png" class="bio-img"></p>
+<p><a href="veronica.andreo@ig.edu.ar"><i class="fa-solid fa-envelope" aria-label="envelope"></i> veronica.andreo@ig.edu.ar</a></p>
+</div>
+<div style="float: left; font-size: 0.7em;">
+<p><img data-src="../assets/img/lecture_1/gulich.jpg" class="bio-img"></p>
+<p><a href="https://ig.conae.unc.edu.ar/"><i class="fa-solid fa-globe" aria-label="globe"></i> https://ig.conae.unc.edu.ar/</a></p>
+</div>
 
 
 </section>

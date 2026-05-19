@@ -22,13 +22,214 @@ format:
     theme: [default, ../assets/css/IG_style.scss]
     logo: ../assets/img/logos_ig_unc_conae.png
     transition: fade
-    highlight-style: github
-    code-line-numbers: false
-    toc: true
-    toc-depth: 1
-    toc-title: "Outline"
 ---
 
-## Overview
+## How this session works
 
-Placeholder for Lecture 3 — Discussion session.
+<br>
+
+:::: {.columns}
+::: {.column width="60%"}
+- **No slides with answers** — only questions
+- I bring three open problems from my own research
+- We think through them **together** — your modeling instincts, my domain knowledge
+- The goal is not consensus but better-defined problems
+
+:::
+::: {.column width="40%"}
+> *Real research problems are messy. Data are scarce, labels are uncertain, biology is noisy, and the "right" method is rarely obvious.*
+:::
+::::
+
+
+## Three problems for today
+
+| # | Problem | The question for the room |
+|---|---------|--------------------------|
+| 1 | **AI buzz vs. ecological data** | Can ML/DL actually learn something from 30 points or 150 time series? |
+| 2 | **The pipeline we built** | Here's exactly what we did — what would you build instead? |
+| 3 | **Transferability** | The model was trained in Córdoba — what would it take to use it in Pavia? |
+
+
+# Problem 1 {background-color="#1A428A"}
+
+Is the AI buzz worthy for ecological modeling?
+
+*When your data is 30 points, 150 time series, zeroes, and imbalance*
+
+## The tension
+
+Two concrete scenarios from this week:
+
+:::: {.columns}
+::: {.column width="50%" .tiny}
+**Scenario A — Species distribution modeling**
+
+- ~30–100 occurrence records of *Aedes albopictus* in Northern Italy
+- Presence-only: we know where it was found, not where it is absent
+- 8–10 environmental predictors derived from daily LST
+- Classical approach: **MaxEnt**
+:::
+
+::: {.column width="50%" .tiny}
+**Scenario B — Oviposition pattern classification**
+
+- 150 ovitrap time series across one city, two seasons
+- 3 clusters with data-driven labels and severe class imbalance
+- ~20 Sentinel-2 texture and spectral features as predictors
+- Classical approach: **random forest**
+:::
+::::
+
+<br>
+
+> **Can ML or DL do better than these — and how would we even know?**
+
+::: {.notes}
+The point here is not to dismiss AI — it is to ask an honest question. These are the actual data sizes we work with. The burden of proof is on the more complex method.
+:::
+
+## Discussion — AI and ecological data
+
+1. Can any model genuinely learn from 30 presence-only points? At what sample size does model complexity start helping rather than hurting?
+
+2. We had 150 time series and used time series clustering + RF. What would you try    instead — and would the result be more accurate, more interpretable, or just more complex?
+
+3. Most datasets have structural problems: presence-only records, zero inflation, class imbalance. Are these problems that more complex algorithms can solve — or do they require different data collection strategies?
+
+4. Standard cross-validation might be unreliable at these sample sizes. How would you honestly evaluate a model trained on 30 points or 150 time series?
+
+::: {.notes}
+Let the room drive toward concrete proposals. Push back gently if someone proposes a method that requires 10,000 samples — ask what they would do *with this data, today*.
+:::
+
+
+# Problem 2 {background-color="#1A428A"}
+
+Here's exactly what we did
+
+*Where would you intervene?*
+
+## The pipeline
+
+:::: {.columns}
+::: {.column width="55%"}
+![](../assets/img/lecture_2/workflow.png)
+:::
+
+::: {.column width="45%" .tiny}
+![](../assets/img/lecture_2/dengue_cases_and_incidence.png)
+
+![](../assets/img/lecture_2/incidence_vs_ovi_clus_prop.png)
+:::
+::::
+
+::: {.notes}
+Each step makes a choice that seemed reasonable at the time. The choices compound. ρ ≈ 0.15 at the end — is that a floor or a ceiling?
+:::
+
+## Discussion — the pipeline
+
+1. The pipeline has five sequential steps, each introducing noise and information loss. Where would you intervene first — and what would you replace that step with?
+
+2. We aggregated to neighbourhoods because that is how dengue incidence is officially reported. Can you recover a fine-scale signal from aggregated data?
+
+3. We used dengue incidence only as a validation target, not as a training signal. Would an end-to-end pipeline that uses dengue as a (noisy, weak) supervision signal be feasible with this data?
+
+4. Can you think of an alternative pipeline that works with both datasets as points, respects their spatial locations, and also accounts for the time lag between mosquito activity and disease onset?
+
+::: {.notes}
+Question 3 is the most technically open — if the room has deep learning people, this is where they will engage. Question 4 is yours to anchor: remind the room that ovitraps are geolocated weekly time series, dengue cases are geolocated (with some uncertainty) and dated — in principle, all the information is there, the aggregation was a choice, not a necessity.
+:::
+
+
+# Problem 3 {background-color="#1A428A"}
+
+Can a model trained in Córdoba work in Pavia?
+
+*The transferability problem*
+
+## The tension
+
+:::: {.columns}
+::: {.column width="55%"}
+**What we showed this week:**
+
+- Feature importances shifted between the two seasons *within the same city*
+  - 2017–18: land cover diversity indices
+  - 2018–19: texture + water index variability
+
+**The question:** if inter-annual variation within Córdoba already changes what
+matters, what breaks when you move continents, climate zones, and species?
+:::
+
+::: {.column width="45%" .tiny}
+![](../assets/img/lecture_2/predictions_1718_1819.png)
+
+*City-wide predicted pattern maps, Córdoba*
+:::
+::::
+
+::: {.notes}
+The Sentinel-2 covariates (NDVI, NDBI, NDWI, texture) are geometrically universal but ecologically context-dependent. "Land cover diversity" in a mid-density Argentine city carries a different ecological signal than in a Po Valley Italian town.
+:::
+
+## Discussion — transferability
+
+1. The Sentinel-2 covariates are geometrically universal — the same bands exist
+   everywhere. But does "high NDWI variability around an ovitrap in Córdoba" mean the
+   same thing ecologically in Pavia? How would you test for covariate equivalence
+   across cities?
+
+2. Our pipeline has no mechanism to flag when it is predicting in covariate space it
+   has never seen. What would a useful uncertainty or extrapolation warning look like
+   in a classification pipeline like this?
+
+3. What is the minimum data you would need from a new city to adapt this model —
+   and how would you design that data collection to be as informative as possible?
+
+::: {.notes}
+Good provocation: ask whether anyone has seen RS-based models transfer successfully across geographies. Push on whether the problem is the covariates, the labels, or both.
+:::
+
+
+# Wrapping up {background-color="#1A428A"}
+
+## What we worked on today
+
+| Problem | What I brought | What I hope to leave with |
+|---------|---------------|--------------------------|
+| **AI & ecological data** | 30 points, 150 time series, zeroes, imbalance | A sense of what complexity is justified |
+| **The pipeline** | Five steps, ρ ≈ 0.15 | At least one concrete alternative to try |
+| **Transferability** | A model trained in Córdoba | A protocol for what to collect in a new city |
+
+## Take-home messages
+
+- Classical models (MaxEnt, random forest) are honest about what they can do with
+  sparse, noisy data — before adopting something more complex, the question is:
+  **what does the new method give us that these do not?**
+- The pipeline we built makes a series of choices that each seemed reasonable — but
+  the choices compound. **Changing one step changes what the next step can do.**
+- The hardest constraint is not the algorithm. It is the data: how it was collected,
+  at what scale, with what biases. **No model fixes a sampling problem.**
+
+
+# { background-image="../assets/img/lecture_1/CONAE_aereo.png" }
+
+::: {style="display: inline-block; background: rgba(255,255,255,0.65); color: #1A428A; font-size: 3em; padding: 0.15em 0.4em; border-radius: 4px;" .fragment}
+Thanks! Let's not forget to think!
+:::
+
+<br><br>
+
+::: {style="float: right; font-size: 0.7em;"}
+![](../assets/img/profile.png){.bio-img}
+
+[{{< fa envelope >}} veronica.andreo\@ig.edu.ar](veronica.andreo@ig.edu.ar)
+:::
+
+::: {style="float: left; font-size: 0.7em;"}
+![](../assets/img/lecture_1/gulich.jpg){.bio-img}
+
+[{{< fa globe >}} https://ig.conae.unc.edu.ar/](https://ig.conae.unc.edu.ar/)
+:::
