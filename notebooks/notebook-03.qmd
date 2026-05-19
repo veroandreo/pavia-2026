@@ -19,11 +19,11 @@ For that, we need to connect to GRASS via the `rgrass` package in order to read 
 
 # [**rgrass**](https://cran.r-project.org/web/packages/rgrass/index.html)
 
-- `initGRASS()`: starts a GRASS GIS session from R
-- `execGRASS()`: executes GRASS GIS commands 
+- `initGRASS()`: starts a GRASS session from R
+- `execGRASS()`: executes GRASS commands 
 - `gmeta()`: shows GRASS location metadata
 - `read_VECT()` and `read_RAST()`: read vector and raster maps from GRASS into R *terra* objects.
-- `write_VECT()` and `write_RAST()`: write R *terra* objects into the GRASS GIS database
+- `write_VECT()` and `write_RAST()`: write R *terra* objects into the GRASS database
 
 ::: {.callout-note}
 Package `terra` is developed by @terra and will eventually replace `raster`.
@@ -31,32 +31,9 @@ Package `terra` is developed by @terra and will eventually replace `raster`.
 
 ## Usage
 
-GRASS GIS and R can be used together in two ways:
-
-A. Using [R within a GRASS GIS session](https://grasswiki.osgeo.org/wiki/R_statistics/rgrass7#R_within_GRASS), i.e. starting R (or RStudio) from GRASS terminal
-<br>
-
-- type `R` or `rstudio &` in the GRASS GIS terminal
-- load `rgrass` library
-- use `read_VECT()`, `read_RAST()` to read data from GRASS into R
-- access GRASS GIS modules and database through `execGRASS()`
-- write data (back) to GRASS database with `write_VECT()` and `write_RAST()`
-
-
-![](../assets/img/studio/grass_terminal_calling_R.png){width="60%" fig-align="center"}
-
-B. Using [GRASS GIS within an R session](https://grasswiki.osgeo.org/wiki/R_statistics/rgrass7#GRASS_within_R), i.e. we connect to GRASS GIS database from within R (or RStudio).
-<br>
-
-- we need to start GRASS GIS with `initGRASS()` from R
-- we access GRASS GIS modules through `execGRASS()`
-- use `read_VECT()`, `read_RAST()`, `write_VECT()` and `write_RAST()` to read data from and to GRASS database
-
 ::: {.callout-note}
-`rgrass` was originally intended to apply GRASS functions on data outside GRASS database; hence some prefer to create throw away locations
+See the [**Get started with GRASS & R**](https://grass-tutorials.osgeo.org/content/tutorials/get_started/fast_track_grass_and_R.html) tutorial for a 101 guide on interfacing GRASS and R.
 :::
-
-![](../assets/img/studio/grass_within_rstudio_session.png){width="70%" fig-align="center"}
 
 # SDM workflow
 
@@ -88,7 +65,7 @@ library(zeallot)
 
 ### Initialize GRASS
 
-We'll use **option B**, i.e., we'll launch GRASS GIS in a defined project and mapset, from R
+Let's launch GRASS in our project and mapset, from R
 
 ```{r}
 #| label: grass_init
@@ -97,13 +74,13 @@ We'll use **option B**, i.e., we'll launch GRASS GIS in a defined project and ma
 # path to GRASS binaries (run `grass --config path`)
 grassbin <- system("grass --config path", intern = TRUE)
 # path to GRASS database
-grassdata <- path.expand("~/grass_ncsu_2023/grassdata/")
+grassdata <- "/content/drive/MyDrive/pavia_2026"
 # path to location
 project <- "eu_laea"
 # path to mapset
 mapset <- "italy_LST_daily"
 
-# start GRASS GIS from R
+# start GRASS from R
 initGRASS(gisBase = grassbin, 
           home = tempdir(), 
           gisDbase = grassdata, 
@@ -149,7 +126,7 @@ We read now all the variables that we derived from the daily LST time series.
 # List rasters by pattern
 worldclim <- execGRASS("g.list", 
                        parameters = list(type = "raster", 
-                                         pattern = "worldclim*"))
+                                         pattern = "bioclim*"))
 avg <- execGRASS("g.list", 
                  parameters = list(type = "raster", 
                                    pattern = "avg*"))

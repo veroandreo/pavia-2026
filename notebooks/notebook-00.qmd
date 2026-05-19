@@ -24,7 +24,7 @@ format:
 To open this notebook in Colab, just use the [repository URL](https://github.com/veroandreo/pavia-2026) as shown below:
 
 
-**include img here**
+![](../assets/img/workshop/open_nb_colab.png){fig-align="center"}
 
 
 ## Mount your GDrive in Colab
@@ -769,7 +769,7 @@ gs.run_command("r.maxent.setup",
 gs.run_command("r.maxent.setup", flags="j")
 ```
 
-### Variable selection
+#### Variable selection
 
 Before training, we remove redundant predictors using the Variance Inflation
 Factor (VIF). We keep variables with VIF < 10.
@@ -812,7 +812,7 @@ selected_vars = [
 ]
 ```
 
-### Export data for MaxEnt (SWD format)
+#### Export data for MaxEnt (SWD format)
 
 `v.maxent.swd` extracts the predictor values at occurrence and background
 locations and exports them in the *Samples With Data* (SWD) format that MaxEnt expects. It also exports ASCII rasters of the predictors.
@@ -833,7 +833,7 @@ gs.run_command(
 )
 ```
 
-### Train MaxEnt model with cross-validation
+#### Train MaxEnt model with cross-validation
 
 We run 4-fold cross-validation to assess model performance. MaxEnt will
 iteratively hold out one fold as test data and train on the remaining three.
@@ -910,7 +910,7 @@ pa_map.add_layer_control(position="bottomright")
 pa_map.show()
 ```
 
-### Predict species distribution in other areas or time periods
+#### Predict species distribution in other areas or time periods
 
 We can re-predict from the lambdas file. This is useful for applying the model to different environmental scenarios:
 
@@ -925,7 +925,7 @@ We can re-predict from the lambdas file. This is useful for applying the model t
 # )
 ```
 
-### Disclaimer
+#### Disclaimer
 
 This is only a simple example for doing SDM and only the beginning… There are several other steps or pathways we may follow:
 
