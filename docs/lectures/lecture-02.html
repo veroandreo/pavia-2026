@@ -131,7 +131,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section data-background-color="#1A428A" class="quarto-title-block center">
+<section data-background-color="#1A428A" data-background-image="../assets/img/lecture_2/qrcode.png" data-background-position="bottom 150px right 150px" data-background-size="250px" class="quarto-title-block center">
   <h1 class="title">Mapping mosquito activity from space</h1>
   <p class="subtitle">Methods, choices, and open questions in urban disease surveillance</p>
 
@@ -153,19 +153,6 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 </div>
 
   <p class="date">2026-05-20</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Outline</h2>
-<ul>
-<li>Motivation</li>
-<li>Data</li>
-<li>Methods</li>
-<li>Results</li>
-<li>Discussion</li>
-<li>Conclusions</li>
-
-</ul>
-</nav>
 </section>
 <section>
 <section class="title-slide slide level1 center" data-background-color="#1A428A">
@@ -187,10 +174,10 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 <section class="slide level2">
 <h2>Research questions</h2>
 <ol type="1">
-<li>Do distinct groups of temporal activity patterns exist among <em>Ae. aegypti</em> ovitraps?</li>
-<li>Are those patterns associated with local environmental conditions detectable from satellite imagery?</li>
-<li>Can we <strong>predict</strong> patterns city-wide — even where no field data exist?</li>
-<li>Do predicted patterns relate to observed dengue incidence?</li>
+<li>Do distinct groups of <strong>temporal activity patterns</strong> exist among <em>Ae. aegypti</em> ovitrap data?</li>
+<li>Are those patterns <strong>associated with local environmental conditions</strong> detectable from satellite imagery?</li>
+<li>Can we <strong>predict patterns city-wide</strong> where no mosquito field data exist?</li>
+<li>Do predicted patterns relate to observed <strong>dengue incidence</strong>?</li>
 </ol>
 </section></section>
 <section>
@@ -261,7 +248,7 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 </tr>
 </tbody>
 </table>
-<p>All covariates were extracted over <strong>buffer areas</strong> of 50 and 100m radius around each ovitrap location.</p>
+<p>All covariates were extracted over <strong>buffer areas</strong> of 50 and 100m radius around each ovitrap location (flight range of female mosquitoes).</p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center" data-background-color="#1A428A">
@@ -271,7 +258,8 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 <section class="slide level2">
 <h2>Analytical pipeline</h2>
 
-<img data-src="../assets/img/lecture_2/workflow.png" class="quarto-figure quarto-figure-center r-stretch"><p><br> Routines: <a href="https://github.com/veroandreo/mosquito-ts-clust" class="uri">https://github.com/veroandreo/mosquito-ts-clust</a></p>
+<img data-src="../assets/img/lecture_2/workflow.png" class="quarto-figure quarto-figure-center r-stretch"><p><br></p>
+<p><span class="tiny">Routines: <a href="https://github.com/veroandreo/mosquito-ts-clust" class="uri">https://github.com/veroandreo/mosquito-ts-clust</a></span></p>
 </section>
 <section class="slide level2">
 <h2>Step 1: Time series clustering</h2>
@@ -353,7 +341,7 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 <h2>Step 4: Validation against dengue incidence</h2>
 <ul>
 <li>Aggregate predicted class proportions per <strong>neighbourhood</strong></li>
-<li>Correlate with dengue incidence (cases / 10,000 inhabitants)</li>
+<li>Correlate with dengue incidence (cases / 10,000 inhabitants) per neighbourhood</li>
 <li>Spearman’s ρ, visual inspection of spatial concordance</li>
 </ul>
 
@@ -406,6 +394,17 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section class="slide level2">
+<h2>Three temporal patterns - cont.</h2>
+<ul>
+<li>Median end date consistent across groups and periods</li>
+<li>Median start date more variable — drives differences in season length</li>
+<li>2018–2019 season started ~1 month earlier than 2017–2018</li>
+<li>Oviposition season ~20–30 days longer in 2018–2019</li>
+<li>Mean peak egg counts 2–3× higher in 2018–2019</li>
+<li>Date of peak similar between seasons</li>
+</ul>
 </section>
 <section class="slide level2">
 <h2>Three temporal patterns - cont.</h2>
@@ -505,17 +504,6 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 </tbody>
 </table>
 </div>
-</section>
-<section class="slide level2">
-<h2>Three temporal patterns - cont.</h2>
-<ul>
-<li>Median end date consistent across groups and periods</li>
-<li>Median start date more variable — drives differences in season length</li>
-<li>2018–2019 season started ~1 month earlier than 2017–2018</li>
-<li>Oviposition season ~20–30 days longer in 2018–2019</li>
-<li>Mean peak egg counts 2–3× higher in 2018–2019</li>
-<li>Date of peak similar between seasons</li>
-</ul>
 </section>
 <section class="slide level2">
 <h2>Three temporal patterns - cont.</h2>
@@ -674,7 +662,7 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 <li>G2 and G3: Higher entropy, lower IDM &amp; ASM (less homogeneity/uniformity), higher SD of water &amp; vegetation indices</li>
 <li><strong>locally heterogeneous, vegetated microenvironments</strong> favour higher and earlier oviposition peaks?</li>
 </ul></li>
-<li><strong>2017–2018</strong>: diversity measures and average vegetation/water conditions more relevant — but accuracy was much lower</li>
+<li><strong>2017–2018</strong>: diversity measures and average vegetation/water conditions more relevant — but accuracy was lower</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -721,14 +709,13 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 <ol type="1">
 <li class="fragment"><em>Ae. aegypti</em> temporal activity is <strong>spatially heterogeneous</strong> within cities</li>
 <li class="fragment">That heterogeneity is <strong>predictable</strong> from freely available satellite imagery</li>
-<li class="fragment">Sentinel-2 + random forest = a practical, scalable surveillance tool</li>
-<li class="fragment">The spatial distribution of patterns has <strong>epidemiological relevance</strong> (dengue)</li>
-<li class="fragment">Open-source tools (GRASS, Python, R) make this workflow <strong>transferable</strong></li>
+<li class="fragment">The spatial distribution of patterns might have <strong>epidemiological relevance</strong> (dengue)</li>
+<li class="fragment">Open-source tools (GRASS, Python, R) make this workflow <strong>reproducible</strong></li>
 </ol>
 </section>
 <section class="slide level2">
 <h2>Implications for public health</h2>
-<p>Understanding <em>where</em> and <em>when</em> mosquitoes are most active — without exhaustive field campaigns — can:</p>
+<p>Understanding <em>where</em> and <em>when</em> mosquitoes are most active — without exhaustive field campaigns — could:</p>
 <ul>
 <li>Guide <strong>targeted vector control</strong> interventions</li>
 <li>Support <strong>early warning systems</strong></li>
@@ -753,13 +740,13 @@ Dr.&nbsp;Verónica Andreo <a href="https://orcid.org/0000-0002-4633-2161" class=
 </div>
 </section>
 <section class="slide level2">
-<h2>References &amp; resources</h2>
-<p><strong>Paper:</strong><br>
-Andreo, V., Porcasi, X., Guzman, C., Lopez, L. &amp; Scavuzzo, C.M. (2021). Spatial distribution of <em>Aedes aegypti</em> oviposition temporal patterns and their relationship with environment and dengue incidence.<br>
+<h2>Reference</h2>
+<p>Andreo, V., Porcasi, X., Guzman, C., Lopez, L. &amp; Scavuzzo, C.M. (2021). Spatial distribution of <em>Aedes aegypti</em> oviposition temporal patterns and their relationship with environment and dengue incidence.<br>
 <em>Insects</em>, 12(10), 919. <a href="https://doi.org/10.3390/insects12100919" class="uri">https://doi.org/10.3390/insects12100919</a></p>
 
 
-</section></section>
+
+<img data-src="../assets/img/lecture_2/qrcode.png" class="quarto-figure quarto-figure-center r-stretch" width="200"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../assets/img/logos_ig_unc_conae.png" class="slide-logo"></p>

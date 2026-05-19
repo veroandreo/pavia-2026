@@ -11,6 +11,9 @@ author:
 date: "2026-05-20"
 title-slide-attributes:
   data-background-color: "#1A428A"
+  data-background-image: "../assets/img/lecture_2/qrcode.png"
+  data-background-size: "250px"
+  data-background-position: "bottom 150px right 150px"
 bibliography: ../references.bib
 csl: ../american-statistical-association.csl
 format:
@@ -25,9 +28,6 @@ format:
     transition: fade
     highlight-style: github
     code-line-numbers: false
-    toc: true
-    toc-depth: 1
-    toc-title: "Outline"
 ---
 
 # Motivation {background-color="#1A428A"}
@@ -47,10 +47,10 @@ format:
 
 ## Research questions
 
-1. Do distinct groups of temporal activity patterns exist among *Ae. aegypti* ovitraps?
-2. Are those patterns associated with local environmental conditions detectable from satellite imagery?
-3. Can we **predict** patterns city-wide — even where no field data exist?
-4. Do predicted patterns relate to observed dengue incidence?
+1. Do distinct groups of **temporal activity patterns** exist among *Ae. aegypti* ovitrap data?
+2. Are those patterns **associated with local environmental conditions** detectable from satellite imagery?
+3. Can we **predict patterns city-wide** where no mosquito field data exist?
+4. Do predicted patterns relate to observed **dengue incidence**?
 
 
 # Data {background-color="#1A428A"}
@@ -92,7 +92,7 @@ Ovitraps are inexpensive, passive traps — but sparse and heterogeneous across 
 | Texture / heterogeneity | GLCM indices (contrast, entropy, correlation) |
 | Land cover diversity | richness, diversity, mode |
 
-All covariates were extracted over **buffer areas** of 50 and 100m radius around each ovitrap location.
+All covariates were extracted over **buffer areas** of 50 and 100m radius around each ovitrap location (flight range of female mosquitoes).
 
 
 # Methods {background-color="#1A428A"}
@@ -103,7 +103,8 @@ All covariates were extracted over **buffer areas** of 50 and 100m radius around
 ![](../assets/img/lecture_2/workflow.png){fig-align="center"}
 
 <br>
-Routines: <https://github.com/veroandreo/mosquito-ts-clust>
+
+[Routines: <https://github.com/veroandreo/mosquito-ts-clust>]{.tiny}
 
 
 ## Step 1: Time series clustering
@@ -145,7 +146,7 @@ Routines: <https://github.com/veroandreo/mosquito-ts-clust>
 ## Step 4: Validation against dengue incidence
 
 - Aggregate predicted class proportions per **neighbourhood**
-- Correlate with dengue incidence (cases / 10,000 inhabitants)
+- Correlate with dengue incidence (cases / 10,000 inhabitants) per neighbourhood
 - Spearman's ρ, visual inspection of spatial concordance
 
 ![](../assets/img/lecture_2/dengue_cases_and_incidence.png){fig-align="center"}
@@ -194,6 +195,16 @@ Two of the selected configurations are based on DTW clustering and the third one
 
 ## Three temporal patterns - cont.
 
+- Median end date consistent across groups and periods
+- Median start date more variable — drives differences in season length
+- 2018–2019 season started ~1 month earlier than 2017–2018
+- Oviposition season ~20–30 days longer in 2018–2019
+- Mean peak egg counts 2–3× higher in 2018–2019
+- Date of peak similar between seasons
+
+
+## Three temporal patterns - cont.
+
 ::: {.tiny}
 | Series | Cluster | n | MSD | MED | Duration (days) | Max eggs | Mean max eggs | Date of max |
 |---|---|---|---|---|---|---|---|---|
@@ -204,16 +215,6 @@ Two of the selected configurations are based on DTW clustering and the third one
 |  | 2 | 88 | 5 Nov 2018 | 29 Apr 2019 | 175 | 594 | 190 | 21 Jan 2019 |
 |  | 3 | 45 | 29 Oct 2018 | 29 Apr 2019 | 182 | 615 | 206 | 4 Feb 2019 |
 :::
-
-
-## Three temporal patterns - cont.
-
-- Median end date consistent across groups and periods
-- Median start date more variable — drives differences in season length
-- 2018–2019 season started ~1 month earlier than 2017–2018
-- Oviposition season ~20–30 days longer in 2018–2019
-- Mean peak egg counts 2–3× higher in 2018–2019
-- Date of peak similar between seasons
 
 
 ## Three temporal patterns - cont.
@@ -281,8 +282,7 @@ We used 2018-2019 to predict temporal pattern distribution for 2019-2020.
 
 ![](../assets/img/lecture_2/pred_2019_2020.png)
 
-- Matrix of group 2 (high egg counts, early increase of activity), group 3 (high egg counts) within urban fabric, and
-group 1 (low activity, no defined peak) in border and green areas
+- Matrix of group 2 (high egg counts, early increase of activity), group 3 (high egg counts) within urban fabric, and group 1 (low activity, no defined peak) in border and green areas
 
 
 ## Relationship with dengue incidence
@@ -329,7 +329,7 @@ group 1 (low activity, no defined peak) in border and green areas
 - **2018–2019**: texture measures + variability in vegetation & water indices
   - G2 and G3: Higher entropy, lower IDM & ASM (less homogeneity/uniformity), higher SD of water & vegetation indices
   - **locally heterogeneous, vegetated microenvironments** favour higher and earlier oviposition peaks?
-- **2017–2018**: diversity measures and average vegetation/water conditions more relevant — but accuracy was much lower
+- **2017–2018**: diversity measures and average vegetation/water conditions more relevant — but accuracy was lower
 
 :::{.notes}
 - High environmental variability around ovitraps → more breeding sites, resting spots, and biting opportunities
@@ -360,15 +360,14 @@ group 1 (low activity, no defined peak) in border and green areas
 ::: {.incremental}
 1. *Ae. aegypti* temporal activity is **spatially heterogeneous** within cities
 2. That heterogeneity is **predictable** from freely available satellite imagery
-3. Sentinel-2 + random forest = a practical, scalable surveillance tool
-4. The spatial distribution of patterns has **epidemiological relevance** (dengue)
-5. Open-source tools (GRASS, Python, R) make this workflow **transferable**
+3. The spatial distribution of patterns might have **epidemiological relevance** (dengue)
+4. Open-source tools (GRASS, Python, R) make this workflow **reproducible**
 :::
 
 ## Implications for public health
 
 Understanding *where* and *when* mosquitoes are most active — 
-without exhaustive field campaigns — can:
+without exhaustive field campaigns — could:
 
   - Guide **targeted vector control** interventions
   - Support **early warning systems**
@@ -397,8 +396,10 @@ Thanks!
 :::
 
 
-## References & resources
+## Reference
 
-**Paper:**  
 Andreo, V., Porcasi, X., Guzman, C., Lopez, L. & Scavuzzo, C.M. (2021). Spatial distribution of *Aedes aegypti* oviposition temporal patterns and their relationship with environment and dengue incidence.  
 *Insects*, 12(10), 919. <https://doi.org/10.3390/insects12100919>
+
+
+![](../assets/img/lecture_2/qrcode.png){fig-align="center" width="200px"}
