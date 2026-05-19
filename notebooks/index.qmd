@@ -11,7 +11,7 @@ In this practical session, we will model and map the habitat suitability for the
 on variables derived from daily Land Surface Temperature (LST) data.
 
 We will roughly go through the following steps:
-<img src="../assets/img/studio/aedes_albopictus.jpg" width="30%" align="right"/>
+<img src="../assets/img/workshop/aedes_albopictus.jpg" width="30%" align="right"/>
 
   - Import species records
   - Create random background points
@@ -28,7 +28,7 @@ We will roughly go through the following steps:
 :::: {.columns}
 
 ::: {.column width="38%"}
-![](../assets/img/studio/lst_north_italy_2014.png){width=100%}
+![](../assets/img/workshop/lst_north_italy_2014.png){width=100%}
 :::
 
 ::: {.column width="62%"}
@@ -47,4 +47,10 @@ in a Jupyter notebook within [Google Colab](https://colab.research.google.com/).
 To open the notebooks in Colab, just use the URL of [this repository](https://github.com/veroandreo/pavia-2026) as shown below:
 
 **include img here**
+
+
+
+<div style="text-align: center;">
+<a href="notebook-00.qmd" class="btn btn-primary btn-lg" role="button">Go to the rendered notebook</a>
+</div>
 

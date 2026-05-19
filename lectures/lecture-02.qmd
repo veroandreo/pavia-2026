@@ -291,7 +291,7 @@ group 1 (low activity, no defined peak) in border and green areas
 
 ![](../assets/img/lecture_2/incidence_vs_ovi_clus_prop.png){fig-align="center"}
 
-- **Weak but positive** association between proportion of group 3 pixels and neighbourhood-level dengue incidence (ρ ≈ 0.3, p < 0.05)
+- **Weak but positive** association between proportion of group 3 pixels and neighbourhood-level dengue incidence (ρ ≈ 0.15, p < 0.05)
 
 
 # Discussion {background-color="#1A428A"}

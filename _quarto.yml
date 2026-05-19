@@ -13,7 +13,7 @@ website:
       - href: lectures/index.qmd
         text: Lectures
       - href: notebooks/index.qmd  
-        text: Notebooks
+        text: Workshop
     right:
       - text: About
         href: about.qmd
