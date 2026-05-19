@@ -1,5 +1,5 @@
 ---
-title: "Part 3: Modelling with R"
+title: "SDM with R"
 author: Verónica Andreo
 date: "2026-05-21"
 format: 
@@ -14,12 +14,8 @@ knitr::opts_chunk$set(eval = FALSE)
 # knitr::opts_chunk$set(cache = TRUE)
 ```
 
-In this third part of the studio, we'll use R to model *Aedes albopictus*
-distribution in Northern Italy. For that, we need to connect to GRASS via
-the `rgrass` package in order to read occurrence data and predictors. The 
-*rgrass* package is developed by @rgrass and can be found at: 
-<https://github.com/rsbivand/rgrass/>. See the vignette with further
-explanations and examples at: <https://rsbivand.github.io/rgrass/>.
+This optional part of the workshop shows the use of R to model *Aedes albopictus* distribution in Northern Italy. 
+For that, we need to connect to GRASS via the `rgrass` package in order to read occurrence data and predictors. The *rgrass* package is developed by @rgrass and can be found at: <https://github.com/rsbivand/rgrass/>. See the vignette with further explanations and examples at: <https://rsbivand.github.io/rgrass/>.
 
 # [**rgrass**](https://cran.r-project.org/web/packages/rgrass/index.html)
 
@@ -64,8 +60,7 @@ B. Using [GRASS GIS within an R session](https://grasswiki.osgeo.org/wiki/R_stat
 
 # SDM workflow
 
-In this part of the Studio we'll be covering the middle and right side of the
-SDM workflow, modeling and predictions.
+Here we'll be covering the middle and right side of the SDM workflow, modeling and predictions.
 
 ![](../assets/img/lecture_1/workflow_sdm_other.png)
 
@@ -93,7 +88,7 @@ library(zeallot)
 
 ### Initialize GRASS
 
-We'll use **option B**, i.e., we'll launch GRASS GIS in a defined location and mapset, from R
+We'll use **option B**, i.e., we'll launch GRASS GIS in a defined project and mapset, from R
 
 ```{r}
 #| label: grass_init
@@ -104,7 +99,7 @@ grassbin <- system("grass --config path", intern = TRUE)
 # path to GRASS database
 grassdata <- path.expand("~/grass_ncsu_2023/grassdata/")
 # path to location
-location <- "eu_laea"
+project <- "eu_laea"
 # path to mapset
 mapset <- "italy_LST_daily"
 
@@ -112,7 +107,7 @@ mapset <- "italy_LST_daily"
 initGRASS(gisBase = grassbin, 
           home = tempdir(), 
           gisDbase = grassdata, 
-          location = location, 
+          location = project, 
           mapset = mapset, 
           override = TRUE,
           remove_GISRC= TRUE)
@@ -186,7 +181,7 @@ because `mapview` does not support terra yet.
 #| warning: false
 
 # Quick visualization in mapview
-mapview(raster::raster(predictors_r[['worldclim_bio01']])) + presence
+mapview(raster::raster(predictors_r[['bioclim_bio01']])) + presence
 ```
 
 #### Data preparation
@@ -483,24 +478,10 @@ labels <- LETTERS[1:length(retained_varnames)]
 ggpubr::ggarrange(plotlist = plotlist, labels = labels)
 ```
 
-We close the mapset and done
-
-```{r}
-# close the mapset
-unlink_.gislock()
-```
-
 
 ### Disclaimer
 
-This is only a simple example for doing SDM and only the beginning... 
-There are:
-
-- other models to test
-- hyper-parameter tuning
-- ensemble modeling
-- uncertainty assessment: where we can predict with confidence
-- many other relevant packages: 
+There are many other relevant packages we could use: 
   - [*dismo*](https://cran.r-project.org/web/packages/dismo/index.html), [*sdm*](https://cran.r-project.org/web/packages/sdm/index.html),  [*kuenm*](https://github.com/marlonecobos/kuenm), [*caret*](https://cran.r-project.org/web/packages/caret/index.html), [*CAST*](https://cran.r-project.org/web/packages/CAST/index.html), etc.
 
 ## References

@@ -927,7 +927,7 @@ We can re-predict from the lambdas file. This is useful for applying the model t
 
 ### Disclaimer
 
-This is only a simple example for doing SDM and only the beginning… There are:
+This is only a simple example for doing SDM and only the beginning… There are several other steps or pathways we may follow:
 
 - presence records thinning
 - other types of models
@@ -938,4 +938,5 @@ This is only a simple example for doing SDM and only the beginning… There are:
 - uncertainty assessment and extrapolation analysis
 - projection on new data, transfer the model to other areas or periods
 
-
+Also, if you are interested on how a similar workflow can be achieved within R, calling maps we stored in GRASS, check this optional notebook:
+[SDM training with R](notebook-03.qmd).
