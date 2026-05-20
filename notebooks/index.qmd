@@ -50,6 +50,6 @@ To open the notebooks in Colab, just use the URL of [this repository](https://gi
 
 
 <div style="text-align: center;">
-<a href="notebook-00.qmd" class="btn btn-primary btn-lg" role="button">Go to the rendered notebook</a>
+<a href="notebook-00.qmd" class="btn btn-primary btn-lg" role="button" target="_blank">Go to the rendered notebook</a>
 </div>
 

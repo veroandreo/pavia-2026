@@ -44,7 +44,7 @@ import gdown, os
 dest = '/content/drive/MyDrive/pavia_2026'
 os.makedirs(dest, exist_ok=True)
 
-file_id = '1tBmsMtivpkKdV6l9OyytUgWK-FnUy92Q'
+file_id = '1U2r7HGKEPqIh0rCClWUJvYa81z9fMCMF'
 gdown.download(id=file_id, output=f'{dest}/pavia_2026.zip', quiet=False)
 ```
 
@@ -63,11 +63,16 @@ else:
 The folder structure within your `pavia_2026` folderz should look like:
 
 ```
-.
+pavia_2026
 ├── aedes_albopictus.gpkg
-└── eu_laea
-    ├── italy_LST_daily
-    └── PERMANENT
+├── eu_laea
+│   ├── italy_LST_daily
+│   └── PERMANENT
+└── maxent
+    ├── maxent.bat
+    ├── maxent.jar
+    ├── maxent.sh
+    └── readme.txt
 ```
 
 To check, just click the folder icon on the left sidebar, navigate to drive → MyDrive → pavia_2026 and check that you can see eu_laea/ and aedes_albopictus.gpkg.
@@ -78,11 +83,10 @@ To check, just click the folder icon on the left sidebar, navigate to drive → 
 Install GRASS from the `ppa:ubuntugis/ubuntugis-unstable` repository. This may take some minutes.
 
 ```{python}
-%%capture
 # Install GRASS and Java
-apt-get update -q
-add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
-apt-get install -q grass grass-dev default-jdk
+!apt-get update -q
+!add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
+!apt-get install -q grass grass-dev default-jdk
 ```
 
 ```{python}
@@ -264,7 +268,7 @@ rast[0:10]
 
 ```{python}
 # Display raster map with interactive class
-lst_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+lst_map = gj.InteractiveMap(width = 500, use_region=True)
 lst_map.add_raster("lst_2014.005_avg")
 lst_map.add_layer_control(position = "bottomright")
 lst_map.show()
@@ -297,7 +301,7 @@ Let's add the occurrence points over the previous interactive map
 
 ```{python}
 # Display raster map with interactive class
-lst_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+lst_map = gj.InteractiveMap(width = 500, use_region=True)
 lst_map.add_raster("lst_2014.005_avg")
 lst_map.add_vector("aedes_albopictus")
 lst_map.add_layer_control(position = "bottomright")
@@ -374,7 +378,7 @@ Let's display the result
 
 ```{python}
 # Display raster map with interactive class
-mask_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+mask_map = gj.InteractiveMap(width = 500, use_region=True)
 mask_map.add_vector("mask_bg")
 mask_map.add_layer_control(position = "bottomright")
 mask_map.show()
@@ -543,7 +547,7 @@ Let's have a look at some of the maps we just created
 
 ```{python}
 # Display raster map with interactive class
-bio_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+bio_map = gj.InteractiveMap(width = 500, use_region=True)
 bio_map.add_raster("bioclim_bio01")
 bio_map.add_raster("bioclim_bio02")
 bio_map.add_layer_control(position = "bottomright")
@@ -586,7 +590,7 @@ gs.run_command("t.rast.series",
 
 ```{python}
 # Display raster map with interactive class
-auc_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+auc_map = gj.InteractiveMap(width = 500, use_region=True)
 auc_map.add_raster("avg_spring_warming")
 auc_map.add_layer_control(position = "bottomright")
 auc_map.show()
@@ -628,7 +632,7 @@ gs.run_command("t.rast.series",
 
 ```{python}
 # Display raster map with interactive class
-spw_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+spw_map = gj.InteractiveMap(width = 500, use_region=True)
 spw_map.add_raster("avg_autumnal_cooling")
 spw_map.add_layer_control(position = "bottomright")
 spw_map.show()
@@ -681,7 +685,7 @@ gs.run_command("t.rast.series",
 
 ```{python}
 # Display raster map with interactive class
-h20_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+h20_map = gj.InteractiveMap(width = 500, use_region=True)
 h20_map.add_raster("avg_count_tmean_higher25_lower30")
 h20_map.add_layer_control(position = "bottomright")
 h20_map.show()
@@ -732,7 +736,7 @@ gs.run_command("t.rast.series",
 
 ```{python}
 # Display raster map with interactive class
-h20_map = gj.InteractiveMap(width = 500, use_region=True, tiles="OpenStreetMap")
+h20_map = gj.InteractiveMap(width = 500, use_region=True)
 h20_map.add_raster("median_count_tmean_lower10")
 h20_map.add_layer_control(position = "bottomright")
 h20_map.show()
@@ -861,7 +865,7 @@ gs.run_command(
 Let's visualise the result:
 
 ```{python}
-sdm_map = gj.InteractiveMap(width=500, use_region=True, tiles="OpenStreetMap")
+sdm_map = gj.InteractiveMap(width=500, use_region=True)
 sdm_map.add_raster("modelcv_suitability")
 sdm_map.add_vector("aedes_albopictus")
 sdm_map.add_layer_control(position="bottomright")
@@ -882,7 +886,7 @@ gs.run_command(
     color="bcyr",
 )
 
-sdm_cv_map = gj.InteractiveMap(width=500, use_region=True, tiles="OpenStreetMap")
+sdm_cv_map = gj.InteractiveMap(width=500, use_region=True)
 sdm_cv_map.add_raster("modelcv_suitability_mean")
 sdm_cv_map.add_vector("modelcv_suitability_occurrences")
 sdm_cv_map.add_layer_control(position="bottomright")
@@ -903,7 +907,7 @@ gs.run_command("r.colors", map="modelcv_presence", color="ndvi")
 ```
 
 ```{python}
-pa_map = gj.InteractiveMap(width=500, use_region=True, tiles="OpenStreetMap")
+pa_map = gj.InteractiveMap(width=500, use_region=True)
 pa_map.add_raster("modelcv_presence")
 pa_map.add_vector("aedes_albopictus")
 pa_map.add_layer_control(position="bottomright")
