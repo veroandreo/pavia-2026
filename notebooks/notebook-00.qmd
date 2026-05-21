@@ -41,11 +41,15 @@ drive.mount('/content/drive')
 # Download zip directly into your Drive
 import gdown, os
 
-dest = '/content/drive/MyDrive/pavia_2026'
+dest = '/content/drive/MyDrive'
 os.makedirs(dest, exist_ok=True)
 
+zip_path = f'{dest}/pavia_2026.zip'
 file_id = '1U2r7HGKEPqIh0rCClWUJvYa81z9fMCMF'
-gdown.download(id=file_id, output=f'{dest}/pavia_2026.zip', quiet=False)
+if not os.path.exists(zip_path):
+    gdown.download(id=file_id, output=zip_path, quiet=False)
+else:
+    print(f'File already exists: {zip_path}')
 ```
 
 ```{python}
@@ -60,10 +64,10 @@ else:
     print("Already unzipped, skipping")
 ```
 
-The folder structure within your `pavia_2026` folderz should look like:
+The folder structure within `pavia_2026` should look like:
 
 ```
-pavia_2026
+.
 ├── aedes_albopictus.gpkg
 ├── eu_laea
 │   ├── italy_LST_daily
@@ -93,31 +97,6 @@ Install GRASS from the `ppa:ubuntugis/ubuntugis-unstable` repository. This may t
 # Check the GRASS GIS installation
 import subprocess
 print(subprocess.check_output(["grass", "--config", "version"], text=True))
-```
-
-## Configure the GRASS Python environment
-
-Tell Python where to find GRASS packages and import the required libraries:
-
-- **`grass.script`** (`gs`): project and session management, tools execution 
-- **`grass.jupyter`** (`gj`): interactive map visualisation in notebooks
-
-```{python}
-import sys
-
-# Add GRASS Python packages to path
-grass_python_path = subprocess.check_output(
-    ["grass", "--config", "python_path"], text=True
-).strip()
-sys.path.append(grass_python_path)
-print(f"GRASS Python path: {grass_python_path}")
-```
-
-```{python}
-import grass.script as gs
-import grass.jupyter as gj
-
-print("grass.script and grass.jupyter imported successfully")
 ```
 
 We are set!
@@ -231,13 +210,39 @@ More info: <https://grass.osgeo.org/grass-stable/manuals/libpython/grass.jupyter
 
 ## Start a GRASS session
 
+### Configure the GRASS Python environment
+
+Tell Python where to find GRASS packages and import the required libraries:
+
+- **`grass.script`** (`gs`): project and session management, tools execution 
+- **`grass.jupyter`** (`gj`): interactive map visualisation in notebooks
+
+```{python}
+import sys
+
+# Add GRASS Python packages to path
+grass_python_path = subprocess.check_output(
+    ["grass", "--config", "python_path"], text=True
+).strip()
+sys.path.append(grass_python_path)
+print(f"GRASS Python path: {grass_python_path}")
+```
+
+```{python}
+import grass.script as gs
+import grass.jupyter as gj
+
+print("grass.script and grass.jupyter imported successfully")
+```
+
 To start a GRASS session, we need a project. For this workshop, a ready to use project is provided and it is saved in your Google Drive inside the `pavia_2026` folder. The session is then started with `gj.init()`.
 
 ```{python}
 # Start working session in the eu_laea project
+home = 'pavia_2026'
 project = 'eu_laea'
 mapset = 'italy_LST_daily'
-session = gj.init(dest, project, mapset)
+session = gj.init(home, project, mapset)
 ```
 
 :::{.callout-note}
@@ -425,8 +430,7 @@ gs.run_command("t.create",
 
 ```{python}
 # Check it is created
-gs.run_command("t.list",
-              type="strds")
+gs.read_command("t.list", type="strds")
 ```
 
 ```{python}
@@ -447,8 +451,7 @@ gs.run_command("t.register",
 
 ```{python}
 # Get info about the strds
-gs.run_command("t.info",
-               input="lst_daily")
+print(gs.run_command("t.info", input="lst_daily"))
 ```
 
 Now that we created the time series or **STRDS**, let's start estimating relevant variables. We start by calculating long term aggregations, also called *climatologies*.
@@ -478,9 +481,10 @@ We want to estimate climatologies for all months, so let's try first to get the 
 months=['{0:02d}'.format(m) for m in range(1,13)]
 
 for m in months:
-    gs.run_command("t.rast.list",
-                   input="lst_daily",
-                   where=f"strftime('%m', start_time)='{m}'")
+    output = gs.read_command("t.rast.list",
+                             input="lst_daily",
+                             where=f"strftime('%m', start_time)='{m}'")
+    print(f"--- Month {m} ---\n{output}")
 ```
 
 Now we add the `methods` and we are ready to estimate climatologies for all months with three different methods.
@@ -577,7 +581,7 @@ gs.run_command("t.rast.aggregate",
 
 ```{python}
 # Check raster maps in the STRDS
-gs.run_command("t.rast.list", input="annual_spring_warming")
+print(gs.read_command("t.rast.list", input="annual_spring_warming"))
 ```
 
 ```{python}
@@ -619,7 +623,7 @@ gs.run_command("t.rast.aggregate",
 
 ```{python}
 # Check raster maps in the STRDS
-gs.run_command("t.rast.list", input="annual_autumnal_cooling")
+print(gs.read_command("t.rast.list", input="annual_autumnal_cooling"))
 ```
 
 ```{python}
@@ -670,9 +674,7 @@ gs.run_command("t.rast.aggregate",
 
 ```{python}
 # Check raster maps in the STRDS
-gs.run_command("t.rast.list", 
-               input="count_tmean_higher25_lower30", 
-               columns="name,start_time,min,max")
+print(gs.read_command("t.rast.list", input="count_tmean_higher25_lower30", columns="name,start_time,min,max"))
 ```
 
 ```{python}
@@ -721,9 +723,9 @@ gs.run_command("t.rast.aggregate",
 
 ```{python}
 # Check raster maps in the STRDS
-gs.run_command("t.rast.list", 
+print(gs.read_command("t.rast.list", 
                input="count_tmean_lower10", 
-               columns="name,start_time,min,max")
+               columns="name,start_time,min,max"))
 ```
 
 ```{python}
@@ -790,11 +792,11 @@ print(predictors)
 ```
 
 ```{python}
-# Run VIF — iteratively removes the most collinear variable until all VIF < 10
+# Run VIF — iteratively removes the most collinear variable until all VIF < 20
 gs.run_command("r.vif",
                maps=predictors,
                n=100000,
-               maxvif=10,
+               maxvif=25,
                seed=42)
 ```
 
@@ -822,8 +824,8 @@ selected_vars = [
 locations and exports them in the *Samples With Data* (SWD) format that MaxEnt expects. It also exports ASCII rasters of the predictors.
 
 ```{python}
-os.makedirs(os.path.join(dest, "model_input/swd"), exist_ok=True)
-os.makedirs(os.path.join(dest, "model_input/ascii"), exist_ok=True)
+os.makedirs(os.path.join(home, "model_input/swd"), exist_ok=True)
+os.makedirs(os.path.join(home, "model_input/ascii"), exist_ok=True)
 
 gs.run_command(
     "v.maxent.swd",
@@ -831,9 +833,9 @@ gs.run_command(
     species="aedes_albopictus",
     bgp="background_points",
     evp_maps=",".join(selected_vars),
-    species_output=os.path.join(dest, "model_input/swd/species.swd"),
-    bgr_output=os.path.join(dest, "model_input/swd/background.swd"),
-    export_rasters=os.path.join(dest, "model_input/ascii"),
+    species_output=os.path.join(home, "model_input/swd/species.swd"),
+    bgr_output=os.path.join(home, "model_input/swd/background.swd"),
+    export_rasters=os.path.join(home, "model_input/ascii"),
 )
 ```
 
@@ -843,15 +845,15 @@ We run 4-fold cross-validation to assess model performance. MaxEnt will
 iteratively hold out one fold as test data and train on the remaining three.
 
 ```{python}
-os.makedirs(os.path.join(dest, "model_02"), exist_ok=True)
+os.makedirs(os.path.join(home, "model_cv"), exist_ok=True)
 
 gs.run_command(
     "r.maxent.train",
     flags="ybg",
-    samplesfile=os.path.join(dest, "model_input/swd/species.swd"),
-    environmentallayersfile=os.path.join(dest, "model_input/swd/background.swd"),
-    projectionlayers=os.path.join(dest, "model_input/ascii"),
-    outputdirectory=os.path.join(dest, "model_cv"),
+    samplesfile=os.path.join(home, "model_input/swd/species.swd"),
+    environmentallayersfile=os.path.join(home, "model_input/swd/background.swd"),
+    projectionlayers=os.path.join(home, "model_input/ascii"),
+    outputdirectory=os.path.join(home, "model_cv"),
     replicatetype="crossvalidate",
     replicates=4,
     samplepredictions="modelcv_suitability_occurrences",
@@ -873,25 +875,9 @@ sdm_map.show()
 ```
 
 ::: {.callout-note}
-Open the HTML report in `model_02/` to inspect the mean test AUC across folds, variable importance (% contribution and permutation importance), and response curves.
+Open the HTML report in `model_cv/` to inspect the mean test AUC across folds, variable importance (% contribution and permutation importance), and response curves.
 :::
 
-```{python}
-# Inspect prediction variability across folds at occurrence locations
-gs.run_command(
-    "v.colors",
-    map="modelcv_suitability_occurrences",
-    use="attr",
-    column="Cloglog_range",
-    color="bcyr",
-)
-
-sdm_cv_map = gj.InteractiveMap(width=500, use_region=True)
-sdm_cv_map.add_raster("modelcv_suitability_mean")
-sdm_cv_map.add_vector("modelcv_suitability_occurrences")
-sdm_cv_map.add_layer_control(position="bottomright")
-sdm_cv_map.show()
-```
 
 #### Presence-absence maps
 
@@ -900,7 +886,7 @@ Convert the continuous suitability map to a binary presence/absence map using a 
 ```{python}
 gs.run_command(
     "r.mapcalc",
-    expression="modelcv_presence = if(model01_suitability >= 0.5, 1, 0)",
+    expression="modelcv_presence = if(model01_suitability >= 0.3, 1, 0)",
 )
 
 gs.run_command("r.colors", map="modelcv_presence", color="ndvi")
@@ -909,7 +895,7 @@ gs.run_command("r.colors", map="modelcv_presence", color="ndvi")
 ```{python}
 pa_map = gj.InteractiveMap(width=500, use_region=True)
 pa_map.add_raster("modelcv_presence")
-pa_map.add_vector("aedes_albopictus")
+#pa_map.add_vector("aedes_albopictus")
 pa_map.add_layer_control(position="bottomright")
 pa_map.show()
 ```
