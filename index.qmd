@@ -23,7 +23,7 @@ All lectures will take place at:
 |------|------|------|-------|
 | May 18, 2026 | 16:00–18:00 | Lecture | [Environmental drivers of vector-borne and zoonotic diseases: leveraging remote sensing for public health](lectures/lecture-01.qmd) |
 | May 20, 2026 | 11:00–13:00 | Seminar | [Mapping mosquito activity from space: methods, choices, and open questions in urban disease surveillance](lectures/lecture-02.qmd) |
-| May 21, 2026 | 14:00–16:00 | Workshop | From satellite data to disease risk maps: a practical introduction to species distribution modeling |
+| May 21, 2026 | 14:00–16:00 | Workshop | [From satellite data to disease risk maps: a practical introduction to species distribution modeling](notebooks/index.qmd) |
 | May 22, 2026 | 14:00–16:00 | Discussion | [Let's solve it together: open problems in RS-based disease surveillance](lectures/lecture-03.qmd) |
 
 : {tbl-colwidths="[15, 10, 10, 65]"}

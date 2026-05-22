@@ -1,6 +1,7 @@
 ---
-title: "Workshop"
-date: today
+title: "From satellite data to disease risk maps"
+subtitle: "A practical introduction to species distribution modeling"
+date: "2026-05-21"
 author: "Verónica Andreo"
 toc: true
 ---
@@ -46,7 +47,7 @@ We will use GRASS, Python and MaxEnt. The whole workflow will be run
 in a Jupyter notebook within [Google Colab](https://colab.research.google.com/). 
 To open the notebooks in Colab, just use the URL of [this repository](https://github.com/veroandreo/pavia-2026) as shown below:
 
-![](../assets/img/workshop/open_nb_colab.png){fig-align="center"}
+![](../assets/img/workshop/open_nb_colab.png){fig-align="center" width="80%"}
 
 
 <div style="text-align: center;">

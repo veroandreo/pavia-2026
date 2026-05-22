@@ -764,7 +764,7 @@ for addon in addons:
     gs.run_command("g.extension", extension=addon)
 ```
 
-MaxEnt requires a Java runtime (that we already installed) and the `maxent.jar` file. Point GRASS to both:
+[`r.maxent.setup`](https://grass.osgeo.org/grass-stable/manuals/addons/r.maxent.setup.html) requires a Java runtime (that we already installed) and the `maxent.jar` file. Point GRASS to both:
 
 ```{python}
 # Set path to maxent.jar
@@ -777,8 +777,8 @@ gs.run_command("r.maxent.setup", flags="j")
 
 #### Variable selection
 
-Before training, we remove redundant predictors using the Variance Inflation
-Factor (VIF). We keep variables with VIF < 10.
+Before training, we remove redundant predictors using [`r.vif`](https://grass.osgeo.org/grass-stable/manuals/addons/r.vif.html) (Variance Inflation
+Factor). We keep variables with VIF < 10.
 
 ```{python}
 # Collect all candidate predictor maps
@@ -796,7 +796,7 @@ print(predictors)
 gs.run_command("r.vif",
                maps=predictors,
                n=100000,
-               maxvif=25,
+               maxvif=10,
                seed=42)
 ```
 
@@ -820,7 +820,7 @@ selected_vars = [
 
 #### Export data for MaxEnt (SWD format)
 
-`v.maxent.swd` extracts the predictor values at occurrence and background
+[`v.maxent.swd`](https://grass.osgeo.org/grass-stable/manuals/addons/v.maxent.swd.html) extracts the predictor values at occurrence and background
 locations and exports them in the *Samples With Data* (SWD) format that MaxEnt expects. It also exports ASCII rasters of the predictors.
 
 ```{python}
@@ -841,7 +841,7 @@ gs.run_command(
 
 #### Train MaxEnt model with cross-validation
 
-We run 4-fold cross-validation to assess model performance. MaxEnt will
+We use [`r.maxent.train`](https://grass.osgeo.org/grass-stable/manuals/addons/r.maxent.train.html) with 4-fold cross-validation to assess model performance. MaxEnt will
 iteratively hold out one fold as test data and train on the remaining three.
 
 ```{python}
@@ -902,7 +902,7 @@ pa_map.show()
 
 #### Predict species distribution in other areas or time periods
 
-We can re-predict from the lambdas file. This is useful for applying the model to different environmental scenarios:
+We can use [`r.maxent.predict`](https://grass.osgeo.org/grass-stable/manuals/addons/r.maxent.predict.html) to re-predict from the lambdas file. This is useful for applying the model to different environmental scenarios:
 
 ```{python}
 # DO NOT RUN
