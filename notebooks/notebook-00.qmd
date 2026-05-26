@@ -298,7 +298,7 @@ We will use occurrence data already downloaded and cleaned. We need to import it
 ```{python}
 # Import mosquito records
 gs.run_command("v.import",
-               input=os.path.join(dest,"aedes_albopictus.gpkg"),
+               input=os.path.join(dest,home,"aedes_albopictus.gpkg"),
                output="aedes_albopictus")
 ```
 
